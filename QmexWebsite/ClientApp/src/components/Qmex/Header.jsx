@@ -37,7 +37,7 @@ class InternalHeader extends PureComponent {
                          <Nav id="navbarSupportedContent" style={{ flexWrap:"wrap",  columnGap: "30px", whiteSpace: "nowrap", fontSize: "23px"  }} >
                              {
                                  this.props.menulinks.map((ml) => 
-                                      (<Nav.Item key={ml.title} className="my-auto d-inline pl-3" style={{ width: "126px" }} data-toggle="collapse" data-target=".navbar-collapse.show, .navbar-toggler">
+                                     (<Nav.Item key={ml.title} className="my-auto d-inline pl-3" id="navLink" style={{ width: "126px" }} data-toggle="collapse" data-target=".navbar-collapse.show, .navbar-toggler">
                                          <Link to={ml.to} className={"mr-4 " + ((ml.to === page) ? "text-primary" : "text-dark")}>
                                              {ml.title}
                                          </Link>

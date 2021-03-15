@@ -4,6 +4,7 @@ import CFLoader from './Contentful/CFLoader';
 import { Row, Col, Container } from 'react-bootstrap';
 import VMFJombo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import Verhaal from './Contentful/Verhaal';
+import ReactMarkdownWithHtml from 'react-markdown/with-html';
 import WidthContainer from './Common/WidthContainer';
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 
@@ -35,10 +36,9 @@ export default class ServiceDetail extends Component {
             <div id="servicedetail_main_content">
                     <VMFJombo content={this.props.content.verhalen[0].fields} pos="top" height="40vh" />
                     <WidthContainer width={1}>
-                        {lijstZonderEerste.map((v) => this.kiesComponent(v))}
+                       {lijstZonderEerste.map((v) => this.kiesComponent(v))}
                     </WidthContainer>
                 </div> 
-           
              </Fragment>
             )
     }
@@ -46,7 +46,7 @@ export default class ServiceDetail extends Component {
     kiesComponent(v) {
         switch (v.sys?.contentType.sys.id) {
             case "verhaalmetfoto":
-                return <VerhaalMetFoto content={v.fields} />
+                return <VerhaalMetFoto  content={v.fields} />
             default:
                 return <Verhaal  content={v.fields} width={2} />
         }

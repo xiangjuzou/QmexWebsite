@@ -29,20 +29,22 @@ export default class App extends Component {
             { to: '/services/marketing', title: 'Marketing', render: () => <ServiceDetail content={this.state.dienstInkoop} page='dienstInkoop' statecallback={this.saveState} /> },
             { to: '/services/OEM', title: 'OEM', render: () => <ServiceDetail content={this.state.dienstOEM} page='dienstOEM' statecallback={this.saveState} /> },
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
+         
 
             { to: '/', title: 'Home', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
-
             { to: '/products', title: 'Products', render: () => <div>Loading...</div> },
             { to: '/services', title: 'Services', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
             { to: '/production', title: 'Production', render: () => <Production content={this.state.production} statecallback={this.saveState} /> },
             { to: '/about', title: 'About us', render: () => <About content={this.state.about} statecallback={this.saveState}/> },
             { to: '/contact', title: 'Contact', render: () => <Contact content={this.state.contact} statecallback={this.saveState} /> }
+
         ];
+        this.home = 4;
 
         // menu en footer items 
-        this.FooterlinksLeft = [this.links[4], this.links[5], this.links[6]];
-        this.FooterlinksMiddle = [this.links[8], this.links[9], this.links[0]];
-        this.menulinks = this.links.slice(4);
+        this.FooterlinksLeft = [this.links[this.home], this.links[this.home+1], this.links[this.home+2]];
+        this.FooterlinksMiddle = [this.links[this.home+4], this.links[this.home+5], this.links[0]];
+        this.menulinks = this.links.slice(this.home);
 
         // get all url's from the basic-route's and save them for the search. (products added later.)
         let urls = this.links.map(l => l.to);
@@ -62,7 +64,7 @@ export default class App extends Component {
         if (Object.keys(state)[0] == 'product') {
             let p = state.product.hoofdmenuitems[0];
 
-            this.links[5] = {
+            this.links[this.home+1] = {
                 to: '/products', title: 'Products', render: () =>
                                 <Products content={this.state['product_' + p.fields.slug]}
                                     statecallback={this.saveState}

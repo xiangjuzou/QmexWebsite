@@ -4,15 +4,19 @@ import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
+
+// - overlay : plaatjes is achtergrond, ipv erboven
 export default class Kaart extends Component {
     render() {
+        const overlay = this.props.overlay ? "card-img-overlay" : "";
+
         // card met button-link
         if (this.props.content?.linkUrl && this.props.button) {
             return (
                 <Card style={{ marginBottom: "15px" }} className={this.props.className} >
                     {this.renderCardBody(
                         <Button variant="outline-secondary" ><Link to={this.props.content?.linkUrl}>read more</Link></Button>
-                    )}
+                    , overlay)}
                 </Card>
             );
         }
@@ -24,7 +28,7 @@ export default class Kaart extends Component {
                     
                     {this.renderCardBody(
                         <Link to={this.props.content?.linkUrl}>read more</Link>
-                    )}
+                    , overlay)}
                    
                 </Card>
             );
@@ -33,16 +37,16 @@ export default class Kaart extends Component {
         // anders card zonder link
         return (
             <Card style={{ borderWidth: '0', marginBottom: "15px" }} className={this.props.className}>
-                {this.renderCardBody("")}
+                {this.renderCardBody("", overlay)}
             </Card>
         );
     }
 
-    renderCardBody(btn) {
+    renderCardBody(btn, overlay) {
         return (
             <Fragment>
                 <Card.Img variant="top" src={this.props.content?.fotoUrl}  />
-                <Card.Body>
+                <Card.Body className={overlay}>
                     <Card.Text>
                         <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
                     </Card.Text>

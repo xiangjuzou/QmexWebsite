@@ -1,7 +1,12 @@
 ﻿import React, { Component, Fragment } from 'react';
 import CFLoader from './Contentful/CFLoader';
+import Kaart from './Contentful/Kaart';
 import Verhaal from './Contentful/Verhaal';
+import Columns from './Common/Columns';
+import { Col, Container } from 'react-bootstrap';
+import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
+import WidthContainer from './Common/WidthContainer';
 
 export default class Production extends Component {
     constructor(props) {
@@ -16,21 +21,40 @@ export default class Production extends Component {
 
     render() {
         if (!this.props.content) { return "Loading..."; }
-
-
         return (
-            <Fragment>
-                <div id="production_logistiek">
-                    <Verhaal content={this.props.content.logistiek.fields} className="my-5" width={3} /> 
-                </div>
-                <div id="production_verhaal" >
-                    <Verhaal content={this.props.content.productionVerhaal.fields} className="my-5"  width={3}  />
-                </div>
-                <div id="production_info" lg={6} md={12} className="text-white pl-5 " style={{width:'80%', margin:'auto'}}>
-                    <VerhaalMetFoto lg={6} md={12} content={this.props.content.productionInfo.fields} />
-                 </div>
-            </Fragment>
+                <div className="position-relative">
 
+                    <VMFJumbo content={this.props.content.banner.fields} height="70vh" />
+
+                    <div id="production_section" className="bg-light mx-auto position-relative" style={{ width:'80%', top:'-250px'}}>  
+                        <Columns fluid className="py-5 px-5 text-center" id="production_fabKaart">
+                            {
+                            this.props.content.fabKaart.map((k, id) => (
+                                <Col key={id} md={4} sm={12}>
+                                    <Kaart content={k.fields} overlay className="text-white" />
+                                </Col>
+                                ))
+                            }
+                        </Columns>
+
+                        <Verhaal content={this.props.content.fabriek.fields} className="text-center" width={3}  /> 
+                     
+                        <VMFJumbo className="text-white pl-5" cover pos="bottomleft" height="50vh" content={this.props.content.location.fields}  />
+                        
+                        <div className="bg-light py-3">
+                            <Columns className="py-5" id="production_locKaart">
+                                {
+                                    this.props.content.locKaart.map((k, id) => (
+                                        <Col key={id} md={4} sm={12}> 
+                                            <Kaart content={k.fields} />
+                                        </Col>
+                                    ))
+                                }
+                            </Columns>
+                        </div>
+
+                    </div>
+                </div>
         );
     }
 }

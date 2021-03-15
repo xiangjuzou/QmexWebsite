@@ -3,6 +3,7 @@ import VMFJumbo from './VerhaalMetFoto/VMFJumbo';
 import VerhaalMetFoto from './VerhaalMetFoto/VerhaalMetFoto';
 import Verhaal from './Verhaal';
 import Kaart from './Kaart';
+import { Container } from 'react-bootstrap';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
 // props:
@@ -11,7 +12,7 @@ function ProductsShowcase(props) {
 
     const getGallery = (gi) => {
         switch (gi.sys.contentType.sys.id) {
-            case "story": return <Verhaal content={gi.fields} className="flex-basis-1 container mb-5" width={1}/>;
+            case "story": return <Verhaal content={gi.fields} className="flex-basis-1 container my-5" />;
             case "verhaalmetfoto": return <VerhaalMetFoto content={gi.fields} className="flex-basis-1"/>;
             case "card": return <Kaart content={gi.fields} className="flex-basis-2 text-left"  />;
         }
@@ -24,14 +25,15 @@ function ProductsShowcase(props) {
                 <VMFJumbo content={props.content.showcase.fields} height="40vh" />
             </div>
             
-            <div className="d-flex flex-wrap text-center">
+            <div className="d-flex flex-wrap">
                 {props.content.gallery?.map((gi) => getGallery(gi))}
             </div>
-            <div className="text-center my-5">
-            <h2 className="d-inline-block border border-warning px-5 py-5">
-                <ReactMarkdownWithHtml allowDangerousHtml>{props.content?.meerinfo}</ReactMarkdownWithHtml>
-                </h2>
-             </div>
+
+            <div id="products-moreinfo" className="bg-light py-2 px-5">
+                <Container>
+                <Verhaal content={props.content?.meerinfo?.fields}  />
+            </Container>
+            </div>
         </Fragment>
     );
 }

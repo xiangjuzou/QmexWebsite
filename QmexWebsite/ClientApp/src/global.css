@@ -38,7 +38,7 @@
 }
 
 h1 {
-    font-size: 42px;
+    font-size: 36px;
     line-height: 1.08349;
     font-weight: 600;
     letter-spacing: -.003em;
@@ -85,6 +85,10 @@ header, nav.navbar {
     margin-left: 15px !important;
 }
 
+#navLink :hover {
+    text-decoration: none !important;
+}
+
 
 /* globale body */
 body {
@@ -95,9 +99,8 @@ body {
     letter-spacing: .011em;
 }
 
-
 /* home pagina */
-#home_kaarten .card-img-top {
+.home_kaarten .card-img-top {
     height: 96px;
     width: 96px;
     margin:2rem auto;
@@ -112,33 +115,34 @@ body {
 
 /* service pagina */
 #service_kaarten button:hover a {
-    color:white;
+    color: white;
+    text-decoration: none;
 }
-#service_kaarten a {
-    color: #6c757d;  /* secondary van bootstrap */
-}
-
-.p_icon:hover {
-    text-decoration: underline;
+#service_kaarten a, homeTweedeBanner a {
+    color: #ff6a00;
+    text-decoration: none;
 }
 
-/* production pagina */
-#production_info {
-    line-height: 4.5rem;
-    font-size: 30px;
-    background: rgba(51,51,51,1);
-    margin-bottom:0px;
-}
 
-#production_info h2 {
-    font-size: 48px;
-    display:inline-block;
-    border:#f4f4f4 solid 2px;
-    padding: 10px;
-}
+
+
 
 /*product*/
 #products_verhaal {
     padding: 30px;
 }
 
+/*#products-moreinfo {
+    background: #ff6a00;
+   
+}*/
+/*contact*/
+.contactForm_button:hover {
+    color: #f4f4f4;
+    background: #ff6a00;
+    border: 1px solid #ff6a00;
+    text-decoration: none;
+    outline: none;
+}
+
+ 

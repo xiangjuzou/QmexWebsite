@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdownWithHtml from 'react-markdown/with-html';
 import { Jumbotron, Row, Col, Nav, Button, Container } from 'react-bootstrap';
 
 
@@ -27,7 +27,7 @@ export default class VMFJumbo extends Component {
         let text = "";
         switch (this.props.pos) {
             case "bottomleft":
-                pos = "text-left  pl-5 pb-5";
+                pos = "text-left ml-5 pl-5 pb-5";
                 break;
             case "top":
                 pos = "text-center pt-1";
@@ -44,7 +44,7 @@ export default class VMFJumbo extends Component {
                     <Row>
                         <Col className={pos}>
                             <h1 className='display-4'>{this.props.content?.titel}</h1>
-                            <ReactMarkdown>{this.props.content?.tekst}</ReactMarkdown>
+                            <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
                         </Col>
                     </Row>
                 </Container>

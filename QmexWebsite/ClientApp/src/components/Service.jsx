@@ -54,7 +54,7 @@ export default class Service extends Component {
                
                 <div id="service_kaarten" className="my-5 pt-5">
                     <Columns>
-                        {this.props.content.kaarten.map(k => <Col><Kaart key={k.fields.name} button content={k.fields}/></Col>)}
+                        {this.props.content.kaarten.map(k => <Col><Kaart key={k.fields.name} button target="_blank" content={k.fields}/></Col>)}
                     </Columns>
                 </div>
             </Fragment>

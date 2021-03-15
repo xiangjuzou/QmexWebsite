@@ -1,6 +1,7 @@
-﻿import React, { Component, Fragment } from 'react';
+﻿import React, { Component,  Fragment } from 'react';
+
 import CFLoader from './Contentful/CFLoader';
-import { Col, Container } from 'react-bootstrap';
+import { Col, Container} from 'react-bootstrap';
 import Columns from './Common/Columns';
 import ReactMarkdown from 'react-markdown';
 
@@ -34,11 +35,11 @@ export default class Home extends Component {
         return (
             <Fragment>
                 <div id="home_topbanner">
-                    <VMFJumbo content={this.props.content.banner.fields} height="70vh" />
+                    <VMFJumbo content={this.props.content.banner.fields} height="73vh" />
                 </div>
 
                 <div id="home_verhaal">
-                    <Verhaal className="text-center bg-white my-5 py-5" content={this.props.content.inleiding.fields} width={3} />
+                    <Verhaal className="text-center bg-white my-3 py-5" content={this.props.content.inleiding.fields} width={3} />
                 </div>
 
                 <div id="home_waarden" className="my-5 py-5" >
@@ -72,8 +73,9 @@ export default class Home extends Component {
 
                 <div id="homeTweedeBanner">
                     <VerhaalMetFoto className="text-white bg-secondary pl-5 "
-                       content={this.props.content.homeTweedeBanner.fields} width={5} /> 
-                 </div>
+                        content={this.props.content.homeTweedeBanner.fields} width={5} />
+
+                </div>
             </Fragment>
         );
     }

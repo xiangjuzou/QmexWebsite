@@ -30,27 +30,21 @@ export default class Contact extends Component {
 
         return (
             <Fragment>
-                <div id="contact_banner" className="my-5">
-                    <Row>
-                        <Col lg={6} md={12} className="mb-5">
-                            <div className="d-flex justify-content-center">
-                                <img src="./img/contactbanner.jpg" height="720" width="600" alt="contactbanner" />
-                            </div>
-                        </Col>
 
-                        <Col xl={3} lg={6} md={12} className="d-flex align-items-center justify-content-center">
-                            <ContactInfo id="contactInfo" content={this.props.content.contactgegevens.fields}  />  
-                        </Col>
+                <div id="contact_banner" className="mb-3">
+                    <VMFJumbo content={this.props.content.banner.fields} cover pos="bottomleft" height="50vh" />
+                </div>
 
-                        <Col xl={3} lg={0} />
-                    </Row>
-                  </div>
+                <WidthContainer width={1.5} >
+                <ContactInfo id="contactInfo" content={this.props.content.contactgegevens.fields} />  
+                 </WidthContainer> 
+               
                     
-                <div id="contact_verhaal" className="text-center bg-light" >
+                <div id="contact_verhaal" className="text-center bg-light">
                       <Verhaal content={this.props.content.verhaal.fields} width={3} />
                   </div>
                 
-                <div id="contact_form" className="mx-auto py-5 mb-5" style={{ width: "780px" }}>
+                <div id="contact_form" className="mx-auto py-5 mb-5" style={{width:"780px"}}>
                         <ContactForm />
                 </div>
 
