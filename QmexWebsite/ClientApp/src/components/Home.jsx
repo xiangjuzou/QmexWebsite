@@ -1,15 +1,10 @@
 ﻿import React, { Component,  Fragment } from 'react';
-
 import CFLoader from './Contentful/CFLoader';
-import { Col, Container} from 'react-bootstrap';
+import { Col} from 'react-bootstrap';
 import Columns from './Common/Columns';
-import ReactMarkdown from 'react-markdown';
-
 import Kaart from './Contentful/Kaart';
-import Verhaal from './Contentful/Verhaal';
-import WidthContainer from './Common/WidthContainer';
+import Verhaal from './Contentful/Verhaal/Verhaal';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
-import ReactMarkdownWithHtml from 'react-markdown/with-html';
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSeedling, faStar, faClock } from '@fortawesome/free-solid-svg-icons';
@@ -35,7 +30,7 @@ export default class Home extends Component {
         return (
             <Fragment>
                 <div id="home_topbanner">
-                    <VMFJumbo content={this.props.content.banner.fields} height="73vh" />
+                    <VMFJumbo content={this.props.content.banner.fields} height="77vh" />
                 </div>
 
                 <div id="home_verhaal">
@@ -74,8 +69,10 @@ export default class Home extends Component {
                 <div id="homeTweedeBanner">
                     <VerhaalMetFoto className="text-white bg-secondary pl-5 "
                         content={this.props.content.homeTweedeBanner.fields} width={5} />
-
                 </div>
+
+                
+                
             </Fragment>
         );
     }

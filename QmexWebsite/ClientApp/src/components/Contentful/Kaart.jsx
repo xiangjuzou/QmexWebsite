@@ -15,7 +15,7 @@ export default class Kaart extends Component {
             return (
                 <Card style={{ marginBottom: "15px" }} className={this.props.className} >
                     {this.renderCardBody(
-                        <Button variant="outline-secondary" ><Link to={this.props.content?.linkUrl}>read more</Link></Button>
+                        <Button variant="outline-secondary" ><Link to={this.props.content?.linkUrl}>Bekijk meer</Link></Button>
                     , overlay)}
                 </Card>
             );
@@ -27,7 +27,7 @@ export default class Kaart extends Component {
                 <Card style={{ marginBottom: "15px" }} className={this.props.className}>
                     
                     {this.renderCardBody(
-                        <Link to={this.props.content?.linkUrl}>read more</Link>
+                        <Link to={this.props.content?.linkUrl}>bekijk meer</Link>
                     , overlay)}
                    
                 </Card>
@@ -45,7 +45,7 @@ export default class Kaart extends Component {
     renderCardBody(btn, overlay) {
         return (
             <Fragment>
-                <Card.Img variant="top" src={this.props.content?.fotoUrl}  />
+                <Card.Img variant="top" src={this.props.content?.fotoUrl}/>
                 <Card.Body className={overlay}>
                     <Card.Text>
                         <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>

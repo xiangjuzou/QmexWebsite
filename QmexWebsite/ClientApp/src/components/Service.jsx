@@ -4,7 +4,7 @@ import CFLoader from './Contentful/CFLoader';
 import Columns from './Common/Columns';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import Kaart from './Contentful/Kaart';
-import Verhaal from './Contentful/Verhaal';
+import Verhaal from './Contentful/Verhaal/Verhaal';
 import WidthContainer from './Common/WidthContainer';
 import { Col, Row, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

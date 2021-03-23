@@ -26,7 +26,8 @@ function ProductsSidemenu(props) {
                     <div className='pt-3'>
                     <Link to={"/products/" + p.fields.slug}>
                         {p.fields.menuTitle}
-                    </Link>
+                        </Link>
+                     
                 </div>
                 ))
             }

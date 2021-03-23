@@ -30,9 +30,9 @@ export default class VMFJumbo extends Component {
                 pos = "text-left ml-5 pl-5 pb-5";
                 break;
             case "top":
-                pos = "text-center pt-1";
+                pos = "text-center pt-2 lead";
                 break;
-         
+           
             default:
                 pos = "text-center lead text-dark";
                 break;

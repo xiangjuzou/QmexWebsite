@@ -1,14 +1,9 @@
 ﻿import React, { Component, Fragment } from "react";
 import CFLoader from './Contentful/CFLoader';
-import { faPhoneSquareAlt, faEnvelope} from 'react-icons/fa';
-import {Col, Row, Container } from 'react-bootstrap';
-import ReactMarkdown from 'react-markdown';
-import Columns from "./Common/Columns";
 import ContactForm from './Qmex/ContactForm';
 import Map from './Qmex/Map';
-import Verhaal from './Contentful/Verhaal';
+import Verhaal from './Contentful/Verhaal/Verhaal';
 import WidthContainer from './Common/WidthContainer';
-import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import ContactInfo from './Contentful/ContactInfo';
 

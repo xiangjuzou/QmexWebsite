@@ -45,7 +45,6 @@ h1 {
 }
 
 
-
 /* globale footer */
 footer {
     width: 100%;
@@ -85,7 +84,7 @@ header, nav.navbar {
     margin-left: 15px !important;
 }
 
-#navLink :hover {
+#navLink:hover, #hfLink:hover{
     text-decoration: none !important;
 }
 
@@ -119,12 +118,9 @@ body {
     text-decoration: none;
 }
 #service_kaarten a, homeTweedeBanner a {
-    color: #ff6a00;
+    color: #f48c00;
     text-decoration: none;
 }
-
-
-
 
 
 /*product*/
@@ -132,17 +128,12 @@ body {
     padding: 30px;
 }
 
-/*#products-moreinfo {
-    background: #ff6a00;
-   
-}*/
 /*contact*/
 .contactForm_button:hover {
     color: #f4f4f4;
-    background: #ff6a00;
-    border: 1px solid #ff6a00;
+    background: #f48c00;
+    border: 1px solid #f48c00;
     text-decoration: none;
     outline: none;
 }
 
- 

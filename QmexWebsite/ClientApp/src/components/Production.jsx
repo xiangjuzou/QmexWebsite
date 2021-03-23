@@ -1,7 +1,7 @@
 ﻿import React, { Component, Fragment } from 'react';
 import CFLoader from './Contentful/CFLoader';
 import Kaart from './Contentful/Kaart';
-import Verhaal from './Contentful/Verhaal';
+import Verhaal from './Contentful/Verhaal/Verhaal';
 import Columns from './Common/Columns';
 import { Col, Container } from 'react-bootstrap';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
@@ -38,8 +38,8 @@ export default class Production extends Component {
                         </Columns>
 
                         <Verhaal content={this.props.content.fabriek.fields} className="text-center" width={3}  /> 
-                     
-                        <VMFJumbo className="text-white pl-5" cover pos="bottomleft" height="50vh" content={this.props.content.location.fields}  />
+
+                    <VMFJumbo className="pl-6" cover pos="bottomleft" height="50vh" content={this.props.content.location.fields} />
                         
                         <div className="bg-light py-3">
                             <Columns className="py-5" id="production_locKaart">

@@ -11,6 +11,7 @@ import Production from './components/Production';
 import Products from './components/Products';
 import Contact from './components/Contact';
 import About from './components/About';
+import Blog from './components/Blog';
 import Search from './components/Search';
 import ServiceDetail from './components/ServiceDetail';
 import CFLoader from './components/Contentful/CFLoader';
@@ -25,10 +26,11 @@ export default class App extends Component {
 
         // other links. deep links needs extra slash!
         this.links = [
-            { to: '/privacy', title: 'Privacy Policy', render: () => <h1>Privacy policy</h1> },
+            { to: '/privacy', title: 'Privacy', render: () => <h1>Privacy policy</h1> },
             { to: '/services/marketing', title: 'Marketing', render: () => <ServiceDetail content={this.state.dienstInkoop} page='dienstInkoop' statecallback={this.saveState} /> },
             { to: '/services/OEM', title: 'OEM', render: () => <ServiceDetail content={this.state.dienstOEM} page='dienstOEM' statecallback={this.saveState} /> },
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
+            { to: '/blog', title: 'Blog', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
          
 
             { to: '/', title: 'Home', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
@@ -39,7 +41,7 @@ export default class App extends Component {
             { to: '/contact', title: 'Contact', render: () => <Contact content={this.state.contact} statecallback={this.saveState} /> }
 
         ];
-        this.home = 4;
+        this.home = 5;
 
         // menu en footer items 
         this.FooterlinksLeft = [this.links[this.home], this.links[this.home+1], this.links[this.home+2]];

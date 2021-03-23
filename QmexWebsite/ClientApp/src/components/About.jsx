@@ -4,7 +4,7 @@ import { Col, Row, Container } from 'react-bootstrap';
 
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
-import Verhaal from './Contentful/Verhaal';
+import Verhaal from './Contentful/Verhaal/Verhaal';
 import WidthContainer from './Common/WidthContainer';
 
 
