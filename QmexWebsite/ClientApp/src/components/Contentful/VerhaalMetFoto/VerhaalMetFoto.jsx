@@ -31,14 +31,16 @@ export default class VerhaalMetFoto extends Component {
             <Col md={6} sm={12}>
                 <h2 className="my-5">{this.props.content?.titel}</h2>
                 <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>{' '}
-                {this.props.content.moreUrl && <Link style={{ fontSize: '23px', textDecoration: 'none' }} className="text-white p-2 bg-warning"
-                    to={this.props.content.moreUrl}>{this.props.content?.moreUrlText}</Link>}
+                <div className="my-4">
+                {this.props.content?.moreUrl && <Link style={{ fontSize: '21px', textDecoration: 'none' }} className="text-white p-2 bg-primary"
+                        to={this.props.content.moreUrl}>{this.props.content?.moreUrlText}</Link>}
+                    </div>
             </Col>
         );
 
         let col2 = (
             <Col md={6} sm={12}>
-                <img src={this.props.content?.fotoUrl} style={{ width: '100%' }}/>
+                <img src={this.props.content?.fotoUrl} style={{ minWidth: '400px', width:'100%', height:'auto' }}/>
             </Col>
             );
 

@@ -31,7 +31,7 @@ class InternalHeader extends PureComponent {
          return (
              <header style={{ background: 'rgb(240,240,240)' }}>
                  <Navbar collapseOnSelect expand="lg" >
-                     <Navbar.Brand style={{width:"25%", minWidth:"300px"}}><img src="/img/QmexLogo.png" width="300" className="mr-5" /></Navbar.Brand>
+                     <Navbar.Brand style={{width:"25%", minWidth:"300px"}}><img src="/img/logotran.png" width="300" className="mr-5" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" />
                      <Navbar.Collapse id="navbarSupportedContent" style={{ zIndex: 2000, background: 'rgb(240,240,240)' }}>
                          <Nav id="navbarSupportedContent" style={{ flexWrap:"wrap",  columnGap: "30px", whiteSpace: "nowrap", fontSize: "23px"  }} >

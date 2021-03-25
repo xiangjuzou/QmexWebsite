@@ -1,6 +1,6 @@
 ﻿import React, { Component, Fragment } from 'react';
 import CFLoader from './Contentful/CFLoader';
-import Kaart from './Contentful/Kaart';
+import Kaart from './Contentful/Kaart/Kaart';
 import Verhaal from './Contentful/Verhaal/Verhaal';
 import Columns from './Common/Columns';
 import { Col, Container } from 'react-bootstrap';

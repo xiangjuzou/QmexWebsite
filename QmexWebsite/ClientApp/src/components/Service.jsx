@@ -3,7 +3,7 @@ import CFLoader from './Contentful/CFLoader';
 
 import Columns from './Common/Columns';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
-import Kaart from './Contentful/Kaart';
+import Kaart from './Contentful/Kaart/Kaart';
 import Verhaal from './Contentful/Verhaal/Verhaal';
 import WidthContainer from './Common/WidthContainer';
 import { Col, Row, Container } from 'react-bootstrap';
@@ -29,8 +29,8 @@ export default class Service extends Component {
       
         return (
             <Fragment>
-                <div id="service_jumbo" className="mb-5">
-                    <VMFJumbo content={this.props.content.banner?.fields} height="40vh" pos="bottomleft" />
+                <div id="service_jumbo" className="mb-5 ">
+                    <VMFJumbo content={this.props.content.banner?.fields} height="45vh" pos="bottomleft" />
                 </div>  
 
                

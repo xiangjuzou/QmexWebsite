@@ -1,22 +1,24 @@
 ﻿import React, { Component, Fragment } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
 
 // - overlay : plaatjes is achtergrond, ipv erboven
-export default class Kaart extends Component {
+// - button : link is als een knop
+export default class OneKaart extends Component {
     render() {
         const overlay = this.props.overlay ? "card-img-overlay" : "";
+        const lt = this.props.linktekst ?? "Bekijk meer";
 
         // card met button-link
         if (this.props.content?.linkUrl && this.props.button) {
             return (
                 <Card style={{ marginBottom: "15px" }} className={this.props.className} >
                     {this.renderCardBody(
-                        <Button variant="outline-secondary" ><Link to={this.props.content?.linkUrl}>Bekijk meer</Link></Button>
-                    , overlay)}
+                        <Button variant="primary">
+                            <Link className="text-white p-1 lead" to={this.props.content?.linkUrl}>{lt}</Link></Button>
+                        , overlay)}
                 </Card>
             );
         }
@@ -25,11 +27,11 @@ export default class Kaart extends Component {
         if (this.props.content?.linkUrl && !this.props.button) {
             return (
                 <Card style={{ marginBottom: "15px" }} className={this.props.className}>
-                    
+
                     {this.renderCardBody(
-                        <Link to={this.props.content?.linkUrl}>bekijk meer</Link>
-                    , overlay)}
-                   
+                        <Link to={this.props.content?.linkUrl}>{lt}</Link>
+                        , overlay)}
+
                 </Card>
             );
         }
@@ -45,7 +47,7 @@ export default class Kaart extends Component {
     renderCardBody(btn, overlay) {
         return (
             <Fragment>
-                <Card.Img variant="top" src={this.props.content?.fotoUrl}/>
+                <Card.Img variant="top" src={this.props.content?.fotoUrl} />
                 <Card.Body className={overlay}>
                     <Card.Text>
                         <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>

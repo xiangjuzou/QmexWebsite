@@ -3,6 +3,7 @@ import CFLoader from './CFLoader';
 import Columns from '../Common/Columns';
 import { Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
 
 // props:
@@ -20,14 +21,18 @@ function ProductsSidemenu(props) {
 
     return (
         <div>
-            <div><h4>{props.content.title}{' ' } Cateloge </h4></div>
+            <div>
+                <h4>{props.content.title}{' '} producten</h4>
+            </div>
             {
                 props.content.products?.map((p) => (
                     <div className='pt-3'>
                     <Link to={"/products/" + p.fields.slug}>
                         {p.fields.menuTitle}
                         </Link>
-                     
+                        <div className="ml-3 small">
+                            <ReactMarkdownWithHtml allowDangerousHtml>{p.fields?.menusubtitle}</ReactMarkdownWithHtml>
+                        </div>
                 </div>
                 ))
             }

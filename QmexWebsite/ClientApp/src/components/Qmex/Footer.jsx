@@ -10,7 +10,7 @@ const Footer = React.memo((props) => {
             <Columns>
 
                 <Col xs={12} lg={3} className="d-flex align-items-center">
-                    <img src='/img/QmexLogo.png' className="footer_logo mx-auto" />
+                    <img src='/img/logotran.png' className="footer_logo mx-auto" />
                 </Col>
 
                 <Col sm={6} xs={12} lg={3} className="justify-content-center d-flex pt-4 pt-sm-0">

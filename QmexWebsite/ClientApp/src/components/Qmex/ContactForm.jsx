@@ -91,7 +91,7 @@ export default class ContactForm extends Component{
                             </Form.Row>
                             <Form.Row>
                                 <Col>
-                            <Button id="toggle" className="contactForm_button" variant="dark" type="submit" data-toggle="tooltip" data-placement="bottom" title="Submit your question!" >Submit</Button>
+                            <Button id="toggle" className="contactForm_button text-white" variant="primary" type="submit" data-toggle="tooltip" data-placement="bottom" title="Submit your question!" >Submit</Button>
                                 </Col>
                             </Form.Row>
 

@@ -44,7 +44,7 @@ export default class App extends Component {
         this.home = 5;
 
         // menu en footer items 
-        this.FooterlinksLeft = [this.links[this.home], this.links[this.home+1], this.links[this.home+2]];
+        this.FooterlinksLeft = [this.links[4], this.links[this.home+1], this.links[this.home+2]];
         this.FooterlinksMiddle = [this.links[this.home+4], this.links[this.home+5], this.links[0]];
         this.menulinks = this.links.slice(this.home);
 

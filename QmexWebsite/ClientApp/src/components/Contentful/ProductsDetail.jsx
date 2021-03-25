@@ -2,7 +2,9 @@
 import VMFJumbo from './VerhaalMetFoto/VMFJumbo';
 import VerhaalMetFoto from './VerhaalMetFoto/VerhaalMetFoto';
 import Verhaal from './Verhaal/Verhaal';
+import OneKaart from './Kaart/OneKaart';
 import CollapseVerhaal from './Verhaal/CollapseVerhaal';
+import { Row,Col,Container } from 'react-bootstrap';
 
 // props:
 // - content       : app.state["product_<hoofdmenu>/<product>"]
@@ -28,12 +30,13 @@ function ProductsDetail(props) {
     return (
         <Fragment>
             <VMFJumbo content={props.content.showcase.fields} height="40vh" className="mb-5"/>
-            <Verhaal id="inleiding" className="bg-light p-5 mb-5 " content={props.content.inleiding?.fields} width={2} />
+            <Verhaal id="inleiding" className="p-5 mb-5 text-center" content={props.content.inleiding?.fields} width={2} />
             {props.content.moreInfo?.map((mi, i, arr) => getMoreinfo(mi, i, arr))}
-
-            <div className="contact_kaart bg-light py-3" >
-                {props.content.kaart?.fields} 
-            </div>
+            <div id="ProductDetail_btn">
+            <Container >
+                    <OneKaart button target="_blank" content={props.content.contactkaart?.fields} linktekst="Contact" className="mt-6 mb-4 p-5 bg-secondary" />
+             </Container>     
+             </div>
         </Fragment>
     );
 }

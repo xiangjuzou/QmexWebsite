@@ -1,9 +1,10 @@
 ﻿import React, { Component,  Fragment } from 'react';
 import CFLoader from './Contentful/CFLoader';
-import { Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 import Columns from './Common/Columns';
-import Kaart from './Contentful/Kaart';
+import Kaart from './Contentful/Kaart/Kaart';
 import Verhaal from './Contentful/Verhaal/Verhaal';
+import WidthContainer from './Common/WidthContainer'
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -66,10 +67,11 @@ export default class Home extends Component {
                     <Verhaal className="text-center my-4 pt-3 " content={this.props.content.brancheInleiding.fields} />
                 </div>  
 
-                <div id="homeTweedeBanner">
-                    <VerhaalMetFoto className="text-white bg-secondary pl-5 "
-                        content={this.props.content.homeTweedeBanner.fields} width={5} />
-                </div>
+
+                <WidthContainer width={1} id="homeTweedeBanner">
+                    <VerhaalMetFoto 
+                        content={this.props.content.homeTweedeBanner.fields} className="text-white bg-secondary pl-5 mb-3"/>
+                </WidthContainer>
 
                 
                 

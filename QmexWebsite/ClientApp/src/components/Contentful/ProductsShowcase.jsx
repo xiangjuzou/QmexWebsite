@@ -2,9 +2,10 @@
 import VMFJumbo from './VerhaalMetFoto/VMFJumbo';
 import VerhaalMetFoto from './VerhaalMetFoto/VerhaalMetFoto';
 import Verhaal from './Verhaal/Verhaal';
-import Kaart from './Kaart';
+import Kaart from './Kaart/Kaart';
+import OneKaart from './Kaart/OneKaart';
 import { Container } from 'react-bootstrap';
-import ReactMarkdownWithHtml from 'react-markdown/with-html';
+
 
 // props:
 // - content       : app.state["product_<hoofdmenu>"]
@@ -12,9 +13,9 @@ function ProductsShowcase(props) {
 
     const getGallery = (gi) => {
         switch (gi.sys.contentType.sys.id) {
-            case "story": return <Verhaal content={gi.fields} className="flex-basis-1 container my-5" />;
-            case "verhaalmetfoto": return <VerhaalMetFoto content={gi.fields} className="flex-basis-1"/>;
-            case "card": return <Kaart content={gi.fields} className="card flex-basis-1 border border-warning display-5 mx-auto p-5" style="max-width: 18rem;"/>;
+            case "story": return <Verhaal content={gi.fields} className="flex-basis-1 container mt-5 mb-3 pl-4" />;
+            case "verhaalmetfoto": return <VerhaalMetFoto content={gi.fields} className="flex-basis-1" />;
+            case "card": return <Kaart content={gi.fields} className="card img_productShow flex-basis-2 my-5"/>;
         }
     }
 
@@ -25,11 +26,12 @@ function ProductsShowcase(props) {
                 <VMFJumbo content={props.content.showcase.fields} height="40vh" />
             </div>
             
-            <div className="d-flex flex-wrap p-5">
+            <div className="d-flex flex-wrap">
                 {props.content.gallery?.map((gi) => getGallery(gi))}
             </div>
-
-           
+            <Container>
+                <OneKaart button target="_blank" content={props.content.brochure?.fields} linktekst="Contact" className="py-4 pl-6 bg-secondary" />
+             </Container>
         </Fragment>
     );
 }

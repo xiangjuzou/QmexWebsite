@@ -17,16 +17,16 @@ export default class ContactInfo extends Component {
         return (
 
             <Columns fluid className="mt-5 py-5">
-                <Col className="border border-warning p-3 offset-1 mb-3 pl-2">
+                <Col className="border border-primary p-3 offset-1 mb-3 pl-2">
                     <h4 className="pb-3 pt-2 ">Adres</h4>
                  
                     <ReactMarkdown>{this.props.content?.adres}</ReactMarkdown>
                 </Col>
-                <Col className="border border-warning p-3 offset-1 mb-3 pl-2">
+                <Col className="border border-primary p-3 offset-1 mb-3 pl-2">
                     <h4 className="pb-5 pt-2 ">Telefoonnummer</h4>
                            {Phone} &nbsp; {this.props.content?.telefoonnr}
                 </Col>
-                <Col className="border border-warning p-3 offset-1 mb-3 pl-2">
+                <Col className="border border-primary p-3 offset-1 mb-3 pl-2">
                     <h4 className="pb-5 pt-2">Email</h4>
                   
                     {Email} &nbsp; {this.props.content?.email}
