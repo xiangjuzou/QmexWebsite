@@ -45,7 +45,7 @@ export default class Products extends Component {
                 <WidthContainer width={1}>
                     <Columns fluid>
                         <Col md={2} className='rounded border border-light border-3 px-1 pt-2'>
-                            <ProductsSidemenu content={this.props.submenu} slug={this.props.content.slug} statecallback={this.props.statecallback}  />
+                            <ProductsSidemenu content={this.props.submenu} hoofd={this.props.menu} slug={this.props.content.slug} statecallback={this.props.statecallback}  />
                             </Col>
                         <Col md={10}>
                             {this.isHoofdmenu(this.props.content.slug) ?

@@ -19,21 +19,21 @@ export default class SpecificatieKaart extends Component {
             { afk: "middel", name: "Koudemiddel", eenh: "" },
             { afk: "type", name: "Type", eenh: "" },
             { afk: "capkv", name: "Capaciteit koelen/verwarmen", eenh:""},
-            //{ afk: "capk", name: "Capaciteit koelen", eenh: "w" },
-            //{ afk: "capv", name: "Capaciteit verwarmen", eenh: "w" },
+            { afk: "capk", name: "Capaciteit koelen", eenh: "w" },
+            { afk: "capv", name: "Capaciteit verwarmen", eenh: "w" },
             { afk: "apf", name: "Koelen/Verwarmen Apf", eenh: "W/W" },
             { afk: "gelin", name: "Geluidsniveau Binnenunit", eenh: "dB(A)" },
             { afk: "geout", name: "Geluidsniveau Buitenunit", eenh: "dB(A)" },
             { afk: "na", name: "Neto afmetingen", eenh: "" },
             { afk: "sree", name: "Koelen Seer", eenh: "W/W" },
             { afk: "scop", name: "Koelen Scop", eenh: "W/W" },
-            //{ afk: "nain", name: "Neto afmetingen Binnenunit", eenh: "" },
-            //{ afk: "nainyv", name: "Neto afmetingen binnenunit YV-serie", eenh: "mm" },
+            { afk: "nain", name: "Neto afmetingen Binnenunit", eenh: "" },
+            { afk: "nainyv", name: "Neto afmetingen binnenunit YV-serie", eenh: "mm" },
             { afk: "vp", name: "Verpakkingsafmeting", eenh: "" },
-            //{ afk: "vain", name: "Verpakkingsafmeting", eenh: "" },
-            //{ afk: "vaout", name: "Verpakkingsafmeting Buitenunit", eenh: "mm" },
+            { afk: "vain", name: "Verpakkingsafmeting", eenh: "" },
+            { afk: "vaout", name: "Verpakkingsafmeting Buitenunit", eenh: "mm" },
             { afk: "gew", name: "Netto/Bruto gewicht ", eenh: "" },
-            //{ afk: "gewout", name: "Netto/Bruto gewicht Buitennunit", eenh: "kg" }
+            { afk: "gewout", name: "Netto/Bruto gewicht Buitennunit", eenh: "kg" }
         ];
 
     }
@@ -42,7 +42,7 @@ export default class SpecificatieKaart extends Component {
         return (
             <div style={{fontSize: "13px"}}>
                 <strong>{a.name}</strong> <br />
-                {attr[a.afk]} {a.eenh}
+                <ReactMarkdownWithHtml allowDangerousHtml>{attr[a.afk]} {a.eenh}</ReactMarkdownWithHtml>
                 <Hr />
             </div>
         );

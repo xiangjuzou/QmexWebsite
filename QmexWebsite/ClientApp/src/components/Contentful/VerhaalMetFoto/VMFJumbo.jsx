@@ -34,7 +34,7 @@ export default class VMFJumbo extends Component {
                 break;
            
             default:
-                pos = "text-center lead text-dark";
+                pos = "text-center lead";
                 break;
         }
 

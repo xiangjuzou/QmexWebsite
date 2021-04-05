@@ -16,6 +16,7 @@ import BlogDetail from './components/BlogDetail';
 import Search from './components/Search';
 import ServiceDetail from './components/ServiceDetail';
 import Privacy from './components/Privacy';
+import Faq from './components/Faq';
 import CFLoader from './components/Contentful/CFLoader';
 
 
@@ -33,6 +34,7 @@ export default class App extends Component {
             { to: '/services/OEM', title: 'OEM', render: () => <ServiceDetail content={this.state.dienstOEM} page='dienstOEM' statecallback={this.saveState} /> },
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/blog', title: 'Blog', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
+            { to: '/faq', title: 'Faq', render: () => <Faq content={this.state.faq} statecallback={this.saveState} /> },
          
 
             { to: '/', title: 'Home', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
@@ -41,13 +43,12 @@ export default class App extends Component {
             { to: '/production', title: 'Production', render: () => <Production content={this.state.production} statecallback={this.saveState} /> },
             { to: '/about', title: 'About us', render: () => <About content={this.state.about} statecallback={this.saveState}/> },
             { to: '/contact', title: 'Contact', render: () => <Contact content={this.state.contact} statecallback={this.saveState} /> }
-
         ];
-        this.home = 5;
+        this.home = 6;
 
         // menu en footer items 
         this.FooterlinksLeft = [this.links[4], this.links[this.home+1], this.links[this.home+2]];
-        this.FooterlinksMiddle = [this.links[this.home+4], this.links[this.home+5], this.links[0]];
+        this.FooterlinksMiddle = [this.links[5], this.links[this.home+5], this.links[0]];
         this.menulinks = this.links.slice(this.home);
 
         // get all url's from the basic-route's and save them for the search. (products added later.)

@@ -1,0 +1,30 @@
+﻿import React, { Component, Fragment } from 'react';
+import CollapseVerhaal from './Contentful/Verhaal/CollapseVerhaal';
+import VMFJombo from './Contentful/VerhaalMetFoto/VMFJumbo';
+import CFLoader from './Contentful/CFLoader';
+import { Container } from 'react-bootstrap';
+
+// props:
+// - content       : contenful content
+function Faq(props) {
+    if (!props.content) {
+        CFLoader.LoadPage("08mA3oAFEP2bdyOYBnw4d", "faq", props.statecallback);
+
+        return <div>loading...</div>;
+    }
+
+ 
+    return (
+        <Fragment>
+                <VMFJombo content={props.content.verhalen[0].fields} height="40vh" className="mb-5 text-white" />
+            <div>
+                {props.content.verhalen?.map((mi, i, arr) => (i===0)? <Fragment /> : 
+                    <CollapseVerhaal content={mi.fields} width={1} last={(i === arr.length - 1)} />
+                )}
+            </div>
+        </Fragment>
+    );
+}
+
+
+export default Faq;

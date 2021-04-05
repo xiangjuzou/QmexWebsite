@@ -160,3 +160,11 @@
     }
 
 }
+
+.btn_collapse{ 
+  border-radius:19px;
+}
+.btn_collapse:hover{
+   background-color:#215ab4;
+   color:#ff6a00;
+}

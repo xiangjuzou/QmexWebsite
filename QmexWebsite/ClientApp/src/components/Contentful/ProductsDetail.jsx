@@ -69,7 +69,7 @@ function ProductsDetail(props) {
             </div>
             <div id="ProductDetail_btn">
             <Container >
-                    <OneKaart button target="_blank" content={props.content.contactkaart?.fields} linktekst="Contact meteen" className="mt-6 mb-4 p-5 bg-secondary" />
+                    <OneKaart button target="_blank" content={props.content.contactkaart?.fields} linktekst="Contact nu" className="mt-6 mb-4 p-5 bg-secondary" />
             </Container>     
              </div>
         </Fragment>

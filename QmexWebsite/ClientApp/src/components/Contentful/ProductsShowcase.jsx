@@ -30,7 +30,7 @@ function ProductsShowcase(props) {
                 {props.content.gallery?.map((gi) => getGallery(gi))}
             </div>
             <Container className="pt-5 mt-5">
-                <OneKaart button target="_blank" content={props.content.brochure?.fields} linktekst="Contact meteen" className="py-4 pl-6 bg-secondary" />
+                <OneKaart button target="_blank" content={props.content.brochure?.fields} linktekst="Contact nu" className="py-4 pl-6 bg-secondary" />
              </Container>
         </Fragment>
     );
