@@ -12,8 +12,10 @@ import Products from './components/Products';
 import Contact from './components/Contact';
 import About from './components/About';
 import Blog from './components/Blog';
+import BlogDetail from './components/BlogDetail';
 import Search from './components/Search';
 import ServiceDetail from './components/ServiceDetail';
+import Privacy from './components/Privacy';
 import CFLoader from './components/Contentful/CFLoader';
 
 
@@ -26,7 +28,7 @@ export default class App extends Component {
 
         // other links. deep links needs extra slash!
         this.links = [
-            { to: '/privacy', title: 'Privacy', render: () => <h1>Privacy policy</h1> },
+            { to: '/privacy', title: 'Privacy', render: () => <Privacy content={this.state.privacy} statecallback={this.saveState} /> },
             { to: '/services/marketing', title: 'Marketing', render: () => <ServiceDetail content={this.state.dienstInkoop} page='dienstInkoop' statecallback={this.saveState} /> },
             { to: '/services/OEM', title: 'OEM', render: () => <ServiceDetail content={this.state.dienstOEM} page='dienstOEM' statecallback={this.saveState} /> },
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
@@ -54,7 +56,8 @@ export default class App extends Component {
 
         // product groepen en slugs ophalen van contentful
         CFLoader.LoadPage("6MjPYhDBXepG4aLs1fNcIZ", "product", this.saveState);
-        CFLoader.LoadSlugs(this.saveState);
+        CFLoader.LoadProductSlugs(this.saveState);
+        CFLoader.LoadBlogSlugs(this.saveState);
     }
 
 
@@ -77,28 +80,41 @@ export default class App extends Component {
             };
 
             // add hoofdmenu's to urls list
-            this.addUrlsTostate(state.product.hoofdmenuitems);
+            this.addProductUrlsTostate(state.product.hoofdmenuitems);
         }
 
         // add product urls to urls list
-        if (Object.keys(state)[0] == 'slug') {
-            this.addUrlsTostate(state.slug);
+        if (Object.keys(state)[0] == 'productslug' ) {
+            this.addProductUrlsTostate(state.productslug);
         }
+        if (Object.keys(state)[0] == 'blogslug') {
+            this.addBlogUrlsTostate(state.blogslug);
+        }
+
+        
     }
 
-    addUrlsTostate(CFurls) {
+    addProductUrlsTostate(CFurls) {
         const producturls = CFurls.map(s => "/products/" + s.fields.slug);
         const newurls = [...this.state.urls].concat(producturls);
         this.setState({ urls: newurls });
 
     }
 
+    addBlogUrlsTostate(CFurls) {
+        const urls = CFurls.map(s => "/blog/" + s.fields.slug);
+        const newurls = [...this.state.urls].concat(urls);
+        this.setState({ urls: newurls });
+    }
+
+
    
     render() {
         console.log("APPSTATE:", this.state);
 
         if (!this.state.product) { return "loading product menu..." }
-        if (!this.state.slug) { return "loading products..." }
+        if (!this.state.productslug) { return "loading products..." }
+        if (!this.state.blogslug) { return "loading blogs..." }
 
       
         return  (
@@ -123,7 +139,7 @@ export default class App extends Component {
                         ))}
 
                         {/* De product links met de slug van contentful */}
-                        {this.state.slug.map((p) => (
+                        {this.state.productslug.map((p) => (
                             <Route exact path={"/products/" + p.fields.slug} render={() =>
                                 <Products content={this.state['product_' + p.fields.slug]}
                                     statecallback={this.saveState}
@@ -132,6 +148,16 @@ export default class App extends Component {
                                     menu={this.state.product}
                                     submenu={this.state['product_' + p.fields.slug.split('/')[0]]} />} />
                             ))}
+
+                        {/* De blog links met de slug van contentful */}
+                        {this.state.blogslug.map((p) => (
+                            <Route exact path={"/blog/" + p.fields.slug} render={() =>
+                                <BlogDetail content={this.state['blog_' + p.fields.slug]}
+                                    statecallback={this.saveState}
+                                    id={p.sys.id}
+                                    slug={p.fields.slug} />} />
+                            
+                        ))}
 
                     </main>
                     <Footer navitemsLeft={this.FooterlinksLeft} navitemsMiddle={this.FooterlinksMiddle} />

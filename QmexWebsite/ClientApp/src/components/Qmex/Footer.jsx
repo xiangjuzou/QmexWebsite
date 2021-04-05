@@ -7,22 +7,21 @@ const Footer = React.memo((props) => {
 
     return (
         <footer style={{ background: 'rgba(240,240,240,0.8)' }}>
-            <Columns>
-
-                <Col xs={12} lg={3} className="d-flex align-items-center">
-                    <img src='/img/logotran.png' className="footer_logo mx-auto" />
+            <Columns >
+                <Col xs={12} lg={3} className="d-flex align-items-center justify-content-center ">
+                    <img src='/img/logotrano.png' width="300" className="footer_logo "  />
                 </Col>
 
-                <Col sm={6} xs={12} lg={3} className="justify-content-center d-flex pt-4 pt-sm-0">
+                <Col sm={6} xs={12} lg={3} className="justify-content-center align-items-center d-flex ">
                     <NavList items={props.navitemsLeft} className="footer_links" />
                 </Col>
 
-                <Col sm={6} xs={12} lg={3} className="justify-content-center d-flex pb-4 pb-sm-0">
+                <Col sm={6} xs={12} lg={3} className="justify-content-center align-items-center d-flex md-sm-4">
                     <NavList items={props.navitemsMiddle} className="footer_links" />
                 </Col>
 
-                <Col xs={12} lg={3} className='d-flex align-items-center'>
-                    <div className='footer_social mx-auto'>
+                <Col xs={12} lg={3} className='d-flex align-items-center justify-content-center mt-sm-4'>
+                    <div className='footer_social'>
                         <a href='https://www.linkedin.com' target='_blank'><img src="\img\linkedin.png" alt='linkedin' /></a>
                         <a href='https://www.instagram.com' target='_blank'><img src="\img\instagram.png" alt='instagram' /></a>
                         <a href='https://www.whatsapp.com' target='_blank'><img src="\img\whatsapp.png" alt='whatsapp' /></a>

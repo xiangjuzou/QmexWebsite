@@ -7,7 +7,8 @@ export default class CFLoader {
     static getClient() {
         return createClient({
             space: "p4qxq1qhlde2",
-            accessToken: "vZZVr3OZoAa2hWK0-jPBwNLQufMjONelt-yv7fv24-s"
+            accessToken: "vZZVr3OZoAa2hWK0-jPBwNLQufMjONelt-yv7fv24-s",
+         
         });
     }
 
@@ -33,12 +34,23 @@ export default class CFLoader {
         });
     }
 
-    static LoadSlugs(callback) {
+
+    static LoadProductSlugs(callback) {
 
         let cf = this.getClient();
 
         cf.getEntries({ 'content_type': 'productdetail', 'select': 'fields.slug' }).then((data) => {
-            let newstate = { slug: data.items };
+            let newstate = { productslug: data.items };
+            callback(newstate);
+        });
+    }
+
+    static LoadBlogSlugs(callback) {
+
+        let cf = this.getClient();
+
+        cf.getEntries({ 'content_type': 'blogDetail', 'select': 'fields.slug' }).then((data) => {
+            let newstate = { blogslug: data.items };
             callback(newstate);
         });
     }

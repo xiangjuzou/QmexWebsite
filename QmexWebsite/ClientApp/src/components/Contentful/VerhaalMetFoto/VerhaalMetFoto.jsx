@@ -10,11 +10,12 @@ import { Link } from 'react-router-dom';
 //
 // de rest worden attributen in de html
 export default class VerhaalMetFoto extends Component {
-
+  
 
     render() {
 
         // verzamel de "vreemde" props, en zet deze als attributen op de 1e div.
+      
         const overgeblevenProps = { ...this.props };
         delete overgeblevenProps.reverse;
         delete overgeblevenProps.content;
@@ -40,7 +41,7 @@ export default class VerhaalMetFoto extends Component {
 
         let col2 = (
             <Col md={6} sm={12}>
-                <img src={this.props.content?.fotoUrl} style={{ minWidth: '400px', width:'100%', height:'auto' }}/>
+                <img src={this.props.content?.fotoUrl} className="img-fluid" />
             </Col>
             );
 

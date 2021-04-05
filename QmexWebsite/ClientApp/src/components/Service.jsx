@@ -30,7 +30,7 @@ export default class Service extends Component {
         return (
             <Fragment>
                 <div id="service_jumbo" className="mb-5 ">
-                    <VMFJumbo content={this.props.content.banner?.fields} height="45vh" pos="bottomleft" />
+                    <VMFJumbo content={this.props.content.banner?.fields} height="45vh" pos="bottomleft"/>
                 </div>  
 
                

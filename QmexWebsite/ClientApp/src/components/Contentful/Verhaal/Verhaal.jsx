@@ -11,12 +11,10 @@ import ReactMarkdownWithHtml from 'react-markdown/with-html';
 export default class Verhaal extends Component {
     constructor(props) {
         super(props);
-
-        this.uitklappen = this.uitklappen.bind(this);
         this.state = { uitgeklapt: false };
     }
 
-    uitklappen() {
+     uitklappen = () =>{
         if (this.state.uitgeklapt) {
             this.setState({ uitgeklapt: false });
         } else {

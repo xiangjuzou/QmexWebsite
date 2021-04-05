@@ -51,7 +51,11 @@ const Search = withRouter((props) => {
             namedUrl.pop();
         }
         namedUrl = "/" + namedUrl.join("/").toLowerCase();
-        let url = props.urls.find(item => item.toLowerCase() === namedUrl)
+        let url = props.urls.find(item => item.toLowerCase() === namedUrl)?.toLowerCase();
+
+        if (url == namedUrl) {
+            return url;
+        }
 
         return url + ":" + namedUrl;
 
@@ -65,10 +69,10 @@ const Search = withRouter((props) => {
                 <h2>{stateResult}</h2>
                 {props.content && props.content.map(item => (
                     <div className="mb-5">
-                        <h3>{item.fields.name} ({item.fields?.slug})</h3>
-                        <h2>{findUrl(item.fields.name)}</h2>
-                        <p>{item.fields.tekst}</p>
-                        <Link to={item.fields.name?.split(' ')[0]}>Link</Link>
+                        <h3>{item.fields.name}</h3>
+                        {findUrl(item.fields.name).split(':').length == 2 && <h2 style={{ color: 'red' }}>{findUrl(item.fields.name)}</h2>}
+                        <p>{item.fields.tekst?? item.fields.kortetekst}</p>
+                        {findUrl(item.fields.name).split(':').length == 1 && <Link to={findUrl(item.fields.name)}>Link</Link>}
                     </div>
                 ))}
             </Container>

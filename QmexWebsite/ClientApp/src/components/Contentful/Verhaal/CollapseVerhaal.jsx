@@ -18,7 +18,9 @@ const CollapseVerhaal = (props) =>  {
     delete overgeblevenProps.width;
     delete overgeblevenProps.content;
     delete overgeblevenProps.last;
+    delete overgeblevenProps.children;
     const uid = 'CV_' + uuid();
+
 
     return (
         <div {...overgeblevenProps} >
@@ -35,6 +37,9 @@ const CollapseVerhaal = (props) =>  {
                 </div>
                 <div className="collapse" id={uid}>
                     <ReactMarkdownWithHtml allowDangerousHtml>{props.content?.tekst}</ReactMarkdownWithHtml>
+                    <div className="d-flex flex-wrap">
+                        {props.children}
+                    </div>
                 </div>
                 {props.last && <Hr />}
             </WidthContainer>

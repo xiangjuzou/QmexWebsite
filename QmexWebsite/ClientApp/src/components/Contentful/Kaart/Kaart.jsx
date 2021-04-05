@@ -48,7 +48,7 @@ export default class Kaart extends Component {
     renderCardBody(btn, overlay) {
         return (
             <Fragment>
-                <Card.Img variant="top" src={this.props.content?.fotoUrl}/>
+                <Card.Img variant="top" src={this.props.content?.fotoUrl} className="img-fluid"  />
                 <Card.Body className={overlay}>
                     <Card.Text>
                         <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>

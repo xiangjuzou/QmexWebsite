@@ -28,7 +28,7 @@ function ProductsSidemenu(props) {
                 props.content.products?.map((p) => (
                     <div className='pt-3'>
                     <Link to={"/products/" + p.fields.slug}>
-                        {p.fields.menuTitle}
+                        {p.fields?.menuTitle}
                         </Link>
                         <div className="ml-3 small">
                             <ReactMarkdownWithHtml allowDangerousHtml>{p.fields?.menusubtitle}</ReactMarkdownWithHtml>
