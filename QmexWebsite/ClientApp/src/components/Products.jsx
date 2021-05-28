@@ -5,7 +5,7 @@ import ProductsHoofdmenu from "./Contentful/ProductsHoofdmenu.jsx";
 import ProductsSidemenu from "./Contentful/ProductsSideMenu.jsx";
 import ProductsShowcase from "./Contentful/ProductsShowcase.jsx";
 import ProductsDetail from "./Contentful/ProductsDetail.jsx";
-import { Col, Card, Button } from 'react-bootstrap';
+import { Col, Container, Card, Button } from 'react-bootstrap';
 import WidthContainer from './Common/WidthContainer';
 
 
@@ -20,7 +20,6 @@ import WidthContainer from './Common/WidthContainer';
 export default class Products extends Component {
     constructor(props) {
         super(props);
-
         // menu    is er altijd
         // content wordt hier bijgeladen indien nodig.
         // submenu is optioneel, wordt bijgeladen door ProductSidemenu wanneer het nodig is.
@@ -35,16 +34,14 @@ export default class Products extends Component {
 
     render() {
         if (!this.props.content) { return "Loading..."; }
-
-     
         return (
             <Fragment>
                 <div className='mb-5'>
                     <ProductsHoofdmenu content={this.props.menu} />
                 </div>
-                <WidthContainer width={1}>
+                <Container fluid>
                     <Columns fluid>
-                        <Col md={2} className='rounded border border-light border-3 px-1 pt-2'>
+                        <Col md={2} className='rounded border border-light border-3 pl-4 pt-4'>
                             <ProductsSidemenu content={this.props.submenu} hoofd={this.props.menu} slug={this.props.content.slug} statecallback={this.props.statecallback}  />
                             </Col>
                         <Col md={10}>
@@ -54,7 +51,7 @@ export default class Products extends Component {
                             }
                         </Col>
                     </Columns>
-                </WidthContainer>
+                </Container>
             </Fragment>
       );
     }

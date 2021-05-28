@@ -1,8 +1,5 @@
 ﻿/* variabelen */
-$theme-colors: ( 
-    "primary": #f48c00, 
-    "secondary": #f646368,
-    );
+$theme-colors: ( "primary": #f48c00, "secondary":#808080, );
 
 $spacers: ( 
     6: 5rem
@@ -19,6 +16,7 @@ $spacers: (
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 
+$link-hover-color: darken($link-color, 50%) !default; 
 
 /* mixins */
 @mixin img-fluid() {

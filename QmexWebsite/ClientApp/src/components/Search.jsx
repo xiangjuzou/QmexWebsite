@@ -5,16 +5,12 @@ import { Container } from 'react-bootstrap';
 
 
 const Search = withRouter((props) => {
-
     const [stateWords, setStateWords] = useState("");
     const [stateResult, setStateResult] = useState("loading");
-
-  
 
     // update search data
     useEffect(() => {
         let words = props.location.search;
-
         if (words) {
             words = decodeURIComponent(words.substring(1)); // remove "?"
             if (words !== stateWords) {
@@ -56,25 +52,27 @@ const Search = withRouter((props) => {
         if (url == namedUrl) {
             return url;
         }
-
         return url + ":" + namedUrl;
-
     }
 
 
     return (
         <div id="searchpage">
             <Container>
-                <h1>Search result for {stateWords}</h1>
+                <h1 className="my-5">Search result for {stateWords}</h1>
                 <h2>{stateResult}</h2>
-                {props.content && props.content.map(item => (
+                {props.content && props.content.map(item => {
+                    let url = findUrl(item.fields.name);
+                    let found = (url.indexOf(":") === -1);
+
+                    return (
                     <div className="mb-5">
                         <h3>{item.fields.name}</h3>
-                        {findUrl(item.fields.name).split(':').length == 2 && <h2 style={{ color: 'red' }}>{findUrl(item.fields.name)}</h2>}
-                        <p>{item.fields.tekst?? item.fields.kortetekst}</p>
-                        {findUrl(item.fields.name).split(':').length == 1 && <Link to={findUrl(item.fields.name)}>Link</Link>}
+                        {!found && <h2 style={{ color: 'red' }}>{url}</h2>}
+                        <p>{item.fields.tekst ?? item.fields.kortetekst}</p>
+                        {found && <Link to={url}>Link</Link>}
                     </div>
-                ))}
+                );})}
             </Container>
             
             <Container>

@@ -7,15 +7,20 @@ export default class CFLoader {
     static getClient() {
         return createClient({
             space: "p4qxq1qhlde2",
-            accessToken: "vZZVr3OZoAa2hWK0-jPBwNLQufMjONelt-yv7fv24-s",
-         
+            accessToken: "vZZVr3OZoAa2hWK0-jPBwNLQufMjONelt-yv7fv24-s", 
         });
     }
 
-    static LoadPage(entryId, name, callback) {
-
+   /* static async LoadPage2(entryId, name, callback) {
         let cf = this.getClient();
-
+        let data = await cf.getEntry(entryId);
+        let newstate = {};
+        newstate[name] = data.fields;
+        return newstate;
+    }
+    */
+    static LoadPage(entryId, name, callback) {
+        let cf = this.getClient();
         cf.getEntry(entryId).then((data) => {
             let newstate = {};
             newstate[name] = data.fields;
@@ -24,9 +29,7 @@ export default class CFLoader {
     }
 
     static Loadhoofdmenu(slug, callback) {
-
         let cf = this.getClient();
-
         cf.getEntries({ 'fields.slug': slug, 'content_type': 'producthoofdmenu' }).then((data) => {
             let newstate = {};
             newstate['product_' + slug] = data.items[0].fields;
@@ -36,9 +39,7 @@ export default class CFLoader {
 
 
     static LoadProductSlugs(callback) {
-
         let cf = this.getClient();
-
         cf.getEntries({ 'content_type': 'productdetail', 'select': 'fields.slug' }).then((data) => {
             let newstate = { productslug: data.items };
             callback(newstate);
@@ -46,9 +47,7 @@ export default class CFLoader {
     }
 
     static LoadBlogSlugs(callback) {
-
         let cf = this.getClient();
-
         cf.getEntries({ 'content_type': 'blogDetail', 'select': 'fields.slug' }).then((data) => {
             let newstate = { blogslug: data.items };
             callback(newstate);

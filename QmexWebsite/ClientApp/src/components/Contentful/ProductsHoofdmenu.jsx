@@ -11,16 +11,16 @@ import WidthContainer from '../Common/WidthContainer';
 function ProductsHoofdmenu(props) {
 
     return (
-        <div  style={{ background: 'rgba(51,51,51, 0.9)' }} className="pb-3">
-        <WidthContainer width={2}>
+        <div  style={{ background: 'rgba(51,51,51, 0.9)' }} className="pb-2">
+        <WidthContainer width={1.5}>
             <Columns fluid>
                 {
                     props.content.hoofdmenuitems.map((hmi) => (
                         <Col className="text-center" >
-                        <Link to={"/products/" + hmi.fields.slug} id="hfLink">
-                              <img className='my-3'  src={hmi.fields.iconUrl} width="40px" height="40px" />
+                            <Link id="hfLink"  to={"/products/" + hmi.fields.slug}>
+                                <img className='my-2' src={hmi.fields.iconUrl}  />
                             <br />
-                            <div className="text-white">{hmi.fields.title}</div>
+                                <div className="text-white">{hmi.fields.title}</div>
                         </Link>
                     </Col>
                 ))

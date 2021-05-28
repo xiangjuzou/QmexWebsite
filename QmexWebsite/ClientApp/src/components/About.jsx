@@ -33,7 +33,7 @@ export default class About extends Component {
                     <VMFJumbo content={topbanner.fields} height="40vh" cover id="topbanner"/>
                 </div>
               
-                <div id="about_topverhaal" className="text-center bg-light py-3 mb-5" >
+                <div id="about_topverhaal" className=" bg-light py-3 mb-5 text-left" >
                       <Verhaal content={topverhaal.fields} width={3} />
                 </div>
                   

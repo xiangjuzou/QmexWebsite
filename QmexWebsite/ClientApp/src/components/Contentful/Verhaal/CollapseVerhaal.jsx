@@ -31,13 +31,12 @@ const CollapseVerhaal = (props) =>  {
                     <h2 className="d-flex" data-target={'#' + uid} data-toggle="collapse">{props.content?.titel}
                         <button className='btn_collapse btn-primary border text-white ml-auto'>
                             <FontAwesomeIcon icon={faArrowDown}  size="sm" />
-                        </button>
-                       
+                        </button>  
                     </h2>
                 </div>
                 <div className="collapse" id={uid}>
                     <ReactMarkdownWithHtml allowDangerousHtml>{props.content?.tekst}</ReactMarkdownWithHtml>
-                    <div className="d-flex flex-wrap">
+                    <div className="d-flex flex-wrap px-1">
                         {props.children}
                     </div>
                 </div>

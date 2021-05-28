@@ -24,6 +24,7 @@ export default class SpecificatieKaart extends Component {
             { afk: 'apf', name: 'Koelen/Verwarmen Apf', eenh: 'W/W' },
             { afk: 'gelin', name: 'Geluidsniveau Binnenunit', eenh: 'dB(A)' },
             { afk: 'geout', name: 'Geluidsniveau Buitenunit', eenh: 'dB(A)' },
+            { afk: 'geluids', name: 'Geluidsniveau', eenh: 'dB(A)' },
             { afk: 'na', name: 'Neto afmetingen', eenh: '' },
             { afk: 'sree', name: 'Koelen Seer', eenh: 'W/W' },
             { afk: 'scop', name: 'Koelen Scop', eenh: 'W/W' },
@@ -33,7 +34,11 @@ export default class SpecificatieKaart extends Component {
             { afk: 'vain', name: 'Verpakkingsafmeting', eenh: '' },
             { afk: 'vaout', name: 'Verpakkingsafmeting Buitenunit', eenh: 'mm' },
             { afk: 'gew', name: 'Netto/Bruto gewicht ', eenh: '' },
-            { afk: 'gewout', name: 'Netto/Bruto gewicht Buitennunit', eenh: 'kg' }
+            { afk: 'gewout', name: 'Netto/Bruto gewicht Buitennunit', eenh: 'kg' },
+
+            { afk: 'wkoper', name: 'Wanddikte koperleiding', eenh: 'mm' },
+            { afk: 'wiso', name: 'Wanddikte isolatieleiding', eenh: 'mm' },
+            { afk: 'lengte', name: 'Lengte', eenh: 'm' }
         ];
 
     }
@@ -54,8 +59,10 @@ export default class SpecificatieKaart extends Component {
     render() {
 
         let attr = this.props.content?.attributen;
-        const arr = Array.from(Object.keys(attr), k => [`${k}`, attr[k]]);
-
+        if (!attr) {
+            return <Fragment />;
+        }
+       
         return (
             <Card style={{ borderWidth: '0', marginBottom: "15px" }} className={this.props.className + " bg-light"}>
                 <Card.Body>

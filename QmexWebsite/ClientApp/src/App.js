@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, useParams, Switch } from 'react-router-dom';
 
 import './global.css';
 
@@ -13,6 +13,7 @@ import Contact from './components/Contact';
 import About from './components/About';
 import Blog from './components/Blog';
 import BlogDetail from './components/BlogDetail';
+import { BlogDetail2 } from './components/BlogDetail';
 import Search from './components/Search';
 import ServiceDetail from './components/ServiceDetail';
 import Privacy from './components/Privacy';
@@ -34,14 +35,14 @@ export default class App extends Component {
             { to: '/services/OEM', title: 'OEM', render: () => <ServiceDetail content={this.state.dienstOEM} page='dienstOEM' statecallback={this.saveState} /> },
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/blog', title: 'Blog', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
-            { to: '/faq', title: 'Faq', render: () => <Faq content={this.state.faq} statecallback={this.saveState} /> },
+            { to: '/faq', title: 'FAQ', render: () => <Faq content={this.state.faq} statecallback={this.saveState} /> },
          
 
             { to: '/', title: 'Home', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
-            { to: '/products', title: 'Products', render: () => <div>Loading...</div> },
-            { to: '/services', title: 'Services', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
-            { to: '/production', title: 'Production', render: () => <Production content={this.state.production} statecallback={this.saveState} /> },
-            { to: '/about', title: 'About us', render: () => <About content={this.state.about} statecallback={this.saveState}/> },
+            { to: '/products', title: 'Producten', render: () => <div>Loading...</div> },
+            { to: '/services', title: 'services', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
+            { to: '/production', title: 'Productie', render: () => <Production content={this.state.production} statecallback={this.saveState} /> },
+            { to: '/about', title: 'Over Qmex', render: () => <About content={this.state.about} statecallback={this.saveState}/> },
             { to: '/contact', title: 'Contact', render: () => <Contact content={this.state.contact} statecallback={this.saveState} /> }
         ];
         this.home = 6;
@@ -61,12 +62,9 @@ export default class App extends Component {
         CFLoader.LoadBlogSlugs(this.saveState);
     }
 
-
-
     // de pagina's laden 'hun' state van contentful en bewaren het in app-state.
     saveState = (state) =>  {
         this.setState(state);
-
         if (Object.keys(state)[0] == 'product') {
             let p = state.product.hoofdmenuitems[0];
 
@@ -80,7 +78,7 @@ export default class App extends Component {
                                     submenu={this.state['product_' + p.fields.slug]} />
             };
 
-            // add hoofdmenu's to urls list
+        // add hoofdmenu's to urls list
             this.addProductUrlsTostate(state.product.hoofdmenuitems);
         }
 
@@ -90,16 +88,13 @@ export default class App extends Component {
         }
         if (Object.keys(state)[0] == 'blogslug') {
             this.addBlogUrlsTostate(state.blogslug);
-        }
-
-        
+        }    
     }
 
     addProductUrlsTostate(CFurls) {
         const producturls = CFurls.map(s => "/products/" + s.fields.slug);
         const newurls = [...this.state.urls].concat(producturls);
         this.setState({ urls: newurls });
-
     }
 
     addBlogUrlsTostate(CFurls) {
@@ -112,17 +107,16 @@ export default class App extends Component {
    
     render() {
         console.log("APPSTATE:", this.state);
-
         if (!this.state.product) { return "loading product menu..." }
         if (!this.state.productslug) { return "loading products..." }
         if (!this.state.blogslug) { return "loading blogs..." }
 
-      
         return  (
             <Router>
                 <Fragment>
                     <Header menulinks={this.menulinks} />
                     <main className="mb-5">
+                        <Switch>
                         {/* onze 'harde' links */}
                         {this.links.map((ml) => (
                             <Route exact path={ml.to} render={ml.render} />
@@ -139,6 +133,14 @@ export default class App extends Component {
                                     submenu={this.state['product_' + p.fields.slug]} />} />
                         ))}
 
+                        {/* De blog links useParams*/}
+                        <Route path="/blog/:article">
+                            <BlogDetail2 slug={this.state.blogslug}/>
+                        </Route>
+                       
+
+
+
                         {/* De product links met de slug van contentful */}
                         {this.state.productslug.map((p) => (
                             <Route exact path={"/products/" + p.fields.slug} render={() =>
@@ -150,7 +152,7 @@ export default class App extends Component {
                                     submenu={this.state['product_' + p.fields.slug.split('/')[0]]} />} />
                             ))}
 
-                        {/* De blog links met de slug van contentful */}
+                        {/* De blog links met de slug van contentful 
                         {this.state.blogslug.map((p) => (
                             <Route exact path={"/blog/" + p.fields.slug} render={() =>
                                 <BlogDetail content={this.state['blog_' + p.fields.slug]}
@@ -159,10 +161,11 @@ export default class App extends Component {
                                     slug={p.fields.slug} />} />
                             
                         ))}
-
+                        */}
+                    </Switch>
                     </main>
                     <Footer navitemsLeft={this.FooterlinksLeft} navitemsMiddle={this.FooterlinksMiddle} />
-                </Fragment>
+                    </Fragment>
             </Router>
         );
     }

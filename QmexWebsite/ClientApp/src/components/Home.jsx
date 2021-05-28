@@ -30,16 +30,16 @@ export default class Home extends Component {
 
         return (
             <Fragment>
-                <div id="home_topbanner">
-                    <VMFJumbo content={this.props.content.banner.fields} height="77vh" />
+                <div id="home_topbanner" >
+                    <VMFJumbo className="text-white" content={this.props.content.banner.fields} height="77vh" cover pos="bottomleft" />    
                 </div>
 
-                <div id="home_verhaal">
-                    <Verhaal className="text-center bg-white my-3 py-5" content={this.props.content.inleiding.fields} width={3} />
+                <div id="home_verhaal" className="position-relative" style={{color:'white'}}>
+                    <Verhaal className="text-center my-5 py-5 " content={this.props.content.inleiding.fields} width={3} />
                 </div>
 
-                <div id="home_waarden" className="my-5 py-5" >
-                       <Columns>
+                <div id="home_waarden" className="my-5 py-5 position-relative" style={{display: 'white' }} >
+                       <Columns >
                             <Col lg={4} className="text-center">{WaardOne}</Col>
                             <Col lg={4} className="text-center">{WaardTwo}</Col>
                             <Col lg={4} className="text-center">{WaardThree}</Col>
@@ -49,14 +49,15 @@ export default class Home extends Component {
                  </div>
             
                 <div >
-                    <Verhaal className="text-center my-3 " content={this.props.content.productInleiding.fields}  />
+                    <Verhaal className="text-center my-3  home_assotiment " content={this.props.content.productInleiding.fields}  />
                 </div>
-                <div className="home_kaarten bg-light py-3" >
-                    <Columns className="py-5 " id="home_kaarten">
+
+                <div className="mt-5 mb-5 home_kaarten"  >
+                    <Columns fluid  >
                     {
-                        this.props.content.producten.map( (k,id) => (
-                            <Col key={id} md={6} sm={12}>
-                                <Kaart  content={k.fields} />
+                            this.props.content.producten.map((k, id) => (
+                                <Col key={id} md={4} lg={4} sm={12}>
+                                    <Kaart content={k.fields} className="mx-1" />
                             </Col>
                            ))
                     }

@@ -16,8 +16,8 @@ function Faq(props) {
  
     return (
         <Fragment>
-                <VMFJombo content={props.content.verhalen[0].fields} height="40vh" className="mb-5 text-white" />
-            <div>
+            <VMFJombo content={props.content.verhalen[0].fields} height="50vh" className="mb-5 faq_banner" />
+            <div className="mx-auto" style={{ width: '80%' }}>
                 {props.content.verhalen?.map((mi, i, arr) => (i===0)? <Fragment /> : 
                     <CollapseVerhaal content={mi.fields} width={1} last={(i === arr.length - 1)} />
                 )}

@@ -6,7 +6,7 @@ import NavList from '../Common/NavList';
 const Footer = React.memo((props) => {
 
     return (
-        <footer style={{ background: 'rgba(240,240,240,0.8)' }}>
+        <footer style={{ background: '#f4f4f4' }}>
             <Columns >
                 <Col xs={12} lg={3} className="d-flex align-items-center justify-content-center ">
                     <img src='/img/logotrano.png' width="300" className="footer_logo "  />
@@ -23,8 +23,8 @@ const Footer = React.memo((props) => {
                 <Col xs={12} lg={3} className='d-flex align-items-center justify-content-center mt-sm-4'>
                     <div className='footer_social'>
                         <a href='https://www.linkedin.com' target='_blank'><img src="\img\linkedin.png" alt='linkedin' /></a>
+                        <a href='https://www.whatsapp.com' target='_blank'><img src="\img\whatsapp2.png" alt='whatsapp' /></a>
                         <a href='https://www.instagram.com' target='_blank'><img src="\img\instagram.png" alt='instagram' /></a>
-                        <a href='https://www.whatsapp.com' target='_blank'><img src="\img\whatsapp.png" alt='whatsapp' /></a>
                     </div>
                 </Col>
 

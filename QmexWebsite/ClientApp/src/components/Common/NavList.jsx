@@ -10,7 +10,7 @@ const NavList = (props) => {
 
 
     const mystyle = {
-            color: "#555"
+        color: "#555"
         };
 
     const newclass = (props.className) ? props.className + " flex-column" : "flex-column";

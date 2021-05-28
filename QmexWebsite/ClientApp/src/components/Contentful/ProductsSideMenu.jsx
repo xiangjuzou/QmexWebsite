@@ -19,40 +19,41 @@ function ProductsSidemenu(props) {
 
         return <div>Loading...</div>
     }
-
     return (
         <div>
             <div>
                 <h4>{props.content.title}{' '} producten</h4>
             </div>
             <div id="side-items">
-            {
-                props.content.products?.map((p) => (
-                    <div className='pt-3'>
-                    <Link to={"/products/" + p.fields.slug}>
-                        {p.fields?.menuTitle}
-                        </Link>
-                        <div className="ml-3 small">
-                            <ReactMarkdownWithHtml allowDangerousHtml>{p.fields?.menusubtitle}</ReactMarkdownWithHtml>
+                {
+                    props.content.products?.map((p) => (
+                        <div className='pt-2'>
+                            <Link className="sidemenulink" to={"/products/" + p.fields.slug} >
+                                &gt; {p.fields?.menuTitle}
+                            </Link>
+                            <div className="ml-4 small side_subtitle">
+                                <ReactMarkdownWithHtml allowDangerousHtml>{p.fields?.menusubtitle}</ReactMarkdownWithHtml>
+                            </div>
                         </div>
-                </div>
-                ))
+                    ))
                 }
             </div>
-            <h4 className="mt-6">Andere producten</h4>
-            <div id="hoofd-items" className="mt-3">
-                {props.hoofd.hoofdmenuitems.map((hmi) => (
-                    <div className="mb-3">
-                        <Link to={"/products/" + hmi.fields.slug}>
-                            {hmi.fields.title}  
+            <h4 className="mt-6 pb-2">Alle producten</h4>
+            <div id="hoofd-items" className="">
+                {props.hoofd.hoofdmenuitems.map((hmi) =>
+                    <div className="mt-2">
+                        <Link className="sidemenulink" to={"/products/" + hmi.fields.slug}>
+                            &gt; {hmi.fields?.title}
                         </Link>
                     </div>
-                ))
-                }
-           </div>
+
+                )}
+            </div>
         </div>
-    );
+    )
 }
+    
+
 
 
 export default ProductsSidemenu;

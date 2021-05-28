@@ -69,83 +69,202 @@
     }
 
 
-    /* globale footer */
-    footer {
+
+/* globale footer */
+ footer {
         width: 100%;
         background-color: rgb(240,240,240);
         margin-top: 70px;
+        font-size:21px;
     }
 
-        footer p {
-            display: block;
-            margin-top: 40px;
-            text-align: center;
-            font-size: x-small;
-            padding-bottom: 10px;
+ footer p {
+         display: block;
+         margin-top: 40px;
+         text-align: center;
+         font-size: x-small;
+         padding-bottom: 10px;
         }
 
 
 .footer_social img {
     width: 30px;
     margin: 10px;
-}  
+}
 
-    /* globale header */
-    header, nav.navbar {
-        height: 130px;
+footer a:hover {
+    color: #f48c00 !important;
+    text-decoration: none ;
+}
+
+
+/* globale header */
+ header, nav.navbar {
+        max-height: 120px;
     }
 
-    .navbar-collapse.show form {
+.navbar-collapse.show form {
         margin-left: 15px !important;
     }
 
-    #navLink:hover, #hfLink:hover {
+#hfLink :hover, .sidemenulink:hover{
+    color: #f48c00 !important;
+}
+
+#hfLink, .sidemenulink{
+    text-decoration: none !important;
+}
+
+#navLink a:hover {
         text-decoration: none !important;
+        border-bottom: 4px solid #f48c00;
+        padding-bottom: 8px;
     }
 
+/*header*/
+#hfLink img:hover {
+    animation:shake 0.5s;
+    animation-iteration-count:3;
+    animation-duration:3s;
+}
+@keyframes shake{
+    0% {transform: translate(1px, 1px) rotate(0deg);}
+    30% {transform: translate(-6px, 0px) rotate(1deg);}
+    50% {transform: translate(-3px, 3px) rotate(-1deg);}
+    80% { transform: translate(-2px, -1px) rotate(1deg);}
+    100% { transform: translate(1px, -3px) rotate(-2deg); }
+}
+/* sidemenu links */
+.sidemenulink {
+    color: black !important;
+}
 
-    /* globale body */
-    body {
-        font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
-        font-size: 18px;
-        line-height: 1.6;
-        font-weight: 400;
-        letter-spacing: .011em;
+ .sidemenulink:hover {
+        color: #f48c00 !important;
     }
+
+.side_subtitle {
+    font-weight: bold;
+}
+
+/* globale body */
+body {
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: .011em;
+}
 
     /* home pagina */
-    .home_kaarten .card-img-top {
-        height: 96px;
-        width: 96px;
-        margin: 2rem auto;
-        display: block;
+ 
+
+#home_verhaal{
+    animation-name:showVerhaal;
+    animation-duration:2s;
+    animation-delay:0.5s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes showVerhaal {
+    0% {bottom: -100px; color: white;}
+    100% { bottom: 0px; color: black;}
+}
+
+#home_waarden {
+    animation-name: showWaarden;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showWaarden {
+    0% { left: -10px; color:white;}
+    100% {left: 0px; color: black; }
+}
+
+.home_kaarten .card-img-top {
+    height: 238px;
+    width: 348px;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+}
+
+.home_kaarten .card-img-top:hover {
+        animation-name: hk_img;
+        animation-duration: 0.6s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+    }
+@keyframes hk_img {
+    0% {transform: translate(0px, 0px) rotate(0deg); }
+    30% {transform: translate(10px, 0px) rotate(0deg);}
+    50% {transform: translate(0px, 0px) rotate(0deg);}
+    80% {transform: translate(-10px, 0px) rotate(0deg); }
+    100% {transform: translate(0px, 0px) rotate(0deg);}
+}
+
+.home_kaarten {
+        width: 80%;
+        margin: auto;
     }
 
-    /* service pagina */
-    #service_kaarten button:hover a, .contactForm_button:hover {
-        color: #555;
-        outline: none;
+/*product*/
+
+
+
+.btn_collapse {
+    border-radius: 19px;
+}
+
+.btn_collapse:hover, .btn_collapse:focus {
+        background-color: #808080;
+        outline: none;     
+    }
+
+/*about pagina */
+ #about_topverhaal h1{
+   text-align: center;
+}
+
+#about_sidefotos h2 {
+    border-top: #f48c00 solid 4px;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+#about_sidefotos p:hover{
+box-shadow:1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+    /*product oneKaart*/
+    .oneKaart_btn a {
         text-decoration: none;
     }
+.oneKaart_btn button {
+    margin-left:22px;
+}
 
-    #service_kaarten button a, homeTweedeBanner a {
-        text-decoration: none;
-        color: #f4f4f4;
-    }
+/*productie*/
+.production p {
+    margin-left:8px;
+}
 
+/*about*/
+#about_topbanner {
+ filter: grayscale(100%);
+}
 
-    /*contact*/
-    .contactForm_button:hover {
-        color: #f4f4f4;
-        background: #555;
-        text-decoration: none;
-        outline: none;
-    }
-
-    #ProductDetail_btn button {
-        margin-left: 2rem;
-        margin-top: 1rem;
-    }
+/*services*/
+#service_kaarten .service_kaart:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+/*faq*/
+.faq_banner {
+    background-image: linear-gradient(to bottom right,#f4f4f4,rgba(255,0,0,0), #f48c00);
+}
 
 @media screen and (max-width: 576px) {
     .footer_social {
@@ -153,18 +272,11 @@
     }
 }
 
-@media screen and (max-width:900px){
+@media screen and (max-width:976px){
     .header_logo {
     height:200px;
     width:200px;
     }
-
+ 
 }
 
-.btn_collapse{ 
-  border-radius:19px;
-}
-.btn_collapse:hover{
-   background-color:#215ab4;
-   color:#ff6a00;
-}

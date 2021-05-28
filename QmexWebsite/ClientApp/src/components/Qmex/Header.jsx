@@ -1,9 +1,11 @@
 ﻿import { Link, withRouter } from 'react-router-dom';
 import React, { PureComponent } from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
-class InternalHeader extends PureComponent {
+class Header extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -25,20 +27,21 @@ class InternalHeader extends PureComponent {
         this.props.history.push('/search?' + encodeURIComponent(this.state.search));
     }
 
-     render() {
+    render() {
+        const searchbtn = <FontAwesomeIcon icon={faSearch} className="" size="md" />;
          const page = '/' + this.props.location.pathname.split('/')[1];
 
          return (
              <header style={{ background: 'rgb(240,240,240)' }}>
                  <Navbar collapseOnSelect expand="lg" >
-                     <Navbar.Brand ><img src="/img/logotrano.png" width="300px" style={{ height: 'auto'}}  className="header_logo" /></Navbar.Brand>
+                     <Navbar.Brand href="/" ><img src="/img/logotrano.png" width="300px" style={{ height:'auto'}} className="header_logo mr-4" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" />
-                     <Navbar.Collapse id="navbarSupportedContent" style={{ zIndex: 2000, background: 'rgb(240,240,240)' }}>
-                         <Nav id="navbarSupportedContent" style={{ flexWrap:"wrap",  columnGap: "30px", whiteSpace: "nowrap", fontSize: "23px"  }} >
+                     <Navbar.Collapse id="navbarSupportedContent" style={{ zIndex:3, background: 'rgb(240,240,240)' }}>
+                         <Nav id="navbarSupportedContent" style={{ flexWrap: "wrap", fontSize: "23px"}}  >
                              {
                                  this.props.menulinks.map((ml) => 
-                                     (<Nav.Item key={ml.title} className="my-auto d-inline pl-3" id="navLink" style={{ width: "126px" }} data-toggle="collapse" data-target=".navbar-collapse.show, .navbar-toggler">
-                                         <Link to={ml.to} className={"mr-4 " + ((ml.to === page) ? "text-primary" : "text-dark")}>
+                                     (<Nav.Item key={ml.title} className="d-inline " id="navLink" data-toggle="collapse" data-target=".navbar-collapse.show, .navbar-toggler">
+                                         <Link to={ml.to} className={"mx-4 " + ((ml.to === page) ? "text-primary" : "text-dark")}>
                                              {ml.title}
                                          </Link>
                                      </Nav.Item>)
@@ -47,9 +50,10 @@ class InternalHeader extends PureComponent {
                              
                          </Nav>
                          <div className="ml-auto form-inline" style={{ width: "350px", flexWrap: "nowrap" }}>
-                             <FormControl type="text" placeholder="Search" className="mr-2" onChange={(e) => this.updateSearch(e)} onKeyUp={(e) => this.checkEnter(e)} value={this.state.search} />
-                             <Button variant="outline-dark" className="mr-4" onClick={() => this.searchButton()}>Search</Button>
-                             <br />&nbsp;<br />&nbsp;
+                             <FormControl type="search"placeholder="Search" onChange={(e) => this.updateSearch(e)} onKeyUp={(e) => this.checkEnter(e)} value={this.state.search} />
+                             <Button type="button" className="bg-light" onClick={() => this.searchButton()}>
+                                 {searchbtn} { }Zoek
+                             </Button>
                          </div>
                     </Navbar.Collapse>
                 </Navbar>
@@ -60,8 +64,6 @@ class InternalHeader extends PureComponent {
 }
 
 
+export default withRouter(Header);
 
-
-const Header = withRouter(props => <InternalHeader {...props} />);
-export default Header;
 

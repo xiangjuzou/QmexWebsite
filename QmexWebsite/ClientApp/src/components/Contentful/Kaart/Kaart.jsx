@@ -18,7 +18,7 @@ export default class Kaart extends Component {
             return (
                 <Card style={{ marginBottom: "15px" }} className={this.props.className} >
                     {this.renderCardBody(
-                        <Button className="bg-primary" ><Link to={this.props.content?.linkUrl}>{lt}</Link></Button>
+                        <Button className="bg-primary"><Link className="text-white  stretched-link" style={{ textDecoration: 'none' }} to={this.props.content?.linkUrl}>{lt}</Link></Button>
                     , overlay)}
                 </Card>
             );
@@ -28,11 +28,11 @@ export default class Kaart extends Component {
         if (this.props.content?.linkUrl && !this.props.button) {
             return (
                 <Card style={{ marginBottom: "15px" }} className={this.props.className}>
-                    
+                    <Link to={this.props.content?.linkUrl} className="text-dark " style={{ textDecoration: 'none'}}>
                     {this.renderCardBody(
-                        <Link to={this.props.content?.linkUrl}>{lt}</Link>
+                        <Link style={{ textDecoration: 'none' }} to={this.props.content?.linkUrl}> &gt; {lt}</Link>
                     , overlay)}
-                   
+                   </Link>
                 </Card>
             );
         }
@@ -48,10 +48,11 @@ export default class Kaart extends Component {
     renderCardBody(btn, overlay) {
         return (
             <Fragment>
-                <Card.Img variant="top" src={this.props.content?.fotoUrl} className="img-fluid"  />
+                <Card.Img variant="top" src={this.props.content?.fotoUrl} />
                 <Card.Body className={overlay}>
                     <Card.Text>
                         <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
+                 
                     </Card.Text>
                     {btn}
                 </Card.Body>

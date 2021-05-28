@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 import { Jumbotron, Row, Col, Nav, Button, Container } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 
 
 /* VMF JUMBO
@@ -32,7 +32,9 @@ export default class VMFJumbo extends Component {
             case "top":
                 pos = "text-center pt-2 lead";
                 break;
-           
+            case "left":
+                pos = "center pl-1 lead";
+                break;
             default:
                 pos = "text-center lead";
                 break;
@@ -45,6 +47,10 @@ export default class VMFJumbo extends Component {
                         <Col className={pos}>
                             <h1 className='display-4'>{this.props.content?.titel}</h1>
                             <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
+                            <div className="my-4">
+                                {this.props.content?.moreUrl && <Link style={{ fontSize:'21px', textDecoration:'none'}} className="text-white bg-primary p-2"
+                                    to={this.props.content.moreUrl}>{this.props.content?.moreUrlText}</Link>}
+                            </div>
                         </Col>
                     </Row>
                 </Container>
@@ -64,6 +70,10 @@ export default class VMFJumbo extends Component {
         switch (this.props.pos) {
             case "bottomleft":
                 alignitems = "flex-end";
+                bgpos = "center";
+                break;
+                case "left":
+                alignitems = "center";
                 bgpos = "center";
                 break;
             case "top":

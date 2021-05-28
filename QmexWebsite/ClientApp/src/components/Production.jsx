@@ -39,12 +39,12 @@ export default class Production extends Component {
 
                         <Verhaal content={this.props.content.fabriek.fields} className="text-center" width={3}  /> 
 
-                    <VMFJumbo className="pl-6" cover pos="bottomleft" height="50vh" content={this.props.content.location.fields} />
+                    <VMFJumbo className="pl-5 production" cover pos="left" height="60vh" content={this.props.content.location.fields} />
                         
-                        <div className="bg-light py-3">
-                            <Columns className="py-5" id="production_locKaart">
+                        <div className="bg-light py-3 text-center ">
+                            <Columns fluid className="py-5 mb-3" id="production_locKaart">
                                 {
-                                    this.props.content.locKaart.map((k, id) => (
+                                    this.props.content?.locKaart.map((k, id) => (
                                         <Col key={id} md={4} sm={12}> 
                                             <Kaart content={k.fields} />
                                         </Col>
