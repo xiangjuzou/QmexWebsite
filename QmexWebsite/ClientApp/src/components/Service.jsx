@@ -6,7 +6,7 @@ import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import Kaart from './Contentful/Kaart/Kaart';
 import Verhaal from './Contentful/Verhaal/Verhaal';
 import WidthContainer from './Common/WidthContainer';
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 

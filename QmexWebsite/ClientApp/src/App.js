@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, useParams, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Switch } from 'react-router-dom';
 
 import './global.css';
 
@@ -12,7 +12,6 @@ import Products from './components/Products';
 import Contact from './components/Contact';
 import About from './components/About';
 import Blog from './components/Blog';
-import BlogDetail from './components/BlogDetail';
 import { BlogDetail2 } from './components/BlogDetail';
 import Search from './components/Search';
 import ServiceDetail from './components/ServiceDetail';
@@ -36,6 +35,7 @@ export default class App extends Component {
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/blog', title: 'Blog', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/faq', title: 'FAQ', render: () => <Faq content={this.state.faq} statecallback={this.saveState} /> },
+            //{ to: '/products/airconditioners', title: 'Airconditioners', render: () => <Airconditioners content={this.state.airconditioners} statecallback={this.saveState} /> },
          
 
             { to: '/', title: 'Home', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
@@ -57,7 +57,7 @@ export default class App extends Component {
         this.state = { urls: urls };
 
         // product groepen en slugs ophalen van contentful
-        CFLoader.LoadPage("6MjPYhDBXepG4aLs1fNcIZ", "product", this.saveState);
+        CFLoader.LoadPage("6MjPYhDBXepG4aLs1fNcIZ", "products", this.saveState);
         CFLoader.LoadProductSlugs(this.saveState);
         CFLoader.LoadBlogSlugs(this.saveState);
     }
@@ -65,28 +65,28 @@ export default class App extends Component {
     // de pagina's laden 'hun' state van contentful en bewaren het in app-state.
     saveState = (state) =>  {
         this.setState(state);
-        if (Object.keys(state)[0] == 'product') {
-            let p = state.product.hoofdmenuitems[0];
+        if (Object.keys(state)[0] === 'products') {
+            let p = state.products.hoofdmenuitems[0];
 
             this.links[this.home+1] = {
                 to: '/products', title: 'Products', render: () =>
-                                <Products content={this.state['product_' + p.fields.slug]}
+                                <Products content={this.state['products_' + p.fields.slug]}
                                     statecallback={this.saveState}
                                     id={p.sys.id}
                                     slug={p.fields.slug}
-                                    menu={this.state.product}
-                                    submenu={this.state['product_' + p.fields.slug]} />
+                                    menu={this.state.products}
+                                    submenu={this.state['products_' + p.fields.slug]} />
             };
 
         // add hoofdmenu's to urls list
-            this.addProductUrlsTostate(state.product.hoofdmenuitems);
+            this.addProductUrlsTostate(state.products.hoofdmenuitems);
         }
 
         // add product urls to urls list
-        if (Object.keys(state)[0] == 'productslug' ) {
+        if (Object.keys(state)[0] === 'productslug' ) {
             this.addProductUrlsTostate(state.productslug);
         }
-        if (Object.keys(state)[0] == 'blogslug') {
+        if (Object.keys(state)[0] === 'blogslug') {
             this.addBlogUrlsTostate(state.blogslug);
         }    
     }
@@ -125,12 +125,12 @@ export default class App extends Component {
                         {/* De hoofdmenuitem links met de slug van contentful */}
                         {this.state.product.hoofdmenuitems.map((p) => (
                             <Route exact path={"/products/" + p.fields.slug} render={() =>
-                                <Products content={this.state['product_' + p.fields.slug]}
+                                <Products content={this.state['products_' + p.fields.slug]}
                                     statecallback={this.saveState}
                                     id={p.sys.id}
                                     slug={p.fields.slug}
                                     menu={this.state.product}
-                                    submenu={this.state['product_' + p.fields.slug]} />} />
+                                    submenu={this.state['products_' + p.fields.slug]} />} />
                         ))}
 
                         {/* De blog links useParams*/}
@@ -139,17 +139,15 @@ export default class App extends Component {
                         </Route>
                        
 
-
-
                         {/* De product links met de slug van contentful */}
                         {this.state.productslug.map((p) => (
                             <Route exact path={"/products/" + p.fields.slug} render={() =>
-                                <Products content={this.state['product_' + p.fields.slug]}
+                                <Products content={this.state['products_' + p.fields.slug]}
                                     statecallback={this.saveState}
                                     id={p.sys.id}
                                     slug={p.fields.slug}
-                                    menu={this.state.product}
-                                    submenu={this.state['product_' + p.fields.slug.split('/')[0]]} />} />
+                                    menu={this.state.products}
+                                    submenu={this.state['products_' + p.fields.slug.split('/')[0]]} />} />
                             ))}
 
                         {/* De blog links met de slug van contentful 

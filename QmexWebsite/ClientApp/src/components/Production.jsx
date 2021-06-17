@@ -1,12 +1,10 @@
-﻿import React, { Component, Fragment } from 'react';
+﻿import React, { Component } from 'react';
 import CFLoader from './Contentful/CFLoader';
 import Kaart from './Contentful/Kaart/Kaart';
 import Verhaal from './Contentful/Verhaal/Verhaal';
 import Columns from './Common/Columns';
-import { Col, Container } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
-import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
-import WidthContainer from './Common/WidthContainer';
 
 export default class Production extends Component {
     constructor(props) {

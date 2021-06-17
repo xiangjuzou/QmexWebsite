@@ -1,7 +1,5 @@
-﻿import React, { Fragment } from 'react';
+﻿import React from 'react';
 import CFLoader from './CFLoader';
-import Columns from '../Common/Columns';
-import { Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
@@ -28,7 +26,7 @@ function ProductsSidemenu(props) {
                 {
                     props.content.products?.map((p) => (
                         <div className='pt-2'>
-                            <Link className="sidemenulink" to={"/products/" + p.fields.slug} >
+                            <Link className="sidemenulink" to={"/products/" + p.fields.slug}>
                                 &gt; {p.fields?.menuTitle}
                             </Link>
                             <div className="ml-4 small side_subtitle">

@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import CFLoader from './Contentful/CFLoader';
-import { Link, withRouter, Router } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
 
@@ -49,7 +49,7 @@ const Search = withRouter((props) => {
         namedUrl = "/" + namedUrl.join("/").toLowerCase();
         let url = props.urls.find(item => item.toLowerCase() === namedUrl)?.toLowerCase();
 
-        if (url == namedUrl) {
+        if (url === namedUrl) {
             return url;
         }
         return url + ":" + namedUrl;

@@ -1,10 +1,7 @@
 ﻿import React, { Component, Fragment } from 'react';
 import CFLoader from './Contentful/CFLoader';
-
-import { Row, Col, Container } from 'react-bootstrap';
 import VMFJombo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import Verhaal from './Contentful/Verhaal/Verhaal';
-import ReactMarkdownWithHtml from 'react-markdown/with-html';
 import WidthContainer from './Common/WidthContainer';
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 
@@ -20,6 +17,7 @@ export default class ServiceDetail extends Component {
                 case "dienstOEM":
                     CFLoader.LoadPage("6jDqOC9jJL8uFeh4DfSRpw", "dienstOEM", this.props.statecallback);
                     break;
+                default: break;
             }
         }
     }

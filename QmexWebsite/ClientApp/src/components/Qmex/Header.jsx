@@ -1,6 +1,6 @@
 ﻿import { Link, withRouter } from 'react-router-dom';
 import React, { PureComponent } from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, FormControl, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -34,7 +34,7 @@ class Header extends PureComponent {
          return (
              <header style={{ background:'rgb(240,240,240)' }}>
                  <Navbar collapseOnSelect expand="lg" >
-                     <Navbar.Brand href="/" ><img src="/img/logotrano.png" width="300px" style={{ height:'auto'}} className="header_logo mr-4" /></Navbar.Brand>
+                     <Navbar.Brand href="/" ><img alt="trans" src="/img/logotrano.png" width="300px" style={{ height:'auto'}} className="header_logo mr-4" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" />
                      <Navbar.Collapse id="navbarSupportedContent" style={{ zIndex:3, background: 'rgb(240,240,240)' }}>
                          <Nav id="navbarSupportedContent" style={{ flexWrap: "wrap", fontSize: "23px"}}  >

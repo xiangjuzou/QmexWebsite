@@ -1,7 +1,5 @@
 ﻿import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import WidthContainer from '../../Common/WidthContainer';
-
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
 
