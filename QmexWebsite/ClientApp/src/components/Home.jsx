@@ -54,6 +54,7 @@ export default class Home extends Component {
                     </Columns>
                 </div>
 
+
                 <div id="home_waarden" className="my-5 py-5 position-relative" style={{ display: 'white' }} >
                     <Columns >
                         <Col lg={4} className="text-center">{WaardOne}</Col>
