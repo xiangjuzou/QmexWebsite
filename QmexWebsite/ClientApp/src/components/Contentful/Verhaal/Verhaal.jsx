@@ -39,7 +39,7 @@ export default class Verhaal extends Component {
                 tekst = this.props.content.kortetekst;
                 btn = <button onClick={this.uitklappen} className="mt-2">Read more</button>
             }
-        }
+        }  
 
         return { btn: btn, tekst: tekst };
     }
