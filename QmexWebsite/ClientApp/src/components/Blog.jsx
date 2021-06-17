@@ -26,8 +26,7 @@ const Blog = (props) => {
                 {props.content?.blogs && props.content?.blogs.map(b => (
                     <OneKaart key={b.fields.name} content={b.fields} linktekst="Lees meer" />    
                     ))}
-                
-                
+   
             </div>
         </Fragment>
         )

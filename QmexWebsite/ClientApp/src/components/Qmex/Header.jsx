@@ -32,7 +32,7 @@ class Header extends PureComponent {
          const page = '/' + this.props.location.pathname.split('/')[1];
 
          return (
-             <header style={{ background: 'rgb(240,240,240)' }}>
+             <header style={{ background:'rgb(240,240,240)' }}>
                  <Navbar collapseOnSelect expand="lg" >
                      <Navbar.Brand href="/" ><img src="/img/logotrano.png" width="300px" style={{ height:'auto'}} className="header_logo mr-4" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" />

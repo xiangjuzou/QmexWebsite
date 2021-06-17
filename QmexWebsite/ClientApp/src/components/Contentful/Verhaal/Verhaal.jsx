@@ -46,7 +46,7 @@ export default class Verhaal extends Component {
 
     render() {
         const content = this.bepaalUitklapbareTekst();
-        const newclass = (this.props.className) ? this.props.className  : "my-5 py-5";
+        const newclass = (this.props.className) ? this.props.className : "my-5 py-5";
 
         // verzamel de "vreemde" props, en zet deze als attributen op de 1e div.
         const overgeblevenProps = { ...this.props };

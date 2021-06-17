@@ -28,7 +28,7 @@ const CollapseVerhaal = (props) =>  {
             <WidthContainer width={props.width}>
                 <div>
                     <Hr />
-                    <h2 className="d-flex" data-target={'#' + uid} data-toggle="collapse">{props.content?.titel}
+                    <h2 className="d-flex" data-target={'#'+uid} data-toggle="collapse">{props.content?.titel}
                         <button className='btn_collapse btn-primary border text-white ml-auto'>
                             <FontAwesomeIcon icon={faArrowDown}  size="sm" />
                         </button>  
