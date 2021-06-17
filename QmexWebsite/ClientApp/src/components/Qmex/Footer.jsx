@@ -9,7 +9,7 @@ const Footer = React.memo((props) => {
         <footer style={{ background: '#f4f4f4' }}>
             <Columns >
                 <Col xs={12} lg={3} className="d-flex align-items-center justify-content-center ">
-                    <img src='/img/logotrano.png' width="300" className="footer_logo "  />
+                    <img src='/img/logotrano.png' width="300" className="footer_logo " alt="footer logo"  />
                 </Col>
 
                 <Col sm={6} xs={12} lg={3} className="justify-content-center align-items-center d-flex ">
@@ -22,9 +22,9 @@ const Footer = React.memo((props) => {
 
                 <Col xs={12} lg={3} className='d-flex align-items-center justify-content-center mt-sm-4'>
                     <div className='footer_social'>
-                        <a href='https://www.linkedin.com' target='_blank'><img src="\img\linkedin.png" alt='linkedin' /></a>
-                        <a href='https://www.whatsapp.com' target='_blank'><img src="\img\whatsapp2.png" alt='whatsapp' /></a>
-                        <a href='https://www.instagram.com' target='_blank'><img src="\img\instagram.png" alt='instagram' /></a>
+                        <a href='https://www.linkedin.com' target='_blank' rel="noopener noreferrer"><img src="\img\linkedin.png" alt='linkedin' /></a>
+                        <a href='https://www.whatsapp.com' target='_blank' rel="noopener noreferrer"><img src="\img\whatsapp2.png" alt='whatsapp' /></a>
+                        <a href='https://www.instagram.com' target='_blank' rel="noopener noreferrer"><img src="\img\instagram.png" alt='instagram' /></a>
                     </div>
                 </Col>
 

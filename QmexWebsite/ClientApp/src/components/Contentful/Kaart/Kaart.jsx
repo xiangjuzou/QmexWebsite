@@ -1,7 +1,6 @@
 ﻿import React, { Component, Fragment } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
 

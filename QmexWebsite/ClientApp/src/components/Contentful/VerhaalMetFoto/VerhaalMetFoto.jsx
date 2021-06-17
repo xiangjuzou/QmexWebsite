@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
-import { Jumbotron, Row, Col, Nav, Button, Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 // Verhaal Met Foto
@@ -41,7 +41,7 @@ export default class VerhaalMetFoto extends Component {
 
         let col2 = (
             <Col md={6} sm={12}>
-                <img src={this.props.content?.fotoUrl} className="img-fluid" />
+                <img src={this.props.content?.fotoUrl} className="img-fluid" alt="foto"/>
             </Col>
             );
 

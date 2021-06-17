@@ -5,8 +5,7 @@ import ProductsHoofdmenu from "./Contentful/ProductsHoofdmenu.jsx";
 import ProductsSidemenu from "./Contentful/ProductsSideMenu.jsx";
 import ProductsShowcase from "./Contentful/ProductsShowcase.jsx";
 import ProductsDetail from "./Contentful/ProductsDetail.jsx";
-import { Col, Container, Card, Button } from 'react-bootstrap';
-import WidthContainer from './Common/WidthContainer';
+import { Col, Container} from 'react-bootstrap';
 
 
 // props:
@@ -24,12 +23,12 @@ export default class Products extends Component {
         // content wordt hier bijgeladen indien nodig.
         // submenu is optioneel, wordt bijgeladen door ProductSidemenu wanneer het nodig is.
         if (!this.props.content) {
-            CFLoader.LoadPage(this.props.id, "product_" + this.props.slug, this.props.statecallback);
+            CFLoader.LoadPage(this.props.id, "products_" + this.props.slug, this.props.statecallback);
         }
     }
 
     isHoofdmenu(slug) {
-        return slug.split('/').length === 1;
+        return slug.split('/').length ===1;
     }
 
     render() {

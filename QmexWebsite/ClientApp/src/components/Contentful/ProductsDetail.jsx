@@ -1,10 +1,10 @@
-﻿import React, { Component, Fragment } from 'react';
+﻿import React, { Fragment } from 'react';
 import VMFJumbo from './VerhaalMetFoto/VMFJumbo';
 import VerhaalMetFoto from './VerhaalMetFoto/VerhaalMetFoto';
 import Verhaal from './Verhaal/Verhaal';
 import OneKaart from './Kaart/OneKaart';
 import CollapseVerhaal from './Verhaal/CollapseVerhaal';
-import { Row,Col,Container } from 'react-bootstrap';
+import {Container } from 'react-bootstrap';
 import SpecificatieKaart from './SpecificatieKaart';
 
 // props:
@@ -37,7 +37,8 @@ function ProductsDetail(props) {
                 return <VerhaalMetFoto content={mi.fields} reverse={i % 2} className="flex-basis-1"/>;
             case "specificatiekaart":
                 // return <SpecificatieKaart content={mi.fields} className={"flex-basis-" + countcards(arr,i) + " py-5 px-3"} />
-                return <Fragment/>
+                return <Fragment />
+            default: return <Fragment />
         }
         
     }

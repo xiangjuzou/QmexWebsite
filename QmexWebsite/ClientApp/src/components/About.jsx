@@ -1,6 +1,5 @@
 ﻿import React, { Component, Fragment } from 'react';
 import CFLoader from './Contentful/CFLoader';
-import { Col, Row, Container } from 'react-bootstrap';
 
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';

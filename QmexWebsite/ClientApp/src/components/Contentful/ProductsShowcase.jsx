@@ -8,14 +8,15 @@ import { Container } from 'react-bootstrap';
 
 
 // props:
-// - content       : app.state["product_<hoofdmenu>"]
+// - content       : app.state["products_<hoofdmenu>"]
 function ProductsShowcase(props) {
 
     const getGallery = (gi) => {
         switch (gi.sys.contentType.sys.id) {
             case "story": return <Verhaal content={gi.fields} className="flex-basis-1 container mt-5 mb-3 pl-4" />;
             case "verhaalmetfoto": return <VerhaalMetFoto content={gi.fields} className="flex-basis-1" />;
-            case "card": return <Kaart content={gi.fields}  className="p-5 text-center flex-basis-2"/>;
+            case "card": return <Kaart content={gi.fields} className="p-5 text-center flex-basis-2" />;
+            default: return <div/>
         }
     }
 

@@ -1,9 +1,8 @@
 ﻿import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhoneSquareAlt, faEnvelope, faUser, faPen } from '@fortawesome/free-solid-svg-icons';
+import { faPhoneSquareAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import * as ReactMarkdown from "react-markdown";
-import Hr from "../Common/Hr";
-import { Col, Container } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Columns from "../Common/Columns";
 
 export default class ContactInfo extends Component {

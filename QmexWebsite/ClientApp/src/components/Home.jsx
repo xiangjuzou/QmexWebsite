@@ -56,12 +56,12 @@ export default class Home extends Component {
 
 
                 <div id="home_waarden" className="my-5 py-5 position-relative" style={{ display: 'white' }} >
-                    <Columns >
+                    <Columns fluid >
                         <Col lg={4} className="text-center">{WaardOne}</Col>
                         <Col lg={4} className="text-center">{WaardTwo}</Col>
                         <Col lg={4} className="text-center">{WaardThree}</Col>
                         {this.props.content.waarden.map(k => <Col>
-                            <Kaart key={k.fields.name} content={k.fields} className="d-flex text-center" /></Col>)}
+                            <Kaart key={k.fields.name} content={k.fields} className="d-flex text-center"/></Col>)}
                     </Columns>
                 </div>
 
