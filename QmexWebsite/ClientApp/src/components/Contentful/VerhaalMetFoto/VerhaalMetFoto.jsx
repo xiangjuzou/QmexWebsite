@@ -24,7 +24,7 @@ export default class VerhaalMetFoto extends Component {
 
               // opbouw van de class attribuut
         let className = "mx-auto ";
-        if (this.props.className) {
+        if (this.props.className) {  
             className += this.props.className;
         }
 
