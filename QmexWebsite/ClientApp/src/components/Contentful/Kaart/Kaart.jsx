@@ -6,6 +6,7 @@ import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
 // - overlay : plaatjes is achtergrond, ipv erboven
 // - button : link is als een knop
+// - linkimage : link op de hele kaart zonder linktekst
 // - linktekst : tekst op de link of button
 export default class Kaart extends Component {
     render() {
@@ -15,26 +16,36 @@ export default class Kaart extends Component {
         // card met button-link
         if (this.props.content?.linkUrl && this.props.button) {
             return (
-                <Card style={{ marginBottom: "15px" }} className={this.props.className} >
+                <Card style={{ marginBottom: "15px" }} className={this.props.className}  >
                     {this.renderCardBody(
-                        <Button className="bg-primary"><Link className="text-white  stretched-link" style={{ textDecoration: 'none' }} to={this.props.content?.linkUrl}>{lt}</Link></Button>
+                        <Button className="bg-primary"><Link className="text-white" style={{ textDecoration:'none' }} to={this.props.content?.linkUrl}>{lt}</Link></Button>
                     , overlay)}
                 </Card>
             );
         }
 
         // card met link
-        if (this.props.content?.linkUrl && !this.props.button) {
+        if (this.props.content?.linkUrl && !this.props.button && !this.props.linkimage) {
             return (
                 <Card style={{ marginBottom: "15px" }} className={this.props.className}>
-                    <Link to={this.props.content?.linkUrl} className="text-dark " style={{ textDecoration: 'none'}}>
                     {this.renderCardBody(
                         <Link style={{ textDecoration: 'none' }} to={this.props.content?.linkUrl}> &gt; {lt}</Link>
                     , overlay)}
-                   </Link>
                 </Card>
             );
         }
+
+        // hele kaart wel een link??
+        if (this.props.content?.linkUrl && this.props.linkimage) {
+            return (
+                <Link className="text-white" style={{ textDecoration: 'none' }} to={this.props.content?.linkUrl}>
+                    <Card style={{ marginBottom: "15px" }} className={this.props.className} >
+                        {this.renderCardBody("", overlay)}
+                    </Card>
+                </Link>
+            );
+        }
+
 
         // anders card zonder link
         return (
@@ -42,7 +53,12 @@ export default class Kaart extends Component {
                 {this.renderCardBody("", overlay)}
             </Card>
         );
+
+
+
+
     }
+
 
     renderCardBody(btn, overlay) {
         return (
@@ -51,7 +67,6 @@ export default class Kaart extends Component {
                 <Card.Body className={overlay}>
                     <Card.Text>
                         <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
-                 
                     </Card.Text>
                     {btn}
                 </Card.Body>

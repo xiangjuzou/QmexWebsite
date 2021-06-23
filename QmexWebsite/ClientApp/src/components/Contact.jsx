@@ -31,7 +31,7 @@ export default class Contact extends Component {
                 </div>
 
                 <WidthContainer width={1.5} >
-                <ContactInfo id="contactInfo" content={this.props.content.contactgegevens.fields} />  
+                    <ContactInfo  content={this.props.content.contactgegevens.fields}/>  
                  </WidthContainer> 
                
                     

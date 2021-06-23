@@ -5,7 +5,7 @@ import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
 
 // props:
-// - content       : app.state["product_<hoofdmenu>"]
+// - content       : app.state["product_<hoofdmenu>"] (met fields)
 // - hoofd         : de content van hoofdmenu.
 // - slug          : deel van de url kan hoofdmenu slug zijn of product slug. ("fridges" of "fridges/coolefridge")
 // - statecallback : callback functie om state in APP.jsx op te slaan.
@@ -20,26 +20,26 @@ function ProductsSidemenu(props) {
     return (
         <div>
             <div>
-                <h4>{props.content.title}{' '} producten</h4>
+                <h5 className='font-weight-bold'>{props.content.fields.title}{' '} producten</h5>
             </div>
             <div id="side-items">
                 {
-                    props.content.products?.map((p) => (
+                    props.content.fields.products?.map((p) => (
                         <div className='pt-2'>
                             <Link className="sidemenulink" to={"/products/" + p.fields.slug}>
                                 &gt; {p.fields?.menuTitle}
                             </Link>
-                            <div className="ml-4 small side_subtitle">
+                            <div className="ml-4 small side_subtitle font-weight-light font-italic">
                                 <ReactMarkdownWithHtml allowDangerousHtml>{p.fields?.menusubtitle}</ReactMarkdownWithHtml>
                             </div>
                         </div>
                     ))
                 }
             </div>
-            <h4 className="mt-6 pb-2">Alle producten</h4>
+            <h5 className="mt-6 pb-2 font-weight-bold">Alle producten</h5>
             <div id="hoofd-items" className="">
                 {props.hoofd.hoofdmenuitems.map((hmi) =>
-                    <div className="mt-2">
+                    <div className="mt-2" key={hmi.fields.slug}>
                         <Link className="sidemenulink" to={"/products/" + hmi.fields.slug}>
                             &gt; {hmi.fields?.title}
                         </Link>

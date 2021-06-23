@@ -4,11 +4,11 @@ import VerhaalMetFoto from './VerhaalMetFoto/VerhaalMetFoto';
 import Verhaal from './Verhaal/Verhaal';
 import Kaart from './Kaart/Kaart';
 import OneKaart from './Kaart/OneKaart';
-import { Container } from 'react-bootstrap';
+import WidthContainer from '../Common/WidthContainer'
 
 
 // props:
-// - content       : app.state["products_<hoofdmenu>"]
+// - content       : app.state["products_<hoofdmenu>"] 
 function ProductsShowcase(props) {
 
     const getGallery = (gi) => {
@@ -30,9 +30,10 @@ function ProductsShowcase(props) {
             <div className="d-flex flex-wrap">
                 {props.content.gallery?.map((gi) => getGallery(gi))}
             </div>
-            <Container className="pt-5 mt-5">
-                <OneKaart button  target="_blank" content={props.content.brochure?.fields} linktekst="Contact nu" className="py-4 pl-6 bg-secondary oneKaart_btn" />
-             </Container>
+
+            <WidthContainer width={3} className='bg-light mt-5'>
+                <OneKaart button target="_blank" content={props.content.brochure?.fields} linktekst="Contact nu" className="py-5 my-5 px-4 oneKaart_btn" />
+             </WidthContainer>
         </Fragment>
     );
 }

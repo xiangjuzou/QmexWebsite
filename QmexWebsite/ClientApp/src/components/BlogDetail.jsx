@@ -2,14 +2,13 @@
 import Verhaal from './Contentful/Verhaal/Verhaal';
 import CFLoader from './Contentful/CFLoader';
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
-import {BrowserRouter as useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 
 
 const BlogDetail = (props) => {
 
     if (!props.content) {
         CFLoader.LoadPage(props.id, "blog_"+ props.slug, props.statecallback);
-     
     }
 
     const getVerhaal = (gi) => {
@@ -41,7 +40,7 @@ const BlogDetail2 = (props) => {
     }
 
     
-    useEffect((props) => {
+    useEffect(() => {
         let id = props.slug.find(s => s.fields.slug === article)?.sys.id;
         CFLoader.LoadPage(id, "blog", callback);
     }, [article]);
