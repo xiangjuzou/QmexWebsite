@@ -2,11 +2,11 @@
 import CFLoader from './Contentful/CFLoader';
 import Columns from './Common/Columns';
 import ProductsHoofdmenu from "./Contentful/ProductsHoofdmenu.jsx";
+import ProductsTussenpagina from "./Contentful/ProductsTussenpagina.jsx";
 import ProductsSidemenu from "./Contentful/ProductsSideMenu.jsx";
 import ProductsShowcase from "./Contentful/ProductsShowcase.jsx";
 import ProductsDetail from "./Contentful/ProductsDetail.jsx";
-import { Col, Container, Card, Button } from 'react-bootstrap';
-import WidthContainer from './Common/WidthContainer';
+import { Col, Container} from 'react-bootstrap';
 
 
 // props:
@@ -23,13 +23,19 @@ export default class Products extends Component {
         // menu    is er altijd
         // content wordt hier bijgeladen indien nodig.
         // submenu is optioneel, wordt bijgeladen door ProductSidemenu wanneer het nodig is.
+        //
+        // false: dus we krijgen props.content.fields en props.content.sys ipv props.content
         if (!this.props.content) {
-            CFLoader.LoadPage(this.props.id, "product_" + this.props.slug, this.props.statecallback);
+            CFLoader.LoadPage(this.props.id, "products_" + this.props.slug, this.props.statecallback, false);
         }
     }
 
-    isHoofdmenu(slug) {
-        return slug.split('/').length === 1;
+    getContent(content) {
+        switch (content.sys.contentType.sys.id) {
+            case 'producthoofdmenu': return <ProductsShowcase content={content.fields} />
+            case 'productTussenpagina': return <ProductsTussenpagina content={content.fields} />
+            default: return <ProductsDetail content={content.fields} />
+        }
     }
 
     render() {
@@ -41,14 +47,11 @@ export default class Products extends Component {
                 </div>
                 <Container fluid>
                     <Columns fluid>
-                        <Col md={2} className='rounded border border-light border-3 pl-4 pt-4'>
-                            <ProductsSidemenu content={this.props.submenu} hoofd={this.props.menu} slug={this.props.content.slug} statecallback={this.props.statecallback}  />
+                        <Col md={3} lg={2} className='rounded border border-light border-3 pl-4 pt-4'>
+                            <ProductsSidemenu content={this.props.submenu} hoofd={this.props.menu} slug={this.props.content.fields.slug} statecallback={this.props.statecallback}  />
                             </Col>
-                        <Col md={10}>
-                            {this.isHoofdmenu(this.props.content.slug) ?
-                                <ProductsShowcase content={this.props.content}/> :
-                                <ProductsDetail content={this.props.content} />
-                            }
+                        <Col md={9} lg={10}>
+                            {this.getContent(this.props.content)}
                         </Col>
                     </Columns>
                 </Container>

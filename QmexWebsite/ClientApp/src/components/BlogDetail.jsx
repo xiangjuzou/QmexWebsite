@@ -1,21 +1,21 @@
-﻿import React, { Component, Fragment, useEffect, useState } from "react";
+﻿import React, {useEffect, useState } from "react";
 import Verhaal from './Contentful/Verhaal/Verhaal';
 import CFLoader from './Contentful/CFLoader';
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
-import { BrowserRouter as Router, Route, useParams, Switch } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 
 
 const BlogDetail = (props) => {
 
     if (!props.content) {
         CFLoader.LoadPage(props.id, "blog_"+ props.slug, props.statecallback);
-     
     }
 
     const getVerhaal = (gi) => {
         switch (gi.sys.contentType.sys.id) {
             case "story": return <Verhaal content={gi.fields} className="flex-basis-1 container mt-5 mb-3 pl-4" />;
             case "verhaalmetfoto": return <VerhaalMetFoto content={gi.fields} className="flex-basis-1" />;
+            default: return <div/>
         }
     }
 
@@ -41,7 +41,7 @@ const BlogDetail2 = (props) => {
 
     
     useEffect(() => {
-        let id = props.slug.find(s => s.fields.slug == article)?.sys.id;
+        let id = props.slug.find(s => s.fields.slug === article)?.sys.id;
         CFLoader.LoadPage(id, "blog", callback);
     }, [article]);
 
@@ -50,6 +50,7 @@ const BlogDetail2 = (props) => {
         switch (gi.sys.contentType.sys.id) {
             case "story": return <Verhaal content={gi.fields} className="flex-basis-1 container mt-5 mb-3 pl-4" />;
             case "verhaalmetfoto": return <VerhaalMetFoto content={gi.fields} className="flex-basis-1" />;
+            default: return <div/>
         }
     }
 

@@ -21,7 +21,7 @@ export default class Map extends Component {
                     defaultZoom={this.props.zoom}
                     yesIWantToUseGoogleMapApiInternals
                 >
-                    <img lat={this.props.center.lat} lng={this.props.center.lng}  width='30px' height='30px' src='https://previews.123rf.com/images/severe06/severe061504/severe06150400001/38905904-rode-kleine-vlag.jpg' />
+                    <img alt="map" lat={this.props.center.lat} lng={this.props.center.lng}  width='30px' height='30px' src='https://previews.123rf.com/images/severe06/severe061504/severe06150400001/38905904-rode-kleine-vlag.jpg' />
                 </GoogleMapReact>
             </div>
         );

@@ -1,7 +1,5 @@
 ﻿import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import WidthContainer from '../../Common/WidthContainer';
-
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
 
@@ -54,15 +52,15 @@ export default class Verhaal extends Component {
         delete overgeblevenProps.width;
         delete overgeblevenProps.content;
 
-        let h1class = "";
+        let h1class ="font-weight-bold";
         if (content.tekst) {
             h1class = "mb-5";
-        }
+        } 
 
         return (
             <div className={newclass} {...overgeblevenProps} >
                 <WidthContainer width={this.props.width}>
-                    <h1 className={h1class} display-3>{this.props.content?.titel}</h1>
+                    <h1 className={h1class}>{this.props.content?.titel}</h1>
                     <ReactMarkdownWithHtml allowDangerousHtml>{content.tekst}</ReactMarkdownWithHtml>
                         {content.btn}
                 </WidthContainer>

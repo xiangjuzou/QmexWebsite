@@ -1,8 +1,8 @@
-﻿import React, { Component, Fragment } from 'react';
+﻿import React, {  Fragment } from 'react';
 import CollapseVerhaal from './Contentful/Verhaal/CollapseVerhaal';
 import VMFJombo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import CFLoader from './Contentful/CFLoader';
-import { Container } from 'react-bootstrap';
+
 
 // props:
 // - content       : contenful content

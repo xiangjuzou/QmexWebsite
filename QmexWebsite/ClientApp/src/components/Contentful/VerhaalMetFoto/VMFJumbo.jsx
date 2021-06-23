@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
-import { Jumbotron, Row, Col, Nav, Button, Container } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -24,7 +24,6 @@ export default class VMFJumbo extends Component {
         delete overgeblevenProps.cover;
 
         let pos = "";
-        let text = "";
         switch (this.props.pos) {
             case "bottomleft":
                 pos = "text-left ml-5 pl-5 pb-5";
