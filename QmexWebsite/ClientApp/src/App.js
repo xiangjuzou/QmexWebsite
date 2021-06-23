@@ -35,12 +35,10 @@ export default class App extends Component {
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/blog', title: 'Blog', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/faq', title: 'FAQ', render: () => <Faq content={this.state.faq} statecallback={this.saveState} /> },
-            //{ to: '/products/airconditioners', title: 'Airconditioners', render: () => <Airconditioners content={this.state.airconditioners} statecallback={this.saveState} /> },
-         
 
             { to: '/', title: 'Home', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
             { to: '/products', title: 'Producten', render: () => <div>Loading...</div> },
-            { to: '/services', title: 'services', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
+            { to: '/services', title: 'Services', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
             { to: '/production', title: 'Productie', render: () => <Production content={this.state.production} statecallback={this.saveState} /> },
             { to: '/about', title: 'Over Qmex', render: () => <About content={this.state.about} statecallback={this.saveState}/> },
             { to: '/contact', title: 'Contact', render: () => <Contact content={this.state.contact} statecallback={this.saveState} /> }
@@ -60,6 +58,7 @@ export default class App extends Component {
         CFLoader.LoadPage("6MjPYhDBXepG4aLs1fNcIZ", "products", this.saveState);
         CFLoader.LoadProductSlugs(this.saveState);
         CFLoader.LoadBlogSlugs(this.saveState);
+        CFLoader.LoadTussenPaginaSlugs(this.saveState);
     }
 
     // de pagina's laden 'hun' state van contentful en bewaren het in app-state.
@@ -107,9 +106,10 @@ export default class App extends Component {
    
     render() {
         console.log("APPSTATE:", this.state);
-        if (!this.state.product) { return "loading product menu..." }
+        if (!this.state.products) { return "loading product menu..." }
         if (!this.state.productslug) { return "loading products..." }
         if (!this.state.blogslug) { return "loading blogs..." }
+        if (!this.state.tussenpaginaslug) { return "loading TussenPaginas..." }
 
         return  (
             <Router>
@@ -118,20 +118,37 @@ export default class App extends Component {
                     <main className="mb-5">
                         <Switch>
                         {/* onze 'harde' links */}
-                        {this.links.map((ml) => (
-                            <Route exact path={ml.to} render={ml.render} />
+                        {this.links.map((ml,i) => (
+                            <Route exact path={ml.to} render={ml.render} key={i} />
                         ))}
 
                         {/* De hoofdmenuitem links met de slug van contentful */}
-                        {this.state.product.hoofdmenuitems.map((p) => (
-                            <Route exact path={"/products/" + p.fields.slug} render={() =>
+                        {this.state.products.hoofdmenuitems?.map((p,i) => (
+                            <Route exact key={i} path={"/products/" + p.fields.slug} render={() =>
                                 <Products content={this.state['products_' + p.fields.slug]}
                                     statecallback={this.saveState}
                                     id={p.sys.id}
                                     slug={p.fields.slug}
-                                    menu={this.state.product}
+                                    menu={this.state.products}
                                     submenu={this.state['products_' + p.fields.slug]} />} />
                         ))}
+
+                            {/* De tussenpagina-product links met de slug van contentful */}
+                            {this.state.tussenpaginaslug.map((p, i) => (
+                                p.fields.hoofdmenus.map((hm,j) => (
+
+                                <Route exact key={i + "_" + j} path={"/products/" + hm.fields.slug} render={() =>
+                                    <Products content={this.state['products_' + hm.fields.slug]}
+                                        statecallback={this.saveState}
+                                        id={hm.sys.id}
+                                        slug={hm.fields.slug}
+                                        menu={this.state.products}
+                                        submenu={this.state['products_' + hm.fields.slug.split('/')[0]]} />} />
+                                ))
+                            ))}
+
+                                    
+
 
                         {/* De blog links useParams*/}
                         <Route path="/blog/:article">
@@ -140,8 +157,8 @@ export default class App extends Component {
                        
 
                         {/* De product links met de slug van contentful */}
-                        {this.state.productslug.map((p) => (
-                            <Route exact path={"/products/" + p.fields.slug} render={() =>
+                        {this.state.productslug.map((p,i) => (
+                            <Route exact key={i} path={"/products/" + p.fields.slug} render={() =>
                                 <Products content={this.state['products_' + p.fields.slug]}
                                     statecallback={this.saveState}
                                     id={p.sys.id}
@@ -151,8 +168,8 @@ export default class App extends Component {
                             ))}
 
                         {/* De blog links met de slug van contentful 
-                        {this.state.blogslug.map((p) => (
-                            <Route exact path={"/blog/" + p.fields.slug} render={() =>
+                        {this.state.blogslug.map((p,i) => (
+                            <Route exact key={i} path={"/blog/" + p.fields.slug} render={() =>
                                 <BlogDetail content={this.state['blog_' + p.fields.slug]}
                                     statecallback={this.saveState}
                                     id={p.sys.id}

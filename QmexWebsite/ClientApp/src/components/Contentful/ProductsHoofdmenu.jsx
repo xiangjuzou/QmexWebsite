@@ -12,11 +12,11 @@ function ProductsHoofdmenu(props) {
 
     return (
         <div  style={{ background: 'rgba(51,51,51, 0.9)' }} className="pb-2">
-        <WidthContainer width={1.5}>
-            <Columns fluid>
-                {
-                    props.content.hoofdmenuitems.map((hmi) => (
-                        <Col className="text-center" >
+        <WidthContainer width={3}>
+            <Columns>
+                    {
+                        props.content.hoofdmenuitems.map((hmi) => (
+                            <Col className="text-center" key={hmi.fields.slug} >
                             <Link id="hfLink" to={"/products/" + hmi.fields.slug}>
                                 <img className='my-2' src={hmi.fields.iconUrl} alt={hmi.fields.title + "icon"}  />
                             <br />
