@@ -30,24 +30,28 @@ export default class App extends Component {
         // other links. deep links needs extra slash!
         this.links = [
             { to: '/privacy', title: 'Privacy', render: () => <Privacy content={this.state.privacy} statecallback={this.saveState} /> },
-            { to: '/services/marketing', title: 'Marketing', render: () => <ServiceDetail content={this.state.dienstInkoop} page='dienstInkoop' statecallback={this.saveState} /> },
-            { to: '/services/OEM', title: 'OEM', render: () => <ServiceDetail content={this.state.dienstOEM} page='dienstOEM' statecallback={this.saveState} /> },
+            { to: '/support/diensten', title: 'Diensten', render: () => <ServiceDetail content={this.state.dienst} page='dienst' statecallback={this.saveState} /> },
+            { to: '/support/productdevelopment', title: 'Producte development', render: () => <ServiceDetail content={this.state.productdevelopment} page='productdevelopment' statecallback={this.saveState} /> },
+            { to: '/support/subsidies', title: 'Subsidies', render: () => <ServiceDetail content={this.state.subsidies} page='subsidies' statecallback={this.saveState} /> },
+            { to: '/support/grantie', title: 'Grantie', render: () => <ServiceDetail content={this.state.gratie} page='gratie' statecallback={this.saveState} /> },
+            { to: '/support/downloads', title: 'Downloads', render: () => <ServiceDetail content={this.state.downloads} page='dienst' statecallback={this.saveState} /> },
+            { to: '/support/video', title: 'Video', render: () => <ServiceDetail content={this.state.vedio} page='vedio' statecallback={this.saveState} /> },
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/blog', title: 'Blog', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/faq', title: 'FAQ', render: () => <Faq content={this.state.faq} statecallback={this.saveState} /> },
 
             { to: '/', title: 'Home', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
             { to: '/products', title: 'Producten', render: () => <div>Loading...</div> },
-            { to: '/services', title: 'Services', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
-            { to: '/production', title: 'Productie', render: () => <Production content={this.state.production} statecallback={this.saveState} /> },
+            { to: '/support', title: 'Support', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
+           /* { to: '/production', title: 'Productie', render: () => <Production content={this.state.production} statecallback={this.saveState} /> },*/
             { to: '/about', title: 'Over Qmex', render: () => <About content={this.state.about} statecallback={this.saveState}/> },
             { to: '/contact', title: 'Contact', render: () => <Contact content={this.state.contact} statecallback={this.saveState} /> }
         ];
-        this.home = 6;
+        this.home = 10;
 
         // menu en footer items 
-        this.FooterlinksLeft = [this.links[4], this.links[this.home+1], this.links[this.home+2]];
-        this.FooterlinksMiddle = [this.links[5], this.links[this.home+5], this.links[0]];
+        this.FooterlinksLeft = [this.links[this.home+2], this.links[this.home+1], this.links[this.home+3]];
+        this.FooterlinksMiddle = [this.links[9], this.links[8], this.links[this.home+4]];
         this.menulinks = this.links.slice(this.home);
 
         // get all url's from the basic-route's and save them for the search. (products added later.)

@@ -338,4 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-/QmexWebsite/ClientApp/src/components/Contentful/CFLoader - kopie.js
+
+/QmexWebsite/ClientApp/src/components/Contentful/CFLoader.js

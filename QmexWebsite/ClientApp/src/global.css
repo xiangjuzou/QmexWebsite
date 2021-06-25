@@ -70,6 +70,9 @@
 
 
 /* globale footer */
+html {
+    background-color: #292929;
+}
  footer {
         width: 100%;
         background-color:#292929;
@@ -81,17 +84,19 @@
         color: #f4f4f4;
     }
 
- footer p {
-         display: block;
-         margin-top: 40px;
-         text-align: center;
-         font-size: x-small;
-         padding-bottom: 10px;
-        }
+#copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: small;
+    color: white;
+}
 
 
 .footer_social img {
-    width: 30px;
+    width: 35px;
     margin: 10px;
 }
 
@@ -172,11 +177,15 @@ body {
 }
 
 /* home pagina */
-#home_waarden .card-img-top{
-    height:auto;
-    width:89px;
-    padding-bottom:20px;
-}
+ #home_topbanner h1,#home_topbanner h3{
+     color:#f2f4f2;
+ }
+
+ #home_waarden .card-img-top {
+        height: auto;
+        width: 89px;
+        padding-bottom: 20px;
+    }
 
 #kaart_0 .card {
     background-color: #f4f5f8;
@@ -189,13 +198,10 @@ body {
     background-color: #e3e5e6;
 }
 
-#home_waarden .card:hover, #contactInfo .border:hover {
+#home_waarden .card:hover {
     background-color: #f48c00;
 }
 
-#homeTweedeBanner .col-md-6:nth-child(1) {
-    background-color: #f3f3f3;
-}
 
 #home_verhaal {
     animation-name: showVerhaal;
@@ -251,8 +257,8 @@ body {
 }
 
 /*about pagina */
-#aboutKaart:hover, #about_kaarten .card:hover, #contact_kaart:hover {
-    background-color: #f48c00;
+ #about_kaarten .card:hover, #contact_kaart:hover {
+    background-color: #f48c00 !important;
     border: none;
 }
 #about_topverhaal h1 {
@@ -288,10 +294,29 @@ box-shadow:1px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 /*about*/
-#about_topbanner {
- filter: grayscale(500%);
+#about_showcase h2{
+color:#f48c00;
+
+}
+/*contact*/
+#contact_kaart-one {
+    background-color: #f8f4f2;
 }
 
+#contact_kaart-two {
+    background-color: #f2f4f2 ;
+}
+
+#contact_kaart-three{
+    background-color: #f3f4f8;
+}
+
+
+
+
+    #contact_kaart-one:hover, #contact_kaart-two:hover, #contact_kaart-three:hover {
+        background: #f48c00 !important;
+    }
 /*services*/
 #service_kaarten .service_kaart:hover, .tussenpage_kaarten .tussenpage_kaart:hover {
     transform: scale(1.02);

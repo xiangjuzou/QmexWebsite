@@ -32,10 +32,10 @@ export default class Verhaal extends Component {
             // wel een korte tekst, dus button, en kijken of de korte of lange tekst te zien is.
             if (this.state.uitgeklapt) {
                 tekst = this.props.content?.tekst;
-                btn = <button onClick={this.uitklappen}>Read less</button>
+                btn = <button onClick={this.uitklappen} className="mt-2 btn btn-primary">Lees minder</button>
             } else {
                 tekst = this.props.content.kortetekst;
-                btn = <button onClick={this.uitklappen} className="mt-2">Read more</button>
+                btn = <button onClick={this.uitklappen} className="mt-2 btn btn-primary">Lees meer</button>
             }
         }  
 

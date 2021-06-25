@@ -30,8 +30,8 @@ export default class Home extends Component {
 
         return (
             <Fragment>
-                <div id="home_topbanner" >
-                    <VMFJumbo className="text-white" content={this.props.content.banner.fields} height="77vh" cover pos="bottomleft" />    
+                <div id="home_topbanner">
+                    <VMFJumbo content={this.props.content.banner.fields} height="77vh" cover pos="bottomleft" />    
                 </div>
 
                 <WidthContainer width={1} id="home_verhaal" className="py-5 my-5">
