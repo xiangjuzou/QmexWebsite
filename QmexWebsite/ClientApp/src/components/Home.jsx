@@ -42,12 +42,12 @@ export default class Home extends Component {
                     <Verhaal className="text-center my-3  home_assotiment " content={this.props.content.productInleiding.fields}  />
                 </div>
 
-                <div className="mt-5 mb-5 home_kaarten"  >
+                <div className="my-6 home_kaarten"  >
                     <Columns fluid  >
                     {
                             this.props.content.producten.map((k, id) => (
                                 <Col key={id} md={4} lg={4} sm={12}>
-                                    <Kaart content={k.fields} className="mx-1" />
+                                    <Kaart content={k.fields} className="p-6" />
                             </Col>
                            ))
                     }
