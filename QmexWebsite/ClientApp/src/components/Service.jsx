@@ -6,7 +6,7 @@ import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import Kaart from './Contentful/Kaart/Kaart';
 import Verhaal from './Contentful/Verhaal/Verhaal';
 import WidthContainer from './Common/WidthContainer';
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col,Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
@@ -45,13 +45,17 @@ export default class Service extends Component {
                         </Columns>
                      </WidthContainer>
                 </div>
-                   
-               
-                <Verhaal className="text-center my-5 py-5 bg-light" content={this.props.content.inleiding.fields} />
-               
+
+                <div className="bg-light">
+                <Container>
+                <Verhaal className="text-center my-5 py-5" content={this.props.content.inleiding.fields} />
+                    </Container>
+                 </div>
+
                 <div id="service_kaarten" className="my-5 pt-5">
                     <Columns>
-                        {this.props.content.kaarten.map(k => <Col><Kaart key={k.fields.name} button target="_blank" content={k.fields} className="service_kaart"/></Col>)}
+                        {this.props.content.kaarten.map( (k,index) => <Col key={index} md={4} lg={4} xl={4} sm={12}>
+                            <Kaart key={k.fields?.name} button target="_blank" content={k.fields} className="service_kaart" /></Col>)}
                     </Columns>
                 </div>
             </Fragment>

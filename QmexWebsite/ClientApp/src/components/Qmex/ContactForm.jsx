@@ -1,5 +1,5 @@
 ﻿import React, { Component,Fragment } from 'react';
-import { Jumbotron, InputGroup, Form, Col, Button, Container } from 'react-bootstrap';
+import { InputGroup, Form, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneSquareAlt, faEnvelope, faUser, faPen } from '@fortawesome/free-solid-svg-icons';
 

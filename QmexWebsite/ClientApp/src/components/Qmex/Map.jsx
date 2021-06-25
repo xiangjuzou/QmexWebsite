@@ -16,12 +16,12 @@ export default class Map extends Component {
             // Important! Always set the container height explicitly
             <div style={{ height: '600px' }}>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key:'AIzaSyCsfFI6uxZZoZe4LR-IAEPUQbIlHTuVAIE'}}
+                     bootstrapURLKeys={{ key:'AIzaSyCG3O-2EgpYjOEJS00MzHkueqFt0g3YPt0'}}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                     yesIWantToUseGoogleMapApiInternals
                 >
-                    <img lat={this.props.center.lat} lng={this.props.center.lng}  width='30px' height='30px' src='https://previews.123rf.com/images/severe06/severe061504/severe06150400001/38905904-rode-kleine-vlag.jpg' />
+                    <img alt="map" lat={this.props.center.lat} lng={this.props.center.lng}  width='30px' height='30px' src='https://previews.123rf.com/images/severe06/severe061504/severe06150400001/38905904-rode-kleine-vlag.jpg' />
                 </GoogleMapReact>
             </div>
         );

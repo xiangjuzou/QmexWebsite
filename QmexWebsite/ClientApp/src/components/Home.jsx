@@ -30,18 +30,29 @@ export default class Home extends Component {
 
         return (
             <Fragment>
-                <div id="home_topbanner" >
-                    <VMFJumbo className="text-white" content={this.props.content.banner.fields} height="77vh" cover pos="bottomleft" />    
+                <div id="home_topbanner">
+                    <VMFJumbo content={this.props.content.banner.fields} height="77vh" cover pos="bottomleft" />    
                 </div>
 
-                <div id="home_verhaal" className="position-relative" style={{color:'white'}}>
-                    <Verhaal className="text-center my-5 py-5 " content={this.props.content.inleiding.fields} width={3} />
-                </div>
+                <WidthContainer width={1} id="home_verhaal" className="py-5 my-5">
+                    <Columns>
+                        {
+                          this.props.content.inleiding.map( (inleiding,index) => (
+                              <Col lg={6} sm={12} key={index}>
+                                  <Verhaal className="text-left" content={inleiding.fields}/>
+                                </Col>
+                            ))
+                        }
+                    </Columns>
+                </WidthContainer>
 
+             
                 <div >
-                    <Verhaal className="text-center my-3  home_assotiment " content={this.props.content.productInleiding.fields}  />
+                    <Verhaal className="text-center" content={this.props.content.productInleiding.fields}  />
                 </div>
 
+                <div className="my-5 home_kaarten">
+                    <Columns fluid>
                 <div className="my-6 home_kaarten"  >
                     <Columns fluid  >
                     {
@@ -54,27 +65,23 @@ export default class Home extends Component {
                     </Columns>
                 </div>
 
-                <div id="home_waarden" className="my-5 py-5 position-relative" style={{ display: 'white' }} >
-                    <Columns >
-                        <Col lg={4} className="text-center">{WaardOne}</Col>
-                        <Col lg={4} className="text-center">{WaardTwo}</Col>
-                        <Col lg={4} className="text-center">{WaardThree}</Col>
-                        {this.props.content.waarden.map(k => <Col>
-                            <Kaart key={k.fields.name} content={k.fields} className="d-flex text-center" /></Col>)}
+               
+                <div id="home_waarden" className="my-5 py-5 ">
+                    <Columns>
+                        {this.props.content.waarden.map((k, i) => <Col id={"kaart_" + i} style={{ padding: '0px' }} key={k.fields.name} md={12} lg={4} xl={4} sm={12}  >
+                            <Kaart content={k.fields} linkimage  className="d-flex flex-column align-items-center text-dark p-5" /></Col>)}
                     </Columns>
                 </div>
-
-                <div >
-                    <Verhaal className="text-center my-4 pt-3 " content={this.props.content.brancheInleiding.fields} />
-                </div>  
-
-
-                <WidthContainer width={1} id="homeTweedeBanner">
-                    <VerhaalMetFoto 
-                        content={this.props.content.homeTweedeBanner.fields} className="text-white bg-secondary pl-5 mb-3"/>
+               
+               
+                <div className="text-center my-5" >
+                    <Verhaal className="my-5" content={this.props.content.brancheInleiding.fields} />
+                    <WidthContainer width={1} id="homeTweedeBanner">
+                    <VerhaalMetFoto
+                        content={this.props.content.homeTweedeBanner.fields}/>
                 </WidthContainer>
-
-                
+               </div>
+              
                 
             </Fragment>
         );

@@ -1,7 +1,5 @@
 ﻿import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import WidthContainer from '../../Common/WidthContainer';
-
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 
 
@@ -34,10 +32,10 @@ export default class Verhaal extends Component {
             // wel een korte tekst, dus button, en kijken of de korte of lange tekst te zien is.
             if (this.state.uitgeklapt) {
                 tekst = this.props.content?.tekst;
-                btn = <button onClick={this.uitklappen}>Read less</button>
+                btn = <button onClick={this.uitklappen} className="mt-2 btn btn-primary">Lees minder</button>
             } else {
                 tekst = this.props.content.kortetekst;
-                btn = <button onClick={this.uitklappen} className="mt-2">Read more</button>
+                btn = <button onClick={this.uitklappen} className="mt-2 btn btn-primary">Lees meer</button>
             }
         }  
 
@@ -54,15 +52,15 @@ export default class Verhaal extends Component {
         delete overgeblevenProps.width;
         delete overgeblevenProps.content;
 
-        let h1class = "";
+        let h1class ="font-weight-bold";
         if (content.tekst) {
             h1class = "mb-5";
-        }
+        } 
 
         return (
             <div className={newclass} {...overgeblevenProps} >
                 <WidthContainer width={this.props.width}>
-                    <h1 className={h1class} display-3>{this.props.content?.titel}</h1>
+                    <h1 className={h1class}>{this.props.content?.titel}</h1>
                     <ReactMarkdownWithHtml allowDangerousHtml>{content.tekst}</ReactMarkdownWithHtml>
                         {content.btn}
                 </WidthContainer>

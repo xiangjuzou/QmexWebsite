@@ -16,6 +16,7 @@ const Privacy = (props) => {
         switch (gi.sys.contentType.sys.id) {
             case "story": return <Verhaal content={gi.fields} className="flex-basis-1 container mt-5 mb-3 pl-4" />;
             case "verhaalmetfoto": return <VerhaalMetFoto content={gi.fields} className="flex-basis-1" />;
+            default: return <div/>
         }
     }
 

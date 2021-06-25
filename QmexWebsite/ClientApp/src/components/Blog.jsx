@@ -1,7 +1,6 @@
-﻿import React, { Component, Fragment } from "react";
+﻿import React, { Fragment } from "react";
 import Verhaal from './Contentful/Verhaal/Verhaal';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
-import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 import CFLoader from './Contentful/CFLoader';
 import OneKaart from './Contentful/Kaart/OneKaart';
 

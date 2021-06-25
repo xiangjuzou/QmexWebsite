@@ -1,10 +1,10 @@
-﻿import React, { Component, Fragment } from 'react';
+﻿import React, { Fragment } from 'react';
 import VMFJumbo from './VerhaalMetFoto/VMFJumbo';
 import VerhaalMetFoto from './VerhaalMetFoto/VerhaalMetFoto';
 import Verhaal from './Verhaal/Verhaal';
 import OneKaart from './Kaart/OneKaart';
 import CollapseVerhaal from './Verhaal/CollapseVerhaal';
-import { Row,Col,Container } from 'react-bootstrap';
+import WidthContainer from '../Common/WidthContainer'
 import SpecificatieKaart from './SpecificatieKaart';
 
 // props:
@@ -37,7 +37,8 @@ function ProductsDetail(props) {
                 return <VerhaalMetFoto content={mi.fields} reverse={i % 2} className="flex-basis-1"/>;
             case "specificatiekaart":
                 // return <SpecificatieKaart content={mi.fields} className={"flex-basis-" + countcards(arr,i) + " py-5 px-3"} />
-                return <Fragment/>
+                return <Fragment />
+            default: return <Fragment />
         }
         
     }
@@ -62,15 +63,17 @@ function ProductsDetail(props) {
   
     return (
         <Fragment>
-            <VMFJumbo content={props.content.showcase.fields} height="40vh" className="mb-5" cover/>
-            <Verhaal id="inleiding" className="p-5 mb-5 text-center" content={props.content.inleiding?.fields} width={2} />
-            <div className="d-flex flex-wrap">
+            <VMFJumbo content={props.content.showcase.fields} height="40vh" className="mb-5" cover />
+
+              <Verhaal id="inleiding" className="text-center" content={props.content.inleiding?.fields} width={2} />
+              <div className="d-flex flex-wrap my-5 pb-5">
                 {props.content.moreInfo?.map((mi, i, arr) => getMoreinfo(mi, i, arr))}
-            </div>
-            <div id="ProductDetail_btn">
-            <Container >
-                    <OneKaart button target="_blank" content={props.content.contactkaart?.fields} linktekst="Contact nu" className="mt-6 mb-4 p-5 bg-secondary oneKaart_btn" />
-            </Container>     
+              </div>
+
+            <div id="ProductDetail_btn" >
+                < WidthContainer width={3} className='bg-light '>
+                    <OneKaart button target="_blank" content={props.content.contactkaart?.fields} linktekst="Contact nu" className="my-5 py-5 oneKaart_btn  productDetail_btn" />
+                </WidthContainer>     
              </div>
         </Fragment>
     );

@@ -1,6 +1,6 @@
 ﻿import { Link, withRouter } from 'react-router-dom';
 import React, { PureComponent } from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, FormControl, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,7 +13,7 @@ class Header extends PureComponent {
     }
 
     updateSearch(e) {
-          this.setState({ search: e.target.value });
+        this.setState({ search: e.target.value });
     }
 
     checkEnter(e) {
@@ -28,37 +28,37 @@ class Header extends PureComponent {
     }
 
     render() {
-        const searchbtn = <FontAwesomeIcon icon={faSearch} className="" size="md" />;
-         const page = '/' + this.props.location.pathname.split('/')[1];
+        const searchbtn = <FontAwesomeIcon icon={faSearch} className="" size="lg" />;
+        const page = '/' + this.props.location.pathname.split('/')[1];
 
-         return (
-             <header style={{ background:'rgb(240,240,240)' }}>
-                 <Navbar collapseOnSelect expand="lg" >
-                     <Navbar.Brand href="/" ><img src="/img/logotrano.png" width="300px" style={{ height:'auto'}} className="header_logo mr-4" /></Navbar.Brand>
+        return (
+            <header>
+                <Navbar collapseOnSelect expand="lg" >
+                    <Navbar.Brand href="/" ><img alt="trans" src="/img/logotrano.png" width="250px" style={{ height: 'auto' }} className="header_logo mr-5" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" />
-                     <Navbar.Collapse id="navbarSupportedContent" style={{ zIndex:3, background: 'rgb(240,240,240)' }}>
-                         <Nav id="navbarSupportedContent" style={{ flexWrap: "wrap", fontSize: "23px"}}  >
-                             {
-                                 this.props.menulinks.map((ml) => 
-                                     (<Nav.Item key={ml.title} className="d-inline " id="navLink" data-toggle="collapse" data-target=".navbar-collapse.show, .navbar-toggler">
-                                         <Link to={ml.to} className={"mx-4 " + ((ml.to === page) ? "text-primary" : "text-dark")}>
-                                             {ml.title}
-                                         </Link>
-                                     </Nav.Item>)
-                                    )
-                             }
-                             
-                         </Nav>
-                         <div className="ml-auto form-inline" style={{ width: "350px", flexWrap: "nowrap" }}>
-                             <FormControl type="search"placeholder="Search" onChange={(e) => this.updateSearch(e)} onKeyUp={(e) => this.checkEnter(e)} value={this.state.search} />
-                             <Button type="button" className="bg-light" onClick={() => this.searchButton()}>
-                                 {searchbtn} { }Zoek
-                             </Button>
-                         </div>
+                    <Navbar.Collapse id="navbarSupportedContent" style={{ zIndex: '3', backgroundColor: "white" }}>
+                        <Nav id="navbarSupportedContent" style={{ flexWrap: "wrap", fontSize: "23px" }}  >
+                            {
+                                this.props.menulinks.map((ml) =>
+                                    (<Nav.Item key={ml.title} className="d-inline " id="navLink" data-toggle="collapse" data-target=".navbar-collapse.show, .navbar-toggler">
+                                        <Link to={ml.to} className={"mx-4 " + ((ml.to === page) ? "text-primary" : "text-dark")}>
+                                            {ml.title}
+                                        </Link>
+                                    </Nav.Item>)
+                                )
+                            }
+
+                        </Nav>
+                        <div className="ml-auto form-inline" style={{ width: "300px", flexWrap: "nowrap" }}>
+                            <FormControl type="search" placeholder="zoek" onChange={(e) => this.updateSearch(e)} onKeyUp={(e) => this.checkEnter(e)} value={this.state.search} />
+                            <Button id='serch_btn' type="button" onClick={() => this.searchButton()}>
+                                {searchbtn} { }
+                            </Button>
+                        </div>
                     </Navbar.Collapse>
                 </Navbar>
             </header>
-         );
+        );
     }
 
 }

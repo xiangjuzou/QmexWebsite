@@ -28,7 +28,7 @@ export default class SupportDetail extends Component {
                     break;
                 case "supportvideo":
                     CFLoader.LoadPage("3kwmkicombbPES9YJmK394 ", "supportvideo", this.props.statecallback);
-                    break;               
+                    break;
                 default: break;
             }
         }
@@ -43,22 +43,22 @@ export default class SupportDetail extends Component {
 
         return (
             <Fragment>
-            <div id="servicedetail_main_content">
+                <div id="supportdetail_main_content">
                     <VMFJombo content={this.props.content.verhalen[0].fields} pos="top" height="40vh" />
                     <WidthContainer width={1}>
-                       {lijstZonderEerste.map((v) => this.kiesComponent(v))}
+                        {lijstZonderEerste.map((v) => this.kiesComponent(v))}
                     </WidthContainer>
-                </div> 
-             </Fragment>
-            )
+                </div>
+            </Fragment>
+        )
     }
 
     kiesComponent(v) {
         switch (v.sys?.contentType.sys.id) {
             case "verhaalmetfoto":
-                return <VerhaalMetFoto  content={v.fields} />
+                return <VerhaalMetFoto content={v.fields} />
             default:
-                return <Verhaal  content={v.fields} width={2} />
+                return <Verhaal content={v.fields} width={2} />
         }
     }
 }
