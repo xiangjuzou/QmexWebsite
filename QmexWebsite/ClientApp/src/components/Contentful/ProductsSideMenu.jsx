@@ -17,6 +17,7 @@ function ProductsSidemenu(props) {
 
         return <div>Loading...</div>
     }
+
     return (
         <div>
             <div>
@@ -32,6 +33,15 @@ function ProductsSidemenu(props) {
                             <div className="ml-4 small side_subtitle font-weight-light font-italic">
                                 <ReactMarkdownWithHtml allowDangerousHtml>{p.fields?.menusubtitle}</ReactMarkdownWithHtml>
                             </div>
+                        </div>
+                    ))
+                }
+                {
+                    props.content.fields.hoofdmenus?.map((p) => (
+                        <div className='pt-2'>
+                            <Link className="sidemenulink" to={"/products/" + p.fields.slug}>
+                                &gt; {p.fields?.title}
+                            </Link>
                         </div>
                     ))
                 }
