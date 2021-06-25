@@ -69,7 +69,6 @@
     }
 
 
-
 /* globale footer */
  footer {
         width: 100%;
@@ -154,6 +153,9 @@ body {
     line-height: 1.6;
     font-weight: 400;
     letter-spacing: .011em;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
     /* home pagina */
@@ -171,12 +173,17 @@ body {
     100% { bottom: 0px; color: black;}
 }
 
-#home_waarden {
+#home_waarden.card{
+ padding:30px;
+
+}
+
+/*#home_waarden {
     animation-name: showWaarden;
     animation-duration: 1s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
-}
+}*/
 
 @keyframes showWaarden {
     0% { left: -10px; color:white;}
@@ -278,5 +285,8 @@ box-shadow:1px 3px 5px rgba(0, 0, 0, 0.1);
     width:200px;
     }
  
+   #about_topbanner h1 {
+   font-size: 20px;
+    }
 }
 
