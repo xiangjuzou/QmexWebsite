@@ -40,12 +40,12 @@ export default class App extends Component {
             { to: '/blog', title: 'Blog', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/faq', title: 'FAQ', render: () => <Faq content={this.state.faq} statecallback={this.saveState} /> },
 
-            { to: '/', title: 'Home', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
-            { to: '/products', title: 'Producten', render: () => <div>Loading...</div> },
-            { to: '/support', title: 'Support', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
+            { to: '/', title: 'HOME', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
+            { to: '/products', title: 'PRODUCTEN', render: () => <div>Loading...</div> },
+            { to: '/support', title: 'SUPPORT', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
            /* { to: '/production', title: 'Productie', render: () => <Production content={this.state.production} statecallback={this.saveState} /> },*/
-            { to: '/about', title: 'Over Qmex', render: () => <About content={this.state.about} statecallback={this.saveState}/> },
-            { to: '/contact', title: 'Contact', render: () => <Contact content={this.state.contact} statecallback={this.saveState} /> }
+            { to: '/about', title: 'OVER QMEX', render: () => <About content={this.state.about} statecallback={this.saveState}/> },
+            { to: '/contact', title: 'CONTACT', render: () => <Contact content={this.state.contact} statecallback={this.saveState} /> }
         ];
         this.home = 10;
 

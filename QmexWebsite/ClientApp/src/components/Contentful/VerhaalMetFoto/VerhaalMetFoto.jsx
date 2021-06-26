@@ -31,9 +31,9 @@ export default class VerhaalMetFoto extends Component {
         let col1 = (
             <Col md={6} sm={12}>
                 <h2 className="my-5">{this.props.content?.titel}</h2>
-                <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>{' '}
+                <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
                 <div className="my-4">
-                {this.props.content?.moreUrl && <Link style={{ fontSize: '21px', textDecoration: 'none' }} className="text-white p-2 bg-primary"
+                {this.props.content?.moreUrl && <Link style={{ fontSize: '21px', textDecoration: 'none' }} className="mr-auto text-white p-2 bg-primary"
                         to={this.props.content.moreUrl}>{this.props.content?.moreUrlText}</Link>}
                     </div>
             </Col>

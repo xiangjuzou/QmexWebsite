@@ -47,7 +47,7 @@ export default class VMFJumbo extends Component {
                             <h1 className='display-4'>{this.props.content?.titel}</h1>
                             <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
                             <div className="my-4">
-                                {this.props.content?.moreUrl && <Link style={{ fontSize:'21px', textDecoration:'none'}} className="text-white bg-primary p-2"
+                                {this.props.content?.moreUrl && <Link style={{ fontSize:'21px', textDecoration:'none'}} className="text-white bg-primary p-2 ml-2"
                                     to={this.props.content.moreUrl}>{this.props.content?.moreUrlText}</Link>}
                             </div>
                         </Col>

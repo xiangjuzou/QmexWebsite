@@ -24,7 +24,7 @@ import WidthContainer from '../Common/WidthContainer';
                                  {
                                      props.content.hoofdmenus.map((hmi) => (
                                          <Col className="text-center" key={hmi.fields.slug} >
-                                             <Link id="hfLink" to={"/products/" + hmi.fields.slug}>
+                                             <Link id="hfLink" to={"/products/" + hmi.fields.slug} xs={4} md={4}  >
                                                  <img alt="icon" className='my-2' src={hmi.fields.iconUrl} />
                                                  <br />
                                                  <div className="">{hmi.fields.title}</div>

@@ -13,7 +13,7 @@ export default class ContactInfo extends Component {
         const Email = <FontAwesomeIcon icon={faEnvelope}  size="lg" />;
 
         return (
-            <Columns fluid className="mt-5 py-5" >
+            <Columns fluid >
                 <Col id="contact_kaart-one" xs={11} md={3} lg={3} className="p-5 my-5 mx-3">
                     <h2 className="py-5">Adres</h2>
                     <ReactMarkdown>{this.props.content?.adres}</ReactMarkdown>

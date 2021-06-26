@@ -8,8 +8,8 @@ const Footer = React.memo((props) => {
     return (
         <footer>
             <Columns className='pt-5' >
-                <Col xs={12} lg={3} className="d-flex align-items-center justify-content-center">
-                    <img src="/img/logotrano.png" width="200" className="footer_logo mx-auto " alt="footer logo"/>
+                <Col xs={12} lg={3} className="d-flex align-items-center justify-content-center mb-5">
+                    <img src="/img/logotrano.png" width="100%" className="footer_logo mx-auto " alt="footer logo"/>
                 </Col>
 
                 <Col xs={6} lg={3} className="justify-content-center align-items-center d-flex">

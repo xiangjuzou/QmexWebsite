@@ -69,7 +69,7 @@ export default class About extends Component {
         <div className="mt-6 pt-6"> 
             <Verhaal className="mb-5 text-center" content={this.props.content.showcaseInleiding.fields} />
             <WidthContainer width={1} >
-                <VerhaalMetFoto content={this.props.content.showcase.fields} id="about_showcase" style={{ backgroundColor: "#f4f3f3", paddingLeft:"20px" }}/>
+                <VerhaalMetFoto content={this.props.content.showcase.fields} id="about_showcase" style={{ backgroundColor: "#f4f3f3", paddingLeft:"25px" }}/>
             </WidthContainer>
         </div>
 

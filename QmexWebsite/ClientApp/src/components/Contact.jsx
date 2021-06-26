@@ -26,23 +26,26 @@ export default class Contact extends Component {
         return (
             <Fragment>
 
-                <div id="contact_banner" className="mb-3">
+                <div id="contact_banner" className="position-relative mb-3">
                     <VMFJumbo content={this.props.content.banner.fields} cover pos="bottomleft" height="50vh" />
                 </div>
 
+             
                 <WidthContainer width={1.5} >
                     <ContactInfo  content={this.props.content.contactgegevens.fields}/>  
                  </WidthContainer> 
-               
-                    
-                <div id="contact_verhaal" className="text-center bg-light">
+              
+
+                <div className="text-center position-relative" style={{ top: '-100px' }}>
+                <div id="contact_verhaal">
                       <Verhaal content={this.props.content.verhaal.fields} width={3} />
                   </div>
                 
-                <div id="contact_form" className="mx-auto py-5 mb-5" style={{width:"780px"}}>
+                <div id="contact_form" className="mx-auto" style={{width:"780px"}}>
                         <ContactForm />
                 </div>
 
+                 </div>
                 <div>
                     <Verhaal className="text-center my-4" content={this.props.content.mapInleiding.fields} />
                 <div style={{ width:"80%"}} className="mx-auto ">

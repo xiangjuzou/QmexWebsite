@@ -66,7 +66,7 @@ function ProductsDetail(props) {
             <VMFJumbo content={props.content.showcase.fields} height="40vh" className="mb-5" cover />
 
               <Verhaal id="inleiding" className="text-center" content={props.content.inleiding?.fields} width={2} />
-              <div className="d-flex flex-wrap my-5 pb-5">
+            <div id="productDetail_btn"  className="d-flex flex-wrap my-5 pb-5">
                 {props.content.moreInfo?.map((mi, i, arr) => getMoreinfo(mi, i, arr))}
               </div>
 

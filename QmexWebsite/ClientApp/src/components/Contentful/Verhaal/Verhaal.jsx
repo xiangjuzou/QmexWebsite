@@ -52,15 +52,15 @@ export default class Verhaal extends Component {
         delete overgeblevenProps.width;
         delete overgeblevenProps.content;
 
-        let h1class ="font-weight-bold";
+        let h2class ="";
         if (content.tekst) {
-            h1class = "mb-5";
+            h2class = "mb-5";
         } 
 
         return (
             <div className={newclass} {...overgeblevenProps} >
                 <WidthContainer width={this.props.width}>
-                    <h1 className={h1class}>{this.props.content?.titel}</h1>
+                    <h2 className={h2class}>{this.props.content?.titel}</h2>
                     <ReactMarkdownWithHtml allowDangerousHtml>{content.tekst}</ReactMarkdownWithHtml>
                         {content.btn}
                 </WidthContainer>

@@ -1,5 +1,6 @@
 ﻿import { Link, withRouter } from 'react-router-dom';
 import React, { PureComponent } from 'react';
+import { Container } from 'react-bootstrap';
 import { Navbar, Nav, FormControl, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -33,11 +34,12 @@ class Header extends PureComponent {
 
         return (
             <header>
+                
                 <Navbar collapseOnSelect expand="lg" >
-                    <Navbar.Brand href="/" ><img alt="trans" src="/img/logotrano.png" width="250px" style={{ height: 'auto' }} className="header_logo mr-5" /></Navbar.Brand>
+                    <Navbar.Brand href="/" ><img alt="trans" src="/img/logotrano.png" width="195px" height="66px" className="header_logo mx-6" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" />
                     <Navbar.Collapse id="navbarSupportedContent" style={{ zIndex: '3', backgroundColor: "white" }}>
-                        <Nav id="navbarSupportedContent" style={{ flexWrap: "wrap", fontSize: "23px" }}  >
+                        <Nav id="navbarSupportedContent" style={{flexWrap: "wrap" }}  >
                             {
                                 this.props.menulinks.map((ml) =>
                                     (<Nav.Item key={ml.title} className="d-inline " id="navLink" data-toggle="collapse" data-target=".navbar-collapse.show, .navbar-toggler">
@@ -48,7 +50,8 @@ class Header extends PureComponent {
                                 )
                             }
 
-                        </Nav>
+                            </Nav>
+          
                         <div className="ml-auto form-inline" style={{ width: "300px", flexWrap: "nowrap" }}>
                             <FormControl type="search" placeholder="zoek" onChange={(e) => this.updateSearch(e)} onKeyUp={(e) => this.checkEnter(e)} value={this.state.search} />
                             <Button id='serch_btn' type="button" onClick={() => this.searchButton()}>
@@ -56,7 +59,7 @@ class Header extends PureComponent {
                             </Button>
                         </div>
                     </Navbar.Collapse>
-                </Navbar>
+                    </Navbar>
             </header>
         );
     }

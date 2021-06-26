@@ -107,12 +107,26 @@ footer a:hover {
 
 /* globale header */
 header, nav.navbar {
-    max-height: 120px;
+    max-height:82px;
+}
+
+header, nav a {
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+    font-weight:700;
+}
+
+.navbar-brand {
+    margin-left: auto;
+}
+
+.navbar-nav{
+    margin-left:auto;
+
 }
 
 .navbar-collapse.show form {
-        margin-left: 15px !important;
-    }
+    margin-left: 15px !important;
+}
 
 #hfLink :hover, .sidemenulink:hover{
     color: #f48c00 !important;
@@ -129,13 +143,11 @@ header, nav.navbar {
     }
 
 
-
 button#serch_btn {
     background:none;
     border: none;
     color:#555;
 }
-
 
 /*header*/
 #hfLink img:hover {
@@ -166,19 +178,29 @@ button#serch_btn {
 /* globale body */
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #384950;
-    font-weight: 400;
-    letter-spacing: .011em;
+    font-weight: 300;
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
-    overflow-x:hidden;
+    letter-spacing: .2px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
+    
 
 /* home pagina */
- #home_topbanner h1,#home_topbanner h3{
-     color:#f2f4f2;
+
+#home_topbanner h2 {
+    background:#f3994c;
+    color: white;
+    font-size: 21px;
+    padding: 5px;
+    display:inline-block;
+}
+
+ #home_topbanner h1{
+     color:#f4f4f4;
  }
 
  #home_waarden .card-img-top {
@@ -187,19 +209,26 @@ body {
         padding-bottom: 20px;
     }
 
+
 #kaart_0 .card {
-    background-color: #f4f5f8;
-}
-#kaart_1 .card {
-    background-color: #f4f8f3;
+    background-color: #f4f5f1;
 }
 
-#kaart_2 .card{
+#kaart_1 .card {
+    background-color: #f2f4f2;
+}
+
+#kaart_2 .card {
     background-color: #e3e5e6;
 }
 
 #home_waarden .card:hover {
     background-color: #f48c00;
+}
+
+#home_waarden .card {
+    font-size: 16px;
+    font-weight:bold;
 }
 
 
@@ -208,10 +237,10 @@ body {
     animation-duration: 2s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
-}*/
+}
 
 #home_verhaal h1 {
-        font-size:48px;
+        font-size:38px;
     }
 
 @keyframes showVerhaal {
@@ -223,13 +252,13 @@ body {
     width:90%;
     margin:auto;
 }
-.home_kaarten .card-img-top, .tussenpage_kaarten .card-img-top {
-    height: 238px;
-    width: 348px;
-    margin: auto;
-    padding: 10px;
-    overflow: hidden;
-}
+
+ .home_kaarten .card-img-top, .tussenpage_kaarten .card-img-top {
+        height: auto;
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+    }
 
 .home_kaarten .card-img-top:hover {
         animation-name: hk_img;
@@ -237,6 +266,11 @@ body {
         animation-timing-function: linear;
         animation-iteration-count: 1;
     }
+
+#home_blog div div {
+    display:flex;
+    flex-direction:column;
+}
 
 @keyframes hk_img {
     0% {transform: translate(0px, 0px) rotate(0deg); }
@@ -248,9 +282,6 @@ body {
 
 
 /*product*/
-#tussenpage_verhaal{
-    font-size:20px !important;
-}
 
 .btn_collapse {
     border-radius: 19px;
@@ -284,14 +315,17 @@ box-shadow:1px 3px 5px rgba(0, 0, 0, 0.1);
   text-align:center;
 }
 
-.productDetail_btn button{
-    margin-left:30px;
+#productDetail_btn button{
+    margin-left:30px; 
 }
 
-/*productie*/
-.production p {
-    margin-left:8px;
+#productDetail_btn button:focus {
+    outline: none !important;
 }
+    /*productie*/
+    .production p {
+        margin-left: 8px;
+    }
 
 /*about*/
 #about_showcase h2{
@@ -300,21 +334,27 @@ color:#f48c00;
 }
 /*contact*/
 #contact_kaart-one {
-    background-color: #f8f4f2;
+    background-color:#f3f4f4 ;
+    position:relative;
+    top: -120px; 
 }
 
 #contact_kaart-two {
-    background-color: #f2f4f2 ;
+    background-color: #f3f4f4;
+    position: relative;
+    top: -120px;
+   
 }
 
-#contact_kaart-three{
-    background-color: #f3f4f8;
+#contact_kaart-three {
+    background-color: #f3f4f4;
+    position: relative;
+    top: -120px;
 }
 
 
 
-
-    #contact_kaart-one:hover, #contact_kaart-two:hover, #contact_kaart-three:hover {
+ #contact_kaart-one:hover, #contact_kaart-two:hover, #contact_kaart-three:hover {
         background: #f48c00 !important;
     }
 /*services*/
@@ -330,6 +370,18 @@ color:#f48c00;
 @media screen and (max-width: 576px) {
     .footer_social {
         margin-top: 3rem;
+    }
+
+ .home_kaarten .card-img-top, .tussenpage_kaarten .card-img-top {
+        height: auto;
+        width: 100%;
+        margin: 10px;
+        padding: 0;
+        padding-right: 20px;
+    }
+
+    .home_kaarten .p-2 {
+        padding: 0!important;
     }
 }
 
@@ -348,17 +400,16 @@ color:#f48c00;
     input.form-control {
         margin-bottom: 10px;
     }
+
+    #home_topbanner h1{
+        font-size: 38px;
+    }
 }
 
-@media screen and (max-width:1381px) {
-    #navLink a {
-        font-size:18px; 
-        margin: 0 10px !important;
-    }
-   
-    .header_logo {
-        width: 160px;
-    }
-               
-}
+
+ 
+    
+
+
+
  
