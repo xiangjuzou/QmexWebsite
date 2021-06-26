@@ -6,6 +6,7 @@ import Verhaal from './Contentful/Verhaal/Verhaal';
 import WidthContainer from './Common/WidthContainer';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import ContactInfo from './Contentful/ContactInfo';
+import Titel from './Contentful/Verhaal/Titel';
 
 
 
@@ -31,13 +32,13 @@ export default class Contact extends Component {
                 </div>
 
              
-                <WidthContainer width={1.5} >
+                <WidthContainer width={2} >
                     <ContactInfo  content={this.props.content.contactgegevens.fields}/>  
                  </WidthContainer> 
               
 
-                <div className="text-center position-relative" style={{ top: '-100px' }}>
-                <div id="contact_verhaal">
+                <div className="text-center position-relative" style={{ top: '-120px' }}>
+                <div id="contact_verhaal bg-light">
                       <Verhaal content={this.props.content.verhaal.fields} width={3} />
                   </div>
                 
@@ -47,7 +48,7 @@ export default class Contact extends Component {
 
                  </div>
                 <div>
-                    <Verhaal className="text-center my-4" content={this.props.content.mapInleiding.fields} />
+                    <Titel className="text-center" content={this.props.content.mapInleiding.fields} />
                 <div style={{ width:"80%"}} className="mx-auto ">
                  <Map center={{ lat: 52.2409555, lng: 6.1859974 }} zoom={12} />
                  </div>

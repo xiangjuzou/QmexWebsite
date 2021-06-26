@@ -20,7 +20,7 @@ export default class Titel extends Component {
         return (
             <div {...overgeblevenProps} >
                 <WidthContainer width={this.props.width}>
-                    <h2 className="my-4">{this.props.content?.titel}</h2>
+                    <h2 className="my-5">{this.props.content?.titel}</h2>
                 </WidthContainer>
             </div>
         );

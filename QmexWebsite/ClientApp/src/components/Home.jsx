@@ -76,7 +76,7 @@ export default class Home extends Component {
                     <Titel className="text-center" content={this.props.content.brancheInleiding.fields} />
                     <WidthContainer width={1}>
                         <VerhaalMetFoto id="home_blog"
-                            content={this.props.content.homeTweedeBanner.fields} style={{ backgroundColor: "#f4f3f3", paddingLeft: "25px"}} />
+                            content={this.props.content.homeTweedeBanner.fields} style={{paddingLeft:"30px"}} />
                 </WidthContainer>
                </div>
 
