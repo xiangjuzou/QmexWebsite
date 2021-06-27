@@ -29,7 +29,7 @@ export default class VerhaalMetFoto extends Component {
         }
 
         let col1 = (
-            <Col md={6} sm={12}>
+            <Col id="col-one" className="mb-4" md={6} sm={12}>
                 <h2 className="my-5">{this.props.content?.titel}</h2>
                 <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
                 <div className="my-4">

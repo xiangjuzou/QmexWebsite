@@ -73,11 +73,13 @@
 html {
     background-color: #292929;
 }
+
  footer {
         width: 100%;
         background-color:#292929;
-        margin-top: 70px;
-        font-size:21px;
+        margin-top: 70px; 
+        font-size:14px;
+        line-height:2;
     }
 
  footer a {
@@ -87,17 +89,17 @@ html {
 #copyright {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    margin-top: 25px;
+    margin-bottom:2px;
     text-align: center;
-    font-size: small;
+    font-size:small;
     color: white;
 }
 
 
 .footer_social img {
-    width: 35px;
-    margin: 10px;
+    width: 30px;
+    margin: 8px;
 }
 
 footer a:hover {
@@ -115,9 +117,6 @@ header, nav a {
     font-weight:700;
 }
 
-.navbar-brand {
-    margin-left: auto;
-}
 
 .navbar-nav{
     margin-left:auto;
@@ -203,7 +202,38 @@ body {
      color:#f4f4f4;
  }
 
- #home_waarden .card-img-top {
+#home_verhaal{
+font-size:18px;
+}
+
+#home_verhaal #section_0 h2{
+  text-align:end;
+  font-weight:bold;
+  font-size:42px;
+  margin:10px;
+}
+
+ #home_verhaal #section_0 strong {
+        text-align: end;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+ #home_verhaal #section_0 p {
+        text-align: end;
+        font-weight: bold;
+        font-size: 10px;
+        margin: 10px;
+    }
+
+    #home_verhaal #section_1 {
+        font-size: 17px;
+        padding: 30px;
+        letter-spacing: .30px;
+    }
+
+
+    #home_waarden .card-img-top {
         height: auto;
         width: 89px;
         padding-bottom: 20px;
@@ -231,6 +261,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     color: #f4f4f4 !important;
+    height:100%;
 }
 
 
@@ -261,6 +292,12 @@ body {
         margin: auto;
         padding: 10px;
     }
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .home_kaarten .card-img-top:hover {
         animation-name: hk_img;
@@ -294,6 +331,12 @@ body {
     background-color: #D88102;
     border: none;
 }
+
+ #about_kaarten h3{
+    padding-top:15px;
+    font-size:20px;
+    font-weight:bold;
+ }
 #about_topverhaal h1 {
     text-align: center;
 }
@@ -375,10 +418,19 @@ color:#f48c00;
 
 @media screen and (max-width: 576px) {
     .footer_social {
-        margin-top: 3rem;
+        margin-top: 1.8rem;
     }
 
- .home_kaarten .card-img-top, .tussenpage_kaarten .card-img-top {
+    .navbar-brand{
+
+    }
+    .navbar-brand .header_logo {
+        margin-left: auto;
+     
+    }
+
+
+    .home_kaarten .card-img-top, .tussenpage_kaarten .card-img-top {
         height: auto;
         width: 100%;
         margin: 10px;
@@ -389,6 +441,13 @@ color:#f48c00;
     .home_kaarten .p-2 {
         padding: 0!important;
     }
+
+    #home_waarden .card{
+       margin-right:15px;
+      margin-left:15px;
+    }
+
+
 }
 
 @media screen and (max-width:976px){
@@ -396,11 +455,16 @@ color:#f48c00;
         width: 160px;
     }
 
+    #navLink a {
+        font-size: 12px;
+    }
     #navLink a:hover {
         text-decoration: none !important;
         color: #f48c00 !important;
         border-bottom: 0px;
-        padding-bottom: 8px;
+        font-size:12px;
+        margin:0px 0px;
+        
     }
 
     input.form-control {
@@ -410,6 +474,30 @@ color:#f48c00;
     #home_topbanner h1{
         font-size: 38px;
     }
+
+    .home_news #col-one {
+        text-align: center;
+    }
+
+     .home_news #col-one a {
+         margin: auto;
+        }
+
+
+        #home_verhaal #section_0 h2 {
+            font-size: 38px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    #home_verhaal #section_0 strong {
+        font-size: 13px
+    }
+
+        #home_verhaal #section_0 p {
+            font-size: 9px;
+            text-align: center;
+        }
 }
 
 

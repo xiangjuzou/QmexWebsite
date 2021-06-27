@@ -35,11 +35,11 @@ export default class Home extends Component {
                     <VMFJumbo content={this.props.content.banner.fields} height="77vh" cover pos="bottomleft" />    
                 </div>
 
-                <WidthContainer width={1} id="home_verhaal" className="py-5 my-5">
+                <WidthContainer width={1} id="home_verhaal" className="my-5">
                     <Columns>
                         {
-                          this.props.content.inleiding.map( (inleiding,index) => (
-                              <Col lg={6} sm={12} key={index}>
+                          this.props.content.inleiding.map( (inleiding,i) => (
+                              <Col lg={6} sm={12} id={"section_" + i}>
                                   <Verhaal className="text-left" content={inleiding.fields}/>
                                 </Col>
                             ))
@@ -52,7 +52,7 @@ export default class Home extends Component {
                     <Titel className="text-center mt-5" content={this.props.content.productInleiding.fields}  />
                 </div>
 
-                <div className="mb-5 home_kaarten"  >
+                <div className="mb-5 home_kaarten">
                     <Columns fluid  >
                     {
                             this.props.content.producten.map((k, id) => (
@@ -64,17 +64,17 @@ export default class Home extends Component {
                     </Columns>
                 </div>
  
-                <div id="home_waarden" className="my-5 py-5 ">
+                <div id="home_waarden" className="my-5 py-5">
                     <Columns>
-                        {this.props.content.waarden.map((k, i) => <Col id={"kaart_" + i} style={{ padding: '0px' }} key={k.fields.name} md={12} lg={4} xl={4} sm={12}  >
+                        {this.props.content.waarden.map((k, i) => <Col id={"kaart_" + i} style={{ padding:'0px', marginBottom:'10px'}} key={k.fields.name} md={12} lg={4} xl={4} sm={12}  >
                             <Kaart content={k.fields} linkimage  className="d-flex flex-column align-items-center text-dark p-5" /></Col>)}
                     </Columns>
                 </div>
                
                
-                <div className="my-5">
-                    <Titel className="text-center" content={this.props.content.brancheInleiding.fields} />
-                    <WidthContainer width={1}>
+                <div className="my-5 home_news" >
+                    <Titel className="text-center home_titel" content={this.props.content.brancheInleiding.fields} />
+                    <WidthContainer width={1.5}>
                         <VerhaalMetFoto id="home_blog"
                             content={this.props.content.homeTweedeBanner.fields} style={{paddingLeft:"30px"}} />
                 </WidthContainer>

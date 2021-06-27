@@ -37,7 +37,7 @@ export default class About extends Component {
                 <Columns fluid>
                     {
                         this.props.content.kaarten.map((k) => (
-                            <Col id='aboutKaart' key={k.fields.name} md={6} lg={6} xl={3} sm={12} className='m-2 pt-5 text-center'>
+                            <Col id='aboutKaart' key={k.fields.name} md={6} lg={6} xl={3} sm={12} className='m-3 py-5 text-center'>
                                 <Kaart content={k.fields} />
                             </Col>
                         ))

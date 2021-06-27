@@ -7,9 +7,9 @@ const Footer = React.memo((props) => {
 
     return (
         <footer>
-            <Columns className='pt-5' >
-                <Col xs={12} lg={3} className="d-flex align-items-center justify-content-center mb-5">
-                    <img src="/img/logotrano.png" width="100%" className="footer_logo mx-auto " alt="footer logo"/>
+            <Columns className='pt-4' >
+                <Col xs={12} lg={3} className="d-flex align-items-center justify-content-center">
+                    <img src="/img/logotrano.png" width="195px"  className="footer_logo mx-auto mb-5 " alt="footer logo"/>
                 </Col>
 
                 <Col xs={6} lg={3} className="justify-content-center align-items-center d-flex">
@@ -30,9 +30,9 @@ const Footer = React.memo((props) => {
 
             </Columns>
             <div id='copyright'>
-                <p> All rights reserved by Qmex Technology B.V.. copyright &copy; 2021</p>
+                <p>Copyright &copy; 2021 Qmex Technology B.V. </p>
                 <span className="mx-2 bold"> || </span>
-                <a href="/privacy" target='_blank' > <h6> Privacy </h6> </a> 
+                <a href="/privacy" target='_blank' > Privacy </a> 
             </div>
 
         </footer>

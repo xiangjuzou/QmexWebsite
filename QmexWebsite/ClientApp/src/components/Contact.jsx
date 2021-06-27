@@ -27,7 +27,7 @@ export default class Contact extends Component {
         return (
             <Fragment>
 
-                <div id="contact_banner" className="position-relative mb-3">
+                <div id="contact_banner" className="position-relative mb-3 text-dark">
                     <VMFJumbo content={this.props.content.banner.fields} cover pos="bottomleft" height="50vh" />
                 </div>
 
@@ -48,7 +48,8 @@ export default class Contact extends Component {
 
                  </div>
                 <div>
-                    <Titel className="text-center" content={this.props.content.mapInleiding.fields} />
+                    <Titel className="text-center position-relative" style={{ top: '-60px' }}
+                        content={this.props.content.mapInleiding.fields} />
                 <div style={{ width:"80%"}} className="mx-auto ">
                  <Map center={{ lat: 52.2409555, lng: 6.1859974 }} zoom={12} />
                  </div>

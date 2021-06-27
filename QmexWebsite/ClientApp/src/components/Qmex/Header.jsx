@@ -36,7 +36,7 @@ class Header extends PureComponent {
             <header>
                 
                 <Navbar collapseOnSelect expand="lg" >
-                    <Navbar.Brand href="/" ><img alt="trans" src="/img/logotrano.png" width="195px" height="66px" className="header_logo mx-6" /></Navbar.Brand>
+                    <Navbar.Brand href="/" ><img alt="trans" src="/img/logotrano.png" width="195px" height="auto" className="header_logo mx-3" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" />
                     <Navbar.Collapse id="navbarSupportedContent" style={{ zIndex: '3', backgroundColor: "white" }}>
                         <Nav id="navbarSupportedContent" style={{flexWrap: "wrap" }}  >

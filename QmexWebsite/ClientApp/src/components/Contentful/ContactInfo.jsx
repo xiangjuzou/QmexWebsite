@@ -14,16 +14,16 @@ export default class ContactInfo extends Component {
 
         return (
             <Columns fluid >
-                <Col id="contact_kaart-one" xs={11} md={3} lg={3} className="p-5 my-5 mx-3">
+                <Col id="contact_kaart-one" xs={11} md={3} lg={3} className="p-4 my-4 mx-3">
                     <h2 className="py-5">Adres</h2>
                     <ReactMarkdown>{this.props.content?.adres}</ReactMarkdown>
                 </Col>
-                <Col id="contact_kaart-two" xs={11} md={4} lg={3} className="p-5 my-5 mx-3 ">
+                <Col id="contact_kaart-two" xs={11} md={4} lg={3} className="p-4 my-4 mx-3 ">
                     <h2 className="py-5 ">Tel. & E-mail</h2>
                     <p className="pb-3">{Phone} &nbsp; {this.props.content?.telefoonnr}</p>
                     <p> {Email} &nbsp; {this.props.content?.email}</p>
                 </Col>
-                <Col id="contact_kaart-three" xs={11} md={3} lg={3} className="p-5 my-5 mx-3">
+                <Col id="contact_kaart-three" xs={11} md={3} lg={3} className="p-4 my-4 mx-3">
                     <h2 className="py-5">KVK & BTW </h2>
                     <p >{this.props.content?.kvk}</p>
                     <p> {this.props.content?.btw}</p>                 

@@ -16,7 +16,7 @@ export default class Kaart extends Component {
         // card met button-link
         if (this.props.content?.linkUrl && this.props.button) {
             return (
-                <Card style={{ marginBottom: "15px" }} className={this.props.className}  >
+                <Card style={{ marginBottom: "15px", height:"100%" }} className={this.props.className}  >
                     {this.renderCardBody(
                         <Button className="bg-primary"><Link className="text-white" style={{ textDecoration:'none' }} to={this.props.content?.linkUrl}>{lt}</Link></Button>
                     , overlay)}
@@ -27,9 +27,9 @@ export default class Kaart extends Component {
         // card met link
         if (this.props.content?.linkUrl && !this.props.button && !this.props.linkimage) {
             return (
-                <Card style={{ marginBottom: "15px" }} className={this.props.className}>
+                <Card style={{ marginBottom: "15px", height: "100%" }} className={this.props.className}>
                     {this.renderCardBody(
-                        <Link style={{ textDecoration: 'none' }} to={this.props.content?.linkUrl}> &gt; {lt}</Link>
+                        <Link style={{ textDecoration: 'none', marginTop:'auto' }} to={this.props.content?.linkUrl}> &gt; {lt}</Link>
                     , overlay)}
                 </Card>
             );
@@ -39,7 +39,7 @@ export default class Kaart extends Component {
         if (this.props.content?.linkUrl && this.props.linkimage) {
             return (
                 <Link className="text-white" style={{ textDecoration: 'none' }} to={this.props.content?.linkUrl}>
-                    <Card style={{ marginBottom: "15px" }} className={this.props.className} >
+                    <Card style={{ marginBottom: "15px", height: "100%" }} className={this.props.className} >
                         {this.renderCardBody("", overlay)}
                     </Card>
                 </Link>
