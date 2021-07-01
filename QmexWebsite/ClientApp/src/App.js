@@ -37,7 +37,7 @@ export default class App extends Component {
             { to: '/support/downloads', title: 'Downloads', render: () => <ServiceDetail content={this.state.downloads} page='dienst' statecallback={this.saveState} /> },
             { to: '/support/video', title: 'Video', render: () => <ServiceDetail content={this.state.vedio} page='vedio' statecallback={this.saveState} /> },
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
-            { to: '/blog', title: 'Blog', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
+            { to: '/blog', title: 'BLOG', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/faq', title: 'FAQ', render: () => <Faq content={this.state.faq} statecallback={this.saveState} /> },
 
             { to: '/', title: 'HOME', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },

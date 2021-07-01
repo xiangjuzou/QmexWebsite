@@ -11,14 +11,14 @@ import ReactMarkdownWithHtml from 'react-markdown/with-html';
 export default class Kaart extends Component {
     render() {
         const overlay = this.props.overlay ? "card-img-overlay" : "";
-        const lt = this.props.linktekst ?? "Bekijk meer";
+        const lt = this.props.linktekst ?? "lees meer";
 
         // card met button-link
         if (this.props.content?.linkUrl && this.props.button) {
             return (
                 <Card style={{ marginBottom: "15px", height:"100%" }} className={this.props.className}  >
                     {this.renderCardBody(
-                        <Button className="bg-primary"><Link className="text-white" style={{ textDecoration:'none' }} to={this.props.content?.linkUrl}>{lt}</Link></Button>
+                        <Button className="bg-primary" style={{display: "inline-block"}}><Link className="text-white" style={{ textDecoration:'none'}} to={this.props.content?.linkUrl}>{lt}</Link></Button>
                     , overlay)}
                 </Card>
             );
@@ -68,7 +68,7 @@ export default class Kaart extends Component {
                     <Card.Text>
                         <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
                     </Card.Text>
-                    {btn}
+                     {btn}
                 </Card.Body>
             </Fragment>
         );

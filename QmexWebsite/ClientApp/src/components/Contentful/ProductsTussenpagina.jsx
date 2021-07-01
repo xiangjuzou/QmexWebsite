@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import Kaart from './Kaart/Kaart';
 import { Col } from 'react-bootstrap';
 import Columns from '../Common/Columns';
-import Verhaal from '../Contentful/Verhaal/Verhaal';
 import WidthContainer from '../Common/WidthContainer';
+import Titel from '../Contentful/Verhaal/Titel';
 
 
 
@@ -14,9 +14,24 @@ import WidthContainer from '../Common/WidthContainer';
              <Fragment>
 
                  <div >
-                     <Verhaal className="text-center my-5" id='tussenpage_verhaal'
+                     <Titel className="text-center " id='tussenpage_verhaal'
                          content={props.content.inleiding.fields} />
                  </div>
+
+                 <div className=" mb-5 tussenpage_kaarten">
+                     <Columns>
+                            {
+                                props.content.kaarten.map((k, index) => (
+                                     <Col key={index} md={6} lg={6} sm={12}>
+                                        <Kaart content={k.fields} className="p-1 mb-5 tussenpage_kaart" />
+                                     </Col>
+                                 ))
+                             }
+                         </Columns>
+                 </div>
+
+
+
                  <div id="tussenpage_icoon">
                      <div className="pb-2">
                          <WidthContainer width={2}>
@@ -37,19 +52,6 @@ import WidthContainer from '../Common/WidthContainer';
                      </div>
 
                  </div>
-                 
-                 <div className="mt-5 mb-5 tussenpage_kaarten">
-                     <Columns>
-                            {
-                                props.content.kaarten.map((k, index) => (
-                                     <Col key={index} md={6} lg={6} sm={12}>
-                                        <Kaart content={k.fields} className="p-1 mb-5 tussenpage_kaart" />
-                                     </Col>
-                                 ))
-                             }
-                         </Columns>
-                 </div>
-
                 
              </Fragment>
          )

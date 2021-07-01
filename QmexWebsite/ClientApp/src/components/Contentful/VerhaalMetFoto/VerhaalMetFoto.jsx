@@ -10,8 +10,7 @@ import { Link } from 'react-router-dom';
 //
 // de rest worden attributen in de html
 export default class VerhaalMetFoto extends Component {
-  
-
+    
     render() {
 
         // verzamel de "vreemde" props, en zet deze als attributen op de 1e div.
@@ -28,19 +27,24 @@ export default class VerhaalMetFoto extends Component {
             className += this.props.className;
         }
 
+       
+       
+
+       
         let col1 = (
-            <Col id="col-one" className="mb-4" md={6} sm={12}>
-                <h2 className="my-5">{this.props.content?.titel}</h2>
+            <Col id="col-one" className="mb-4" md={5} sm={12}>
+                <h2 className="mb-3">{this.props.content?.titel}</h2>
+                <div className="mr-auto mb-5" style={{ borderTop: "5px #f48c00 solid", width: '100px', boxShadow: '0px 3px 1px #ccc' }} />
                 <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
-                <div className="my-4">
+                <div className="my-5">
                 {this.props.content?.moreUrl && <Link style={{ fontSize: '21px', textDecoration: 'none' }} className="mr-auto text-white p-2 bg-primary"
-                        to={this.props.content.moreUrl}>{this.props.content?.moreUrlText}</Link>}
+                        to={this.props.content?.moreUrl}>{this.props.content?.moreUrlText}</Link>}
                     </div>
             </Col>
         );
 
         let col2 = (
-            <Col md={6} sm={12}>
+            <Col md={7} sm={12}>
                 <img src={this.props.content?.fotoUrl} className="img-fluid" alt="foto"/>
             </Col>
             );
@@ -52,4 +56,5 @@ export default class VerhaalMetFoto extends Component {
             </div>
         );
     }
+
 }

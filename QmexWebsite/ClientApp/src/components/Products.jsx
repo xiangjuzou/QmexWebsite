@@ -42,19 +42,22 @@ export default class Products extends Component {
         if (!this.props.content) { return "Loading..."; }
         return (
             <Fragment>
+             
                 <div className='mb-5'>
                     <ProductsHoofdmenu content={this.props.menu} />
                 </div>
                 <Container fluid>
                     <Columns fluid>
-                        <Col md={3} lg={2} className='rounded border border-light border-3 pl-4 pt-4'>
+      
+                        <Col md={2} lg={2}>
                             <ProductsSidemenu content={this.props.submenu} hoofd={this.props.menu} slug={this.props.content.fields.slug} statecallback={this.props.statecallback}  />
                             </Col>
-                        <Col md={9} lg={10}>
+                        <Col md={10} lg={10}>
                             {this.getContent(this.props.content)}
                         </Col>
                     </Columns>
-                </Container>
+                    </Container>
+              
             </Fragment>
       );
     }

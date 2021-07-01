@@ -1,6 +1,6 @@
 ﻿import React, { Component,  Fragment } from 'react';
 import CFLoader from './Contentful/CFLoader';
-import {Col} from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
 import Columns from './Common/Columns';
 import Kaart from './Contentful/Kaart/Kaart';
 import Verhaal from './Contentful/Verhaal/Verhaal';
@@ -31,54 +31,62 @@ export default class Home extends Component {
 
         return (
             <Fragment>
-                <div id="home_topbanner" className="mb-5">
-                    <VMFJumbo content={this.props.content.banner.fields} height="77vh" cover pos="bottomleft" />    
+                <div id="home_topbanner">
+                    <VMFJumbo content={this.props.content.banner.fields} height="82vh" cover pos="bottomleft" />    
                 </div>
 
-                <WidthContainer width={1} id="home_verhaal" className="my-5">
-                    <Columns>
+                <Container fluid div id="home_verhaal" className="my-5">
+                    <Row>
                         {
                           this.props.content.inleiding.map( (inleiding,i) => (
-                              <Col lg={6} sm={12} id={"section_" + i}>
-                                  <Verhaal className="text-left" content={inleiding.fields}/>
-                                </Col>
+                              <Col lg={6} md={12} id={"section_" + i}>
+                                  { i === 0 && <Verhaal className="text-left" content={inleiding.fields} />}
+                                  { i === 1 && <Container fluid><Row><Col xl={7} lg={12}><Verhaal className="text-left" content={inleiding.fields} /></Col><Col xl={5} lg={12}></Col></Row></Container>}
+                               </Col>
                             ))
                         }
-                    </Columns>
-                </WidthContainer>
+                        </Row>
+                </Container>
 
              
-                <div >
-                    <Titel className="text-center mt-5" content={this.props.content.productInleiding.fields}  />
+                <div className="home_productInleiding text-center" >
+                    <Titel content={this.props.content.productInleiding.fields} />
                 </div>
 
-                <div className="mb-5 home_kaarten">
+                <div className="home_kaarten mb-6">
                     <Columns fluid  >
                     {
                             this.props.content.producten.map((k, id) => (
                                 <Col key={id} md={6} lg={6} xl={3} sm={12}>
-                                    <Kaart content={k.fields} className="p-2" />
+                                    <Kaart content={k.fields} className="home_kaart" button />
                             </Col>
                            ))
                     }
                     </Columns>
                 </div>
  
-                <div id="home_waarden" className="my-5 py-5">
-                    <Columns>
-                        {this.props.content.waarden.map((k, i) => <Col id={"kaart_" + i} style={{ padding:'0px', marginBottom:'10px'}} key={k.fields.name} md={12} lg={4} xl={4} sm={12}  >
-                            <Kaart content={k.fields} linkimage  className="d-flex flex-column align-items-center text-dark p-5" /></Col>)}
-                    </Columns>
+                <div id="home_waarden" className="my-6 py-3 mx-auto" style={{ width: "80%" }} >
+                    <Columns fluid>
+                        {this.props.content.waarden.map((k, i) => <Col id={"kaart_" + i} style={{ marginBottom:'10px'}} key={k.fields.name} md={4} lg={4} xl={4} sm={12}  >
+                            <Kaart content={k.fields} linkimage  className="text-white text-center mx-1" /></Col>)}
+               
+                   </Columns>
                 </div>
                
                
-                <div className="my-5 home_news" >
-                    <Titel className="text-center home_titel" content={this.props.content.brancheInleiding.fields} />
-                    <WidthContainer width={1.5}>
-                        <VerhaalMetFoto id="home_blog"
-                            content={this.props.content.homeTweedeBanner.fields} style={{paddingLeft:"30px"}} />
+                <div className="my-6 py-3" >
+                 
+                 <WidthContainer width={1}>
+                        <VerhaalMetFoto id="home_qmex"
+                            content={this.props.content?.homeTweedeBanner.fields} style={{paddingLeft:"30px"}} />
                 </WidthContainer>
-               </div>
+                </div>
+
+                <div className="my-6 pt-3 position-relative" >
+                    <div >
+                        <VMFJumbo content={this.props.content.blogBanner.fields} height="max(275px, 33vw)" cover id="home_blogBanner"  pos="bottomleft"  />
+                    </div>
+                </div>
 
             </Fragment>
         );

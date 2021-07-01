@@ -68,7 +68,6 @@
       letter-spacing: -.003em;
     }
 
-
 /* globale footer */
 html {
     background-color: #292929;
@@ -120,7 +119,6 @@ header, nav a {
 
 .navbar-nav{
     margin-left:auto;
-
 }
 
 .navbar-collapse.show form {
@@ -128,7 +126,7 @@ header, nav a {
 }
 
 #hfLink :hover, .sidemenulink:hover{
-    color: #f48c00 !important;
+    color: #D88102 !important;
 }
 
 #hfLink, .sidemenulink{
@@ -137,7 +135,7 @@ header, nav a {
 
 #navLink a:hover {
         text-decoration: none !important;
-        border-bottom: 2px solid #f48c00;
+        border-bottom: 3px solid #D88102;
         padding-bottom: 8px;
     }
 
@@ -166,8 +164,8 @@ button#serch_btn {
     color: black !important;
 }
 
- .sidemenulink:hover {
-        color: #f48c00 !important;
+.sidemenulink:hover {
+        color: #D88102 !important;
     }
 
 .side_subtitle {
@@ -176,13 +174,13 @@ button#serch_btn {
 
 /* globale body */
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-family: Roboto, Arial Nova Light, Arial light, Gill Sans Nova, Calibri,Times New Roman;
+    font-size: 15px;
     color: #384950;
-    font-weight: 300;
+    font-weight: 200;
     margin: 0;
     padding: 0;
-    letter-spacing: .2px;
+    letter-spacing: .1px;
     box-sizing: border-box;
     overflow-x: hidden;
 }
@@ -198,100 +196,170 @@ body {
     display:inline-block;
 }
 
- #home_topbanner h1{
+#home_topbanner h1{
      color:#f4f4f4;
  }
 
-#home_verhaal{
-font-size:18px;
+#home_verhaal {
+    font-size: 26px;
+    display: flex;
+    flex-direction:row;
 }
 
-#home_verhaal #section_0 h2{
-  text-align:end;
-  font-weight:bold;
-  font-size:42px;
-  margin:10px;
-}
+    
+#home_verhaal #section_0 h2 {
+        text-align: end;
+        font-weight: bold;
+        font-family:Times New Roman;
+        font-size: 50px;
+    }
 
  #home_verhaal #section_0 strong {
         text-align: end;
-        font-weight: bold;
-        font-size: 14px;
+        font-weight: 800;
+        font-style: normal;
+        font-family: 'Gill Sans Nova'
     }
 
- #home_verhaal #section_0 p {
+#home_verhaal span {
+        color: #D88102;
+        font-weight: 400;
+    }
+
+#home_verhaal #section_0 p {
         text-align: end;
-        font-weight: bold;
-        font-size: 10px;
-        margin: 10px;
+        margin-top: 20px;
+        font-weight: 250;
+        font-style: normal;
+        font-family: 'Gill Sans Nova'
     }
 
-    #home_verhaal #section_1 {
-        font-size: 17px;
-        padding: 30px;
-        letter-spacing: .30px;
+ #home_verhaal #section_1 strong {
+        font-size: 24px;
     }
 
-
-    #home_waarden .card-img-top {
-        height: auto;
-        width: 89px;
-        padding-bottom: 20px;
+ #home_verhaal #section_1 p {
+        font-size: 18px;
     }
-
 
 #kaart_0 .card {
-    background-color: #656464;
+    background-image: url("/img/home_waard1.png");
 }
 
 #kaart_1 .card {
-    background-color: #656464;
+    background-image: url("/img/home_waard2.png");
 }
 
 #kaart_2 .card {
-    background-color: #656464;
+    background-image: url("/img/home_waard3.png");
+}
+
+#home_waarden .card-text h4 {
+    font-weight: 800;
+    font-style: normal;
+    font-family: 'Gill Sans Nova'
+}
+
+.home_kaarten button, .service_kaart button {
+    margin-right: auto;
+    box-shadow: -3px 3px 5px #ccc;
+    border-radius: 10px;
+}
+.home_kaart h5{
+    font-weight:800;
 }
 
 #home_waarden .card:hover {
-    background-color: #D88102;
-   
+    background-color: #D88102;   
 }
 
-#home_waarden .card {
-    font-size: 16px;
-    font-weight: bold;
-    color: #f4f4f4 !important;
+#home_waarden .card h3{
     height:100%;
 }
 
-
 #home_verhaal {
-    animation-name: showVerhaal;
+    animation-name:showVerhaal;
     animation-duration: 2s;
     animation-delay: 0.5s;
-    animation-fill-mode: forwards;
+    animation-fill-mode:forwards;
 }
 
 #home_verhaal h1 {
-        font-size:34px;
-    }
+    font-size:34px;
+ }
 
-@keyframes showVerhaal {
-    0% {bottom: -100px; color: white;}
-    100% { bottom: 0px; color: black;}
+.home_productInleiding h2 {
+    font-size: 45px;
+    font-family: 'Roboto';
+    font-weight: 900;
+    display: inline-block;
+    padding-bottom: 15px;
+    text-shadow: -3px 3px 1px #ccc;
 }
 
-.home_kaarten{
+#home_blogBanner .col {
+    background-color: #ffffff;
+    opacity: 0.8;
+    position: absolute;
+    top: 45%;
+    left: 0%;
+    width: 26%;   
+}
+
+#home_blogBanner h2 {
+    font-weight: 900;
+    color: #000000;
+    font-size:48px;
+    font-family: 'Gill Sans Nova';
+    background-color: #ffffff;
+}
+
+#home_blogBanner p {
+    line-height: 1;
+    padding-left: 5px;
+    color: #000000;
+    font-size:20px;
+    font-family: Arial;
+    background-color: #ffffff;
+}
+
+#home_blogBanner div div div div {
+    position:absolute;
+    top: 180px;
+    left: -10px;
+}
+
+#home_blogBanner a {
+    font-weight: bold;
+}
+
+    @keyframes showVerhaal {
+        0% {
+            bottom: -100px;
+            color: white;
+        }
+
+        100% {
+            bottom: 0px;
+            color: black;
+        }
+    }
+
+ .home_kaarten{
     width:90%;
     margin:auto;
 }
-
- .home_kaarten .card-img-top, .tussenpage_kaarten .card-img-top {
-        height: auto;
-        width: 100%;
-        margin: auto;
-        padding: 10px;
-    }
+.home_kaart h5 {
+    font-family: 'Gill Sans Nova';
+    font-size:23px;
+}
+#home_waarden .card-img-top {
+    width: 89px;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+}
 
 .card-body {
     display: flex;
@@ -299,28 +367,33 @@ font-size:18px;
     justify-content: space-between;
 }
 
-.home_kaarten .card-img-top:hover {
-        animation-name: hk_img;
-        animation-duration: 0.6s;
-        animation-timing-function: linear;
-        animation-iteration-count: 1;
-    }
-
-#home_blog div div {
-    display:flex;
-    flex-direction:column;
+#home_qmex h2 {
+    font-weight: 900;
+    font-family: 'Gill Sans Nova';
+    font-size:38px;
 }
+
+#home_qmex p {
+    font-size: 18px;
+    width: 80%;
+    text-align: justify;
+}
+
 
 @keyframes hk_img {
     0% {transform: translate(0px, 0px) rotate(0deg); }
     30% {transform: translate(10px, 0px) rotate(0deg);}
     50% {transform: translate(0px, 0px) rotate(0deg);}
-    80% {transform: translate(-10px, 0px) rotate(0deg); }
+    80% {transform: translate(-10px, 0px) rotate(0deg);}
     100% {transform: translate(0px, 0px) rotate(0deg);}
 }
 
 
 /*product*/
+
+#side_titel{
+    text-shadow: -2px 2px #ccc;
+}
 
 .btn_collapse {
     border-radius: 19px;
@@ -342,7 +415,6 @@ font-size:18px;
 }
 
 #about_sidefotos h2 {
-    border-top: #f48c00 solid 4px;
     padding-top: 10px;
     display: inline-block;
 }
@@ -351,8 +423,16 @@ font-size:18px;
 box-shadow:1px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
- /*product oneKaart*/
-.oneKaart_btn a {
+#about_showcase #col-one div {
+    border:none !important;
+}
+
+ #about_showcase #col-one  h2{
+     padding-bottom:20px;
+ }
+
+    /*product oneKaart*/
+    .oneKaart_btn a {
         text-decoration: none;
     }
 
@@ -368,7 +448,7 @@ box-shadow:1px 3px 5px rgba(0, 0, 0, 0.1);
     outline: none !important;
 }
     /*productie*/
-    .production p {
+ .production p {
         margin-left: 8px;
     }
 
@@ -403,11 +483,13 @@ color:#f48c00;
     font-size: 1.5rem;
 }
 
+
+
  #contact_kaart-one:hover, #contact_kaart-two:hover, #contact_kaart-three:hover {
         background: #D88102;
     }
 /*services*/
-#service_kaarten .service_kaart:hover, .tussenpage_kaarten .tussenpage_kaart:hover {
+#service_kaarten .service_kaart:hover, .tussenpage_kaarten .tussenpage_kaart:hover, .home_kaart:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
@@ -416,92 +498,160 @@ color:#f48c00;
     background-image: linear-gradient(to bottom right,#f4f4f4,rgba(255,0,0,0), #f48c00);
 }
 
-@media screen and (max-width: 576px) {
-    .footer_social {
-        margin-top: 1.8rem;
+@media screen and (max-width: 1560px) {
+    #home_blogBanner h2 {
+        font-size: 40px;
+    }
+    #home_blogBanner p {
+        font-size: 16px;
     }
 
-    .navbar-brand{
-
+    #home_blogBanner .col {
+        width: 30%;
     }
-    .navbar-brand .header_logo {
-        margin-left: auto;
-     
-    }
+}
+@media screen and (max-width: 1200px) {
 
-
-    .home_kaarten .card-img-top, .tussenpage_kaarten .card-img-top {
-        height: auto;
-        width: 100%;
-        margin: 10px;
-        padding: 0;
-        padding-right: 20px;
+    #home_blogBanner div div div div {
+        top: 170px;
     }
 
-    .home_kaarten .p-2 {
-        padding: 0!important;
+    #home_blogBanner .col {
+        top: 35%;
+        width: 36%;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    #home_blogBanner h2 {
+        font-size: 35px;
     }
 
-    #home_waarden .card{
-       margin-right:15px;
-      margin-left:15px;
+    #home_blogBanner p {
+        font-size: 14px;
     }
 
+    #home_blogBanner div div div div {
+        top: 150px;
+    }
 
 }
 
-@media screen and (max-width:976px){
-    .header_logo ,.footer_logo {
-        width: 160px;
-    }
-
-    #navLink a {
-        font-size: 12px;
-    }
-    #navLink a:hover {
-        text-decoration: none !important;
-        color: #f48c00 !important;
-        border-bottom: 0px;
-        font-size:12px;
-        margin:0px 0px;
-        
-    }
-
-    input.form-control {
-        margin-bottom: 10px;
-    }
-
-    #home_topbanner h1{
-        font-size: 38px;
-    }
-
-    .home_news #col-one {
-        text-align: center;
-    }
-
-     .home_news #col-one a {
-         margin: auto;
+    @media screen and (max-width: 976px) {
+        #home_blogBanner .col {
+            top: 25%;
+            width: 40%;
+        }
+        #home_blogBanner div div div div {
+            top: 140px;
         }
 
+        .header_logo, .footer_logo {
+            width: 160px;
+        }
+
+        #navLink a {
+            font-size: 12px;
+        }
+
+            #navLink a:hover {
+                text-decoration: none !important;
+                color: #f48c00 !important;
+                border-bottom: 0px;
+                font-size: 12px;
+                margin: 0px 0px;
+            }
+
+        input.form-control {
+            margin-bottom: 10px;
+        }
+
+        #home_topbanner h1 {
+            font-size: 38px;
+        }
+
+        .home_news #col-one {
+            text-align: center;
+        }
+
+            .home_news #col-one a {
+                margin: auto;
+            }
 
         #home_verhaal #section_0 h2 {
-            font-size: 38px;
-            font-weight: bold;
             text-align: center;
         }
-
-    #home_verhaal #section_0 strong {
-        font-size: 13px
+  
+        #home_verhaal #section_0 p {
+            text-align: center;
+        }
+       
     }
 
-        #home_verhaal #section_0 p {
-            font-size: 9px;
+@media screen and (max-width: 750px) {
+    #home_blogBanner .col {
+        top: 20%;
+        width: 50%;
+    }
+
+
+}
+  
+
+    @media screen and (max-width: 576px) {
+        .footer_social {
+            margin-top: 1.8rem;
+        }
+
+        .navbar-brand {
+        }
+
+          .navbar-brand .header_logo {
+                margin-left: auto;
+            }
+
+        #home_waarden .card {
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        #home_blogBanner .col {
+            width: 50%;
+            top: 20%;
             text-align: center;
         }
-}
+
+        #home_blogBanner h2 {
+            font-size: 18px;
+        }
+
+        #home_blogBanner p {
+            font-size: 15px;
+            display: inline;
+        }
+
+        #home_verhaal #section_1, #home_verhaal #section_0 {
+            flex-basis: 100%;
+            display:flex;
+        }
 
 
- 
+        #home_blogBanner {
+            position: relative;
+        }
+
+            #home_blogBanner .col {
+            }
+
+            #home_blogBanner h2 {
+            }
+
+            #home_blogBanner p {
+            }
+    }
+
+
+
     
 
 

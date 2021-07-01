@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import WidthContainer from '../../Common/WidthContainer';
+import { Col } from 'react-bootstrap';
 
 
 // Props: 
@@ -19,7 +20,10 @@ export default class Titel extends Component {
         return (
             <div {...overgeblevenProps} >
                 <WidthContainer width={this.props.width}>
-                    <h2 className="my-4">{this.props.content?.titel}</h2>
+                    <Col>
+                        <h2 className="mt-5 text-center position-relative" style={{ fontFamily: "'Roboto Black'", fontStyle: 'normal', fontWeight:'900' }}>{this.props.content?.titel}</h2>
+                        <div className="mx-auto mb-5" style={{ borderTop: "5px #f48c00 solid", width: '100px', boxShadow: '0px 3px 1px #ccc' }} />
+                    </Col>
                 </WidthContainer>
             </div>
         );
