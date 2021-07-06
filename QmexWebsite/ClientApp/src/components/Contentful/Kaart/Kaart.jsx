@@ -18,7 +18,7 @@ export default class Kaart extends Component {
             return (
                 <Card style={{ marginBottom: "15px", height:"100%" }} className={this.props.className}  >
                     {this.renderCardBody(
-                        <Button className="bg-primary" style={{display: "inline-block"}}><Link className="text-white" style={{ textDecoration:'none'}} to={this.props.content?.linkUrl}>{lt}</Link></Button>
+                        <Button className="bg-primary" style={{ display: "inline-block" }}><Link className="text-white" style={{ textDecoration: 'none', fontSize:'18px' }} to={this.props.content?.linkUrl}>{lt}</Link></Button>
                     , overlay)}
                 </Card>
             );
@@ -39,7 +39,7 @@ export default class Kaart extends Component {
         if (this.props.content?.linkUrl && this.props.linkimage) {
             return (
                 <Link className="text-white" style={{ textDecoration: 'none' }} to={this.props.content?.linkUrl}>
-                    <Card style={{ marginBottom: "15px", height: "100%" }} className={this.props.className} >
+                    <Card className={this.props.className} >
                         {this.renderCardBody("", overlay)}
                     </Card>
                 </Link>

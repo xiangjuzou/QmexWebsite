@@ -26,7 +26,7 @@ export default class VMFJumbo extends Component {
         let pos = "";
         switch (this.props.pos) {
             case "bottomleft":
-                pos = "text-left ml-5 pl-3 pb-3";
+                pos = "text-left ml-5 pl-5 pb-4";
                 break;
             case "top":
                 pos = "text-center pt-2 lead";
@@ -47,7 +47,7 @@ export default class VMFJumbo extends Component {
                             <h1 className='display-4'>{this.props.content?.titel}</h1>
                             <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
                             <div className="my-4">
-                                {this.props.content?.moreUrl && <Link style={{ textDecoration:'none'}} className="text-white bg-primary p-2 ml-2"
+                                {this.props.content?.moreUrl && <Link style={{ textDecoration:'none',fontSize:'19px'}} className="text-white bg-primary py-2 px-3 ml-2"
                                     to={this.props.content?.moreUrl}>{this.props.content?.moreUrlText}</Link>}
                             </div>
                         </Col>

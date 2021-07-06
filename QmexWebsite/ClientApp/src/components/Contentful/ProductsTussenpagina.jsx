@@ -4,7 +4,7 @@ import Kaart from './Kaart/Kaart';
 import { Col } from 'react-bootstrap';
 import Columns from '../Common/Columns';
 import WidthContainer from '../Common/WidthContainer';
-import Titel from '../Contentful/Verhaal/Titel';
+import VMFJumbo from '../Contentful/VerhaalMetFoto/VMFJumbo';
 
 
 
@@ -12,18 +12,13 @@ import Titel from '../Contentful/Verhaal/Titel';
   
          return (
              <Fragment>
-
-                 <div >
-                     <Titel className="text-center " id='tussenpage_verhaal'
-                         content={props.content.inleiding.fields} />
-                 </div>
-
-                 <div className=" mb-5 tussenpage_kaarten">
-                     <Columns>
+               
+                 <div className="mb-5 tussenpage_kaarten text-center">
+                     <Columns fluid>
                             {
-                                props.content.kaarten.map((k, index) => (
-                                     <Col key={index} md={6} lg={6} sm={12}>
-                                        <Kaart content={k.fields} className="p-1 mb-5 tussenpage_kaart" />
+                                props.content.kaarten.map((k, i) => (
+                                     <Col key={i} md={6} lg={6} sm={12} >
+                                        <Kaart content={k.fields}  className={"tussenkaart_" + i  + "p-2 my-3 tussenpage_kaart"}  button  />
                                      </Col>
                                  ))
                              }
@@ -31,27 +26,7 @@ import Titel from '../Contentful/Verhaal/Titel';
                  </div>
 
 
-
-                 <div id="tussenpage_icoon">
-                     <div className="pb-2">
-                         <WidthContainer width={2}>
-                             <Columns fluid>
-                                 {
-                                     props.content.hoofdmenus.map((hmi) => (
-                                         <Col className="text-center" key={hmi.fields.slug} >
-                                             <Link id="hfLink" to={"/products/" + hmi.fields.slug} xs={4} md={4}  >
-                                                 <img alt="icon" className='my-2' src={hmi.fields.iconUrl} />
-                                                 <br />
-                                                 <div className="">{hmi.fields.title}</div>
-                                             </Link>
-                                         </Col>
-                                     ))
-                                 }
-                             </Columns>
-                         </WidthContainer>
-                     </div>
-
-                 </div>
+                 
                 
              </Fragment>
          )

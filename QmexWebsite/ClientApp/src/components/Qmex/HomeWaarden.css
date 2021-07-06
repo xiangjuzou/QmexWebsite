@@ -1,0 +1,62 @@
+
+
+.home_waarden .card-body {
+    flex-grow: 0;
+}
+
+.home_waarden .waarden_kaart {
+    height: 12vw;
+    margin-bottom: 20px;
+}
+
+.home_waarden .card {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.home_waarden .kaart_0 {
+    background-image: url("/img/home_waard1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home_waarden .kaart_1 {
+    background-image: url("/img/home_waard2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home_waarden .kaart_2 {
+    background-image: url("/img/home_waard3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home_waarden img {
+    padding-bottom: 0px;
+    width: 81px;
+    margin-top:4rem;
+}
+
+.home_waarden .card-text h4 {
+    font-weight: 800;
+    font-style: normal;
+    font-family: 'Gill Sans Nova' ;
+    margin-bottom:1.5rem;
+}
+
+@media screen and (max-width: 992px) {  /* lg */
+    .home_waarden {
+        width: 60%;
+    }
+
+    .home_waarden .waarden_kaart {
+        height: 37vw;
+        margin-bottom: 30px;
+    }
+}
+

@@ -6,7 +6,7 @@ import ProductsTussenpagina from "./Contentful/ProductsTussenpagina.jsx";
 import ProductsSidemenu from "./Contentful/ProductsSideMenu.jsx";
 import ProductsShowcase from "./Contentful/ProductsShowcase.jsx";
 import ProductsDetail from "./Contentful/ProductsDetail.jsx";
-import { Col, Container} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 
 
 // props:
@@ -46,17 +46,18 @@ export default class Products extends Component {
                 <div className='mb-5'>
                     <ProductsHoofdmenu content={this.props.menu} />
                 </div>
-                <Container fluid>
+                
+                <div style={{width:'90%'}}>
                     <Columns fluid>
-      
-                        <Col md={2} lg={2}>
+
+                        <Col md={2} className="ml-auto" >
                             <ProductsSidemenu content={this.props.submenu} hoofd={this.props.menu} slug={this.props.content.fields.slug} statecallback={this.props.statecallback}  />
                             </Col>
-                        <Col md={10} lg={10}>
+                        <Col md={9} >
                             {this.getContent(this.props.content)}
                         </Col>
                     </Columns>
-                    </Container>
+                    </div>
               
             </Fragment>
       );

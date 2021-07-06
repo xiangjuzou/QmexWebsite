@@ -50,8 +50,7 @@ export default class App extends Component {
         this.home = 10;
 
         // menu en footer items 
-        this.FooterlinksLeft = [this.links[this.home+2], this.links[this.home+1], this.links[this.home+3]];
-        this.FooterlinksMiddle = [this.links[9], this.links[8], this.links[this.home+4]];
+        this.FooterlinksLeft = [this.links[9], this.links[8]];
         this.menulinks = this.links.slice(this.home);
 
         // get all url's from the basic-route's and save them for the search. (products added later.)

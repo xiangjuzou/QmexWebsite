@@ -10,7 +10,7 @@ import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSeedling, faStar, faClock } from '@fortawesome/free-solid-svg-icons';
-
+import HomeWaarden from './Qmex/HomeWaarden';
 
 export default class Home extends Component {
     constructor(props) {
@@ -20,8 +20,6 @@ export default class Home extends Component {
             CFLoader.LoadPage("c3pzHjdTf98FC3DscZGTa", "home", this.props.statecallback);
         }
     }
-
-    
 
     render() {
         if (!this.props.content) { return "Loading..."; }
@@ -64,27 +62,18 @@ export default class Home extends Component {
                     }
                     </Columns>
                 </div>
- 
-                <div id="home_waarden" className="my-6 py-3 mx-auto" style={{ width: "80%" }} >
-                    <Columns fluid>
-                        {this.props.content.waarden.map((k, i) => <Col id={"kaart_" + i} style={{ marginBottom:'10px'}} key={k.fields.name} md={4} lg={4} xl={4} sm={12}  >
-                            <Kaart content={k.fields} linkimage  className="text-white text-center mx-1" /></Col>)}
+
+                <HomeWaarden content={this.props.content} />
                
-                   </Columns>
-                </div>
-               
-               
-                <div className="my-6 py-3" >
-                 
-                 <WidthContainer width={1}>
+                <WidthContainer width={1} className="my-6 py-3">
                         <VerhaalMetFoto id="home_qmex"
                             content={this.props.content?.homeTweedeBanner.fields} style={{paddingLeft:"30px"}} />
                 </WidthContainer>
-                </div>
+               
 
                 <div className="my-6 pt-3 position-relative" >
-                    <div >
-                        <VMFJumbo content={this.props.content.blogBanner.fields} height="max(275px, 33vw)" cover id="home_blogBanner"  pos="bottomleft"  />
+                    <div>
+                        <VMFJumbo content={this.props.content.blogBanner.fields} height="max(275px, 28vw)" cover id="home_blogBanner"  pos="bottomleft"  />
                     </div>
                 </div>
 
