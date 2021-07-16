@@ -11,7 +11,7 @@ import ReactMarkdownWithHtml from 'react-markdown/with-html';
 export default class Kaart extends Component {
     render() {
         const overlay = this.props.overlay ? "card-img-overlay" : "";
-        const lt = this.props.linktekst ?? "lees meer";
+        const lt = this.props.linktekst ?? "Lees Meer";
 
         // card met button-link
         if (this.props.content?.linkUrl && this.props.button) {
@@ -29,7 +29,7 @@ export default class Kaart extends Component {
             return (
                 <Card style={{ marginBottom: "15px", height: "100%" }} className={this.props.className}>
                     {this.renderCardBody(
-                        <Link style={{ textDecoration: 'none', marginTop:'auto' }} to={this.props.content?.linkUrl}> &gt; {lt}</Link>
+                        <Link style={{ textDecoration: 'none', marginTop:'auto' }} to={this.props.content?.linkUrl}> {lt}</Link>
                     , overlay)}
                 </Card>
             );
@@ -52,10 +52,7 @@ export default class Kaart extends Component {
             <Card style={{ borderWidth: '0', marginBottom: "15px" }} className={this.props.className}>
                 {this.renderCardBody("", overlay)}
             </Card>
-        );
-
-
-
+        )
 
     }
 

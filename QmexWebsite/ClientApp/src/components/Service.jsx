@@ -30,7 +30,7 @@ export default class Service extends Component {
         return (
             <Fragment>
                 <div id="service_jumbo" className="mb-5 ">
-                    <VMFJumbo content={this.props.content.banner?.fields} height="58vh" cover pos="bottomleft"/>
+                    <VMFJumbo content={this.props.content.banner?.fields} height="48vh" cover pos="bottomleft"/>
                 </div>  
 
                
@@ -54,8 +54,8 @@ export default class Service extends Component {
 
                 <div id="service_kaarten" className="my-5 pt-5">
                     <Columns>
-                        {this.props.content.kaarten.map( (k,index) => <Col key={index} md={4} lg={4} xl={4} sm={12}>
-                            <Kaart key={k.fields?.name} button target="_blank" content={k.fields} className="service_kaart mb-3" /></Col>)}
+                        {this.props.content.kaarten.map((k, index) => <Col className="mb-5" key={index} md={4} lg={4} xl={4} sm={12}>
+                            <Kaart key={k.fields?.name} button target="_blank" content={k.fields} className="service_kaart" /></Col>)}
                     </Columns>
                 </div>
             </Fragment>

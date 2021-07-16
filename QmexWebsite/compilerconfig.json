@@ -2,5 +2,9 @@
   {
     "outputFile": "ClientApp/src/scss/bootstrap.custom.css",
     "inputFile": "ClientApp/src/scss/bootstrap.custom.scss"
+  },
+  {
+    "outputFile": "ClientApp/src/scss/global.css",
+    "inputFile": "ClientApp/src/scss/global.scss"
   }
 ]

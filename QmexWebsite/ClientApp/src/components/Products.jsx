@@ -1,7 +1,7 @@
 ﻿import React, { Component, Fragment } from 'react';
 import CFLoader from './Contentful/CFLoader';
 import Columns from './Common/Columns';
-import ProductsHoofdmenu from "./Contentful/ProductsHoofdmenu.jsx";
+import VMFTopBanner from "./Contentful/VerhaalMetFoto/VMFTopBanner.jsx";
 import ProductsTussenpagina from "./Contentful/ProductsTussenpagina.jsx";
 import ProductsSidemenu from "./Contentful/ProductsSideMenu.jsx";
 import ProductsShowcase from "./Contentful/ProductsShowcase.jsx";
@@ -40,20 +40,18 @@ export default class Products extends Component {
 
     render() {
         if (!this.props.content) { return "Loading..."; }
+
         return (
             <Fragment>
-             
-                <div className='mb-5'>
-                    <ProductsHoofdmenu content={this.props.menu} />
-                </div>
+                <VMFTopBanner content={this.props.content?.fields?.topBanner?.fields} /> 
                 
-                <div style={{width:'90%'}}>
+                <div style={{ width: '80%', margin: 'auto' }} className="mt-5 productPage" >
                     <Columns fluid>
 
-                        <Col md={2} className="ml-auto" >
-                            <ProductsSidemenu content={this.props.submenu} hoofd={this.props.menu} slug={this.props.content.fields.slug} statecallback={this.props.statecallback}  />
-                            </Col>
-                        <Col md={9} >
+                        <Col sm={12} md={2} xl={2} id="sidebalk" className="pr-5" >
+                            <ProductsSidemenu content={this.props.menu} slug={this.props.content.fields.slug} statecallback={this.props.statecallback}  />
+                        </Col>
+                        <Col sm={12} md={9} xl={9} id="product_right">
                             {this.getContent(this.props.content)}
                         </Col>
                     </Columns>

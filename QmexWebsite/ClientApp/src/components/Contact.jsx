@@ -28,7 +28,7 @@ export default class Contact extends Component {
             <Fragment>
 
                 <div id="contact_banner" className="position-relative mb-3 text-dark">
-                    <VMFJumbo content={this.props.content.banner.fields} cover pos="bottomleft" height="50vh" />
+                    <VMFJumbo content={this.props.content.banner.fields} cover pos="bottomleft" height="48vh" />
                 </div>
 
              

@@ -62,7 +62,7 @@ export default class SpecificatieKaart extends Component {
         }
        
         return (
-            <Card style={{ borderWidth: '0', marginBottom: "15px" }} className={this.props.className + " bg-light"}>
+            <Card style={{ borderWidth: '0', marginBottom: "15px" }} className={this.props.className + "bg-light"}>
                 <Card.Body>
                     <Card.Text>
                         <div>

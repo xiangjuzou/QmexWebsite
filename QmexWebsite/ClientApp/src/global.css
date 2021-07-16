@@ -1,407 +1,39 @@
-/* Bootstrap uitbreiding*/
-
-.display-5 {
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: 1.2;
-}
-
-.border-1 {
-    border-width: 1px !important;
-}
-
-.border-2 {
-    border-width: 2px !important;
-}
-.border-3 {
-    border-width: 3px !important;
-}
-
-.border-4 {
-    border-width: 4px !important;
-}
-.border-5 {
-    border-width: 5px !important;
-}
-
-.flex-basis-1 {
-    flex-basis: 100%;
-}
-.flex-basis-2 {
-    flex-basis: 50%;
-}
-.flex-basis-3 {
-    flex-basis: 33%;
-}
-.flex-basis-4 {
-    flex-basis: 25%;
-}
-.flex-basis-5 {
-    flex-basis: 20%;
-}
-.flex-basis-6 {
-    flex-basis: 16%;
-}
-
-@media screen and (max-width: 768px) {
-    .flex-basis-3 {
-        flex-basis: 50%;
-    }
-
-    .flex-basis-4 {
-        flex-basis: 50%;
-    }
-
-    .flex-basis-5 {
-        flex-basis: 50%;
-    }
-
-    .flex-basis-6 {
-        flex-basis: 50%;
-    }
-}
-
- h1 {
-      font-size: 36px;
-      line-height: 1.08349;
-      font-weight: 600;
-      letter-spacing: -.003em;
-    }
-
-/* globale footer */
-html {
-    background-color: #292929;
-}
-
- footer {
-        background-color:#364050;
-        margin-top: 30px; 
-        font-size:14px;
-        line-height:2;
- }
-   .footer_logo{
-        margin-right:auto;
-        margin-left:-3rem;
-    }
-
-    footer, footer a {
-        color: #f4f4f4;
-    }
-
-  .copyright_p{
-      font-size:12px;
-  }
-
-.footer_border {
-    text-transform: upperCase;
-    font-size: 18px;
-}
-
-.f_social{
-    font-size:1.7rem;
-    color:#D88102;
-}
-
-#copyright {
-    display: flex;
-    width: 100vw !important;
-    justify-content: center;
-    margin-bottom: 2px;
-    text-align: center;
-    font-size: 15px;
-    color: white;
-    background-color: #415b71;
-    align-items: center;
-}
-
-.address{
-    line-height:5px!important;
-}
-
-.footer_social img {
-    width: 20px;
-    margin: 8px;
-}
-
-footer a:hover {
-    color: #f48c00 !important;
-    text-decoration: none ;
-}
-
-/* globale header */
-header, nav.navbar {
-    max-height:82px;
-}
-
-header, nav a {
-    font-family: Montserrat, "Helvetica Neue", sans-serif;
-    font-weight:700;
-}
-
-
-.navbar-nav{
-    margin-left:auto;
-}
-
-.navbar-collapse.show form {
-    margin-left: 15px !important;
-}
-
-#hfLink :hover, .sidemenulink:hover{
-    color: #D88102 !important;
-}
-
-#hfLink, .sidemenulink{
-    text-decoration: none !important;
-}
-
-#navLink a:hover {
-        text-decoration: none !important;
-        border-bottom: 3px solid #D88102;
-        padding-bottom: 8px;
-    }
-
-
-button#serch_btn {
-    background:none;
-    border: none;
-    color:#555;
-}
-
-/*header*/
-#hfLink img:hover {
-    animation:shake 0.5s;
-    animation-iteration-count:3;
-    animation-duration:3s;
-}
-@keyframes shake{
-    0% {transform: translate(1px, 1px) rotate(0deg);}
-    30% {transform: translate(-6px, 0px) rotate(1deg);}
-    50% {transform: translate(-3px, 3px) rotate(-1deg);}
-    80% { transform: translate(-2px, -1px) rotate(1deg);}
-    100% { transform: translate(1px, -3px) rotate(-2deg); }
-}
-/* sidemenu links */
-.sidemenulink {
-    color: black !important;
-}
-
-.sidemenulink:hover {
-        color: #D88102 !important;
-    }
-
-.side_subtitle {
-    font-weight: bold;
-}
-
-/* globale body */
-body {
-    font-family: Arial, Gill Sans Nova, Roboto,Times New Roman;
-    font-size: 16px;
-    color: #384950;
-    font-weight: 200;
-    margin: 0;
-    padding: 0;
-    letter-spacing: .1px;
-    box-sizing: border-box;
-    overflow-x: hidden;
-}
-    
-
 /* home pagina */
-
-#home_topbanner h2 {
-    background:#f3994c;
-    color: white;
-    font-size: 21px;
-    padding: 5px;
-    display:inline-block;
-}
-
-#home_topbanner h1{
-     color:#f4f4f4;
- }
-
-#home_verhaal {
-    font-size: 22px;
-    display: flex;
-    flex-direction:row;
-}
-
-    
-#home_verhaal #section_0 h2 {
-        text-align: end;
-        font-weight: bold;
-        font-family:Times New Roman;
-        font-size: 39px;
-    }
-
- #home_verhaal #section_0 strong {
-        text-align: end;
-        font-weight: 800;
-        font-style: normal;
-        font-family: 'Gill Sans Nova'
-     
-    }
-
-#home_verhaal span {
-        color: #D88102;
-        font-weight: 400;
-    }
-
-#home_verhaal #section_0 p {
-        text-align: end;
-        margin-top: 15px;
-        font-weight: 250;
-        font-style: normal;
-        font-family: 'Gill Sans Nova'
-    }
-
- #home_verhaal #section_1 strong {
-        font-size: 21px;
-        margin-top:0.6rem;
-    }
-
- #home_verhaal #section_1 p {
-        font-size: 16px;
-        margin-top: 0.6rem;
-    }
-
-
-.home_kaarten button, .service_kaart button {
-    margin-right: auto;
-    box-shadow: -3px 3px 5px #ccc;
-    border-radius: 8px;
-}
-
-.home_kaart h5{
-    font-weight:900;
-}
-
-
-#home_verhaal {
-    animation-name:showVerhaal;
-    animation-duration: 2s;
-    animation-delay: 0.5s;
-    animation-fill-mode:forwards;
-}
-
-#home_verhaal h1 {
-    font-size:34px;
- }
-
-.home_productInleiding h2 {
-    font-size: 45px;
-    font-family: 'Roboto';
-    font-weight: 900;
-    display: inline-block;
-    padding-bottom: 15px;
-    text-shadow: -3px 3px 1px #ccc;
-}
-
-#home_blogBanner .col {
-    background-color: #ffffff;
-    opacity: 0.8;
-    position: absolute;
-    top: 45%;
-    left: 0%;
-    width: 26%;   
-}
-
-#home_blogBanner h2 {
-    font-weight: 900;
-    color: #000000;
-    font-size:48px;
-    font-family: 'Gill Sans Nova';
-    background-color: #ffffff;
-}
-
-#home_blogBanner p {
-    line-height: 1;
-    padding-left: 5px;
-    color: #000000;
-    font-size:20px;
-    background-color: #ffffff;
-}
-
-#home_blogBanner div div div div {
-    position:absolute;
-    top: 190px;
-    left: -6px;
-}
-
-#home_blogBanner a {
-    font-weight: bold;
-}
-
-
-@keyframes showVerhaal {
-    0% {
-            bottom: -100px;
-            color: white;
-        }
-
-        100% {
-            bottom: 0px;
-            color: black;
-        }
-    }
-
- .home_kaarten{
-    width:90%;
-    margin:auto;
-}
-.home_kaart h5 {
-    font-family: 'Gill Sans Nova';
-    font-size:23px;
-}
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#home_qmex h2 {
-    font-weight: 900;
-    font-family: 'Gill Sans Nova';
-    font-size: 45px;
+
+/* sidemenu links */
+.sidemenulink {
+    color: black !important;
 }
 
-#home_qmex p {
-    font-size: 18px;
-    margin-right: 8rem;
-    text-align: justify;
-}
+ .sidemenulink:hover {
+        color: #D88102 !important;
+    }
 
-
-@keyframes hk_img {
-    0% {transform: translate(0px, 0px) rotate(0deg); }
-    30% {transform: translate(10px, 0px) rotate(0deg);}
-    50% {transform: translate(0px, 0px) rotate(0deg);}
-    80% {transform: translate(-10px, 0px) rotate(0deg);}
-    100% {transform: translate(0px, 0px) rotate(0deg);}
-}
-
-/*product*/
 
 #side_titel {
     font-family: 'Gill Sans Nova';   
 }
-.sidemenu_arrow{
-    color:#f2f2f2;
-    margin-left:-20px;
-}
-.sidemenulink span a {
-    color: red;
-    padding-right: 8px;
+
+.side-subtitel {
+    font-weight: 800;
+    color:black;
 }
 
-.btn_collapse {
-    border-radius: 19px;
+.sidemenu_arrow {
+    color: lightgray;  
+    margin-left:-2rem;
 }
 
-/*about pagina */
- #about_kaarten .card:hover, #contact_kaart:hover {
+
+
+  /*about pagina */
+    #about_kaarten .card:hover, #contact_kaart:hover {
     background-color: #D88102;
     border: none;
 }
@@ -411,6 +43,7 @@ body {
     font-size:20px;
     font-weight:bold;
  }
+
 #about_topverhaal h1 {
     text-align: center;
 }
@@ -440,13 +73,11 @@ box-shadow:1px 3px 5px rgba(0, 0, 0, 0.1);
 
 .oneKaart_btn button {
   text-align:center;
+  margin:auto;
 }
 
-#productDetail_btn button{
-    margin-left:30px; 
-}
 
-#productDetail_btn button:focus {
+#productDetail_c button:focus {
     outline: none !important;
 }
     /*productie*/
@@ -485,13 +116,11 @@ color:#f48c00;
     font-size: 1.5rem;
 }
 
-
-
  #contact_kaart-one:hover, #contact_kaart-two:hover, #contact_kaart-three:hover {
         background: #D88102;
     }
 /*services*/
-#service_kaarten .service_kaart:hover, .tussenpage_kaarten .tussenpage_kaart:hover, .home_kaart:hover {
+#service_kaarten .service_kaart:hover, .home_kaart:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
@@ -501,34 +130,65 @@ color:#f48c00;
 }
 /*tussenpage*/
 .tussenpage_kaarten button{
-    background:black !important;
-    outline:none;
-    width:60%;
-    border-radius:8%;
-    margin:auto;
-    padding:8px;
-    margin-top:15px;
-    font-weight:500;
-    font-size:12px;
+    background: black !important;
+    width: 70%;
+    border-radius: 8%;
+    margin: auto;
+    padding: 8px;
+    margin-top: 2.5rem;
+    font-weight: 500;
+    font-size: 4px;
+    border-color: black;
 }
 
-.tussenpage_kaarten .card{
-   margin-bottom:15px !important;
 
+.tussenpage_kaarten .card {
+    margin: 30px;
+    border: none;
 }
+
+.tussenkaart_0, .tussenkaart_2, .tussenkaart_4 {
+    position: relative;
+}
+
+.tussenkaart_0:after, .tussenkaart_2:after, .tussenkaart_4:after {
+        position: absolute;
+        width: 3px;
+        height: 80%;
+        background: #f1f1f1;
+        content: '';
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+    }
+  
 .tussenpage_kaarten .card h2 {
-    font-weight: 700;
+    width: 90%;
+    padding-left: 20px;
+    font-weight: 800;
     font-family: Arial;
+    text-align: left;
 }
+
 .tussenpage_kaarten p{
-    width:80%;
+    width:90%;
     margin:auto;
+    text-align:left;
 }
+
 .tussenpage_kaarten img.card-img-top {
     margin: auto;
-    width: 300px;
+    width: 260px;
+    margin-top:20px;
+}
+.tussenpage_kaart .card-body {
+    padding:0;
 }
 
+.btn_collapse {
+    border-radius: 19px;
+}
 
 @media screen and (max-width: 1560px) {
     #home_blogBanner h2 {
@@ -541,17 +201,51 @@ color:#f48c00;
     #home_blogBanner .col {
         width: 30%;
     }
+    #PS_VRFsysteem .card-body.card-img-overlay {
+        font-size: 13px;
+        height: 35%;
+    }
+    .sidemenu_arrow {
+        margin-left: 0;
+    }
+    .productPage,.productDetailpage {
+        width: 100% !important;
+    }
+    #sidebalk h3{
+        font-size:21px;
+    }
+    #sidebalk h6{
+        font-size:13px;
+    }
+    
+  .productPage{
+      width:100% !important;
+  }
+    .product_right {
+        width: 100%;
+        margin: auto 0px;
+       padding: auto 0px;
+    }
+   . productDetail_c{
+
+   }
 }
 @media screen and (max-width: 1200px) {  /* xl */
 
     #home_blogBanner div div div div {
-        top: 170px;
+        top: 150px;
     }
 
     #home_blogBanner .col {
-        top: 35%;
+        top: 25%;
         width: 36%;
     }
+    .CT_card {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+
 }
 @media screen and (max-width: 1040px) {
     #home_blogBanner h2 {
@@ -563,9 +257,12 @@ color:#f48c00;
     }
 
     #home_blogBanner div div div div {
-        top: 150px;
+        top: 140px;
     }
-
+    
+    #sidebalk{
+        margin-left:30px;
+    }
 }
 @media screen and (max-width: 992px) {  /* lg */
         #home_blogBanner .col {
@@ -573,7 +270,7 @@ color:#f48c00;
             width: 40%;
         }
         #home_blogBanner div div div div {
-            top: 140px;
+            top: 150px;
         }
 
         .header_logo {
@@ -626,19 +323,13 @@ color:#f48c00;
 
 }
 @media screen and (max-width: 576px) { /* sm */
-        .footer_social {
-            margin-top: 1.8rem;
-        }
-
-        .navbar-brand {
-        }
-
+       
           .navbar-brand .header_logo {
                 margin-left: auto;
             }
 
         #home_blogBanner .col {
-            width: 50%;
+            width: 75%;
             top: 20%;
             text-align: center;
         }
@@ -671,10 +362,38 @@ color:#f48c00;
             #home_blogBanner p {
             }
 
-    .f_support {
-        margin-top: -18px;
+    #footer {
+        width: 100% !important;
+        padding: 0;
+        margin: 0;
+        font-size:14px;
+        margin:auto;
     }
+    .footer_slogo {
+        font-size: 18px;
+        padding: 0px !important;
+    }
+    
+    .footer h6{
+        margin:0px;
+        font-size:13px;
+    }
+    .f_support{
+    padding-left:2rem;
+    }
+    .productTopbanner {
+        padding:4rem  10px!important ;
+        text-align:center;
+    }
+   .productTopbanner h1 {
+            font-size: 38px;
+        }
+  .productTopbanner h5{
+         font-size:14px;
+         margin-top:15px;
+        }
    
+
     }
 
 

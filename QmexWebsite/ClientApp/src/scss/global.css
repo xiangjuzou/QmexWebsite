@@ -1,4 +1,5 @@
-﻿/* variabelen */
+﻿/* global */
+/* variabelen */
 /* import */
 /* mixins */
 :root {
@@ -5470,15 +5471,17 @@ button.bg-vrf:hover,
 button.bg-vrf:focus {
   background-color: #006666 !important; }
 
-.bg-metalblue {
+.bg-metalblue, #copyright {
   background-color: #3c5c71 !important; }
 
-a.bg-metalblue:hover, a.bg-metalblue:focus,
+a.bg-metalblue:hover, a#copyright:hover, a.bg-metalblue:focus, a#copyright:focus,
 button.bg-metalblue:hover,
-button.bg-metalblue:focus {
+button#copyright:hover,
+button.bg-metalblue:focus,
+button#copyright:focus {
   background-color: #2a4150 !important; }
 
-.bg-darkmetalblue {
+.bg-darkmetalblue, footer {
   background-color: #333F50 !important; }
 
 a.bg-darkmetalblue:hover, a.bg-darkmetalblue:focus,
@@ -5486,10 +5489,10 @@ button.bg-darkmetalblue:hover,
 button.bg-darkmetalblue:focus {
   background-color: #1f2631 !important; }
 
-.bg-black {
+.bg-black, #PS_Warmtepomp .productGallery a {
   background-color: #000 !important; }
 
-a.bg-black:hover, a.bg-black:focus,
+a.bg-black:hover, #PS_Warmtepomp .productGallery a:hover, a.bg-black:focus, #PS_Warmtepomp .productGallery a:focus,
 button.bg-black:hover,
 button.bg-black:focus {
   background-color: black !important; }
@@ -8017,13 +8020,13 @@ button.bg-white:focus {
 .font-italic {
   font-style: italic !important; }
 
-.text-white {
+.text-white, #copyright {
   color: #fff !important; }
 
-.text-primary {
+.text-primary, .f_social, footer a:hover, .sidemenulink:hover, #home_verhaal span, #PS_VRFsysteem .CT_card a {
   color: #d88102 !important; }
 
-a.text-primary:hover, a.text-primary:focus {
+a.text-primary:hover, a.f_social:hover, footer a:hover, a.sidemenulink:hover, #PS_VRFsysteem .CT_card a:hover, a.text-primary:focus, a.f_social:focus, footer a:focus:hover, a.sidemenulink:focus:hover, #PS_VRFsysteem .CT_card a:focus {
   color: #8c5401 !important; }
 
 .text-secondary {
@@ -8056,13 +8059,13 @@ a.text-warning:hover, a.text-warning:focus {
 a.text-danger:hover, a.text-danger:focus {
   color: #a71d2a !important; }
 
-.text-light {
+.text-light, footer, footer a, #home_topbanner h1 {
   color: #f4f3f3 !important; }
 
-a.text-light:hover, a.text-light:focus {
+a.text-light:hover, footer a:hover, a.text-light:focus, footer a:focus {
   color: #cfcbcb !important; }
 
-.text-dark {
+.text-dark, button#search_btn {
   color: #343a40 !important; }
 
 a.text-dark:hover, a.text-dark:focus {
@@ -8098,16 +8101,16 @@ a.text-metalblue:hover, a.text-metalblue:focus {
 a.text-darkmetalblue:hover, a.text-darkmetalblue:focus {
   color: #151a21 !important; }
 
-.text-black {
+.text-black, .home_productInleiding h2 {
   color: #000 !important; }
 
 a.text-black:hover, a.text-black:focus {
   color: black !important; }
 
-.text-white {
+.text-white, #copyright {
   color: #fff !important; }
 
-a.text-white:hover, a.text-white:focus {
+a.text-white:hover, a#copyright:hover, a.text-white:focus, a#copyright:focus {
   color: #d9d9d9 !important; }
 
 .text-body {
@@ -8251,3 +8254,268 @@ a.text-white:hover, a.text-white:focus {
     flex-basis: 50%; }
   .flex-basis-6 {
     flex-basis: 50%; } }
+
+/*#region CSS functions in sass */
+/*#endregion */
+/*#region fonts */
+.f-roboto, .home_productInleiding h2 {
+  font-family: 'Roboto Black';
+  font-style: normal;
+  font-weight: 900; }
+
+.f-gill, #home_verhaal #section_0 p {
+  font-family: 'Gill Sans Nova';
+  font-style: normal;
+  font-weight: 250; }
+
+.f-gill-bold, #home_verhaal #section_0 strong, .home_kaart h5, #home_blogBanner h1, #home_blogBanner a, #PS_VRFsysteem .CT_card h5 {
+  font-family: 'Gill Sans Nova';
+  font-style: normal;
+  font-weight: 800; }
+
+.f-montserrat, header, nav a {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700; }
+
+.f-arial, body {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 200; }
+
+.f-arial-bold, h1, .footer_slogo, #home_qmex h2 {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 600; }
+
+.f-times-bold, #home_verhaal #section_0 h2 {
+  font-weight: bold;
+  font-family: 'Times New Roman';
+  font-style: normal; }
+
+/*#endregion */
+/*#region global html */
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  letter-spacing: .1px;
+  box-sizing: border-box;
+  overflow-x: hidden; }
+
+h1 {
+  font-size: 36px;
+  line-height: 1.08349;
+  letter-spacing: -.003em; }
+
+/*#endregion */
+/*#region globale footer */
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 2; }
+
+a.footer_4 {
+  font-size: 13px;
+  font-weight: 500; }
+
+.footer_slogo {
+  font-size: 19px;
+  letter-spacing: 1.8px; }
+
+.footer_logo {
+  margin-left: -2rem; }
+
+.copyright_p {
+  font-size: 12px; }
+
+.f_social {
+  font-size: 1.6rem; }
+
+#copyright {
+  display: flex;
+  width: 100vw !important;
+  justify-content: center;
+  margin-bottom: 2px;
+  text-align: center;
+  font-size: 15px;
+  align-items: center; }
+
+.address {
+  line-height: 5px !important; }
+
+footer a:hover {
+  text-decoration: none; }
+
+/*#endregion */
+/*#region globale header */
+header, nav.navbar {
+  max-height: 82px; }
+
+.navbar-nav {
+  margin-left: auto; }
+
+.navbar-collapse.show form {
+  margin-left: 15px !important; }
+
+.sidemenulink {
+  text-decoration: none !important; }
+
+#navLink a:hover {
+  text-decoration: none !important;
+  border-bottom: 3px solid #D88102;
+  padding-bottom: 8px; }
+
+button#search_btn {
+  background: none;
+  border: none; }
+
+/*#endregion */
+/*#region  Home-page*/
+#home_verhaal {
+  font-size: 22px;
+  display: flex;
+  flex-direction: row; }
+
+#home_verhaal #section_0 h2 {
+  text-align: end;
+  font-size: 39px; }
+
+#home_verhaal #section_0 strong {
+  text-align: end; }
+
+#home_verhaal span {
+  font-weight: 400; }
+
+#home_verhaal #section_0 p {
+  text-align: end;
+  margin-top: 15px; }
+
+#home_verhaal #section_1 strong {
+  font-size: 21px;
+  margin-top: 0.6rem; }
+
+#home_verhaal #section_1 p {
+  font-size: 16px;
+  margin-top: 0.6rem; }
+
+.home_kaarten button {
+  margin-right: auto;
+  box-shadow: -3px 3px 5px #ccc;
+  border-radius: 8px; }
+
+.home_kaart h5 {
+  font-size: 23px; }
+
+#home_verhaal h1 {
+  font-size: 34px; }
+
+.home_productInleiding h2 {
+  font-size: 45px;
+  display: inline-block;
+  padding-bottom: 15px;
+  text-shadow: -3px 3px 1px #ccc; }
+
+#home_blogBanner .col {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 45%;
+  left: 0%;
+  width: 26%; }
+
+#home_blogBanner h1 {
+  font-size: 38px;
+  margin-bottom: 30px;
+  padding-top: 10px; }
+
+#home_blogBanner img {
+  width: max(45px, 4vw); }
+
+#home_blogBanner p {
+  line-height: 1;
+  padding-left: 5px;
+  font-size: 20px; }
+
+#home_blogBanner div div div div {
+  position: absolute;
+  top: 170px;
+  left: -6px; }
+
+.home_kaarten {
+  width: 90%;
+  margin: auto; }
+
+#home_qmex h2 {
+  font-size: 35px; }
+
+#home_qmex p {
+  font-size: 17px;
+  margin-right: 7rem; }
+
+/*#endregion*/
+/*#region service-pagina */
+.service_kaart button {
+  margin-right: auto;
+  box-shadow: -3px 3px 5px #ccc;
+  border-radius: 8px; }
+
+/*#endregion*/
+/*#region tussenpage */
+.tussenpage_kaart img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: 3;
+  animation-duration: 3s; }
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg); }
+  30% {
+    transform: translate(-6px, 0px) rotate(1deg); }
+  50% {
+    transform: translate(-3px, 3px) rotate(-1deg); }
+  80% {
+    transform: translate(-2px, -1px) rotate(1deg); }
+  100% {
+    transform: translate(1px, -3px) rotate(-2deg); } }
+
+/*#endregion*/
+/*#region product showcase */
+.productGallery .vmf_bottom {
+  display: none; }
+
+#PS_VRFsysteem .CT_card h5 {
+  font-size: 25px; }
+
+#PS_VRFsysteem .CT_card a {
+  font-size: 17px;
+  font-weight: bold;
+  text-shadow: 2px 1px 1px #d7d7d7; }
+
+#PS_VRFsysteem .card img {
+  box-shadow: -8px 8px 8px #AAA;
+  margin-top: 2rem; }
+
+#PS_VRFsysteem .card-body.card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 14px;
+  margin-top: auto;
+  height: 25%; }
+
+.CT_card {
+  flex: 0 0 50% !important;
+  max-width: 50% !important; }
+
+#PS_Warmtepomp .productGallery a {
+  width: 80%;
+  border-radius: 8%;
+  padding: 12px;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  font-size: 15px !important; }
+
+/*#endregion*/
+/*faq*/
+.btn_collapse:focus {
+  outline: none; }

@@ -47,7 +47,7 @@ export default class Home extends Component {
                 </Container>
 
              
-                <div className="home_productInleiding text-center" >
+                <div className="home_productInleiding text-center " >
                     <Titel content={this.props.content.productInleiding.fields} />
                 </div>
 
@@ -55,7 +55,7 @@ export default class Home extends Component {
                     <Columns fluid  >
                     {
                             this.props.content.producten.map((k, id) => (
-                                <Col key={id} md={6} lg={6} xl={3} sm={12}>
+                                <Col key={id} md={6} xl={3} sm={12}>
                                     <Kaart content={k.fields} className="home_kaart" button />
                             </Col>
                            ))
@@ -73,7 +73,8 @@ export default class Home extends Component {
 
                 <div className="my-6 pt-3 position-relative" >
                     <div>
-                        <VMFJumbo content={this.props.content.blogBanner.fields} height="max(275px, 28vw)" cover id="home_blogBanner"  pos="bottomleft"  />
+                        <VMFJumbo content={this.props.content.blogBanner.fields} height="max(275px, 28vw)" cover 
+                            id="home_blogBanner" pos="bottomhardleft" sign='/img/home_blogsign2.png' />
                     </div>
                 </div>
 

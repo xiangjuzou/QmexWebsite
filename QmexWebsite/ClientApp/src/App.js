@@ -33,17 +33,16 @@ export default class App extends Component {
             { to: '/support/diensten', title: 'Diensten', render: () => <ServiceDetail content={this.state.dienst} page='dienst' statecallback={this.saveState} /> },
             { to: '/support/productdevelopment', title: 'Producte development', render: () => <ServiceDetail content={this.state.productdevelopment} page='productdevelopment' statecallback={this.saveState} /> },
             { to: '/support/subsidies', title: 'Subsidies', render: () => <ServiceDetail content={this.state.subsidies} page='subsidies' statecallback={this.saveState} /> },
-            { to: '/support/grantie', title: 'Grantie', render: () => <ServiceDetail content={this.state.gratie} page='gratie' statecallback={this.saveState} /> },
-            { to: '/support/downloads', title: 'Downloads', render: () => <ServiceDetail content={this.state.downloads} page='dienst' statecallback={this.saveState} /> },
-            { to: '/support/video', title: 'Video', render: () => <ServiceDetail content={this.state.vedio} page='vedio' statecallback={this.saveState} /> },
+            { to: '/support/grantie', title: 'Grantie', render: () => <ServiceDetail content={this.state.garantie} page='garantie' statecallback={this.saveState} /> },
+            { to: '/support/downloads', title: 'Downloads', render: () => <ServiceDetail content={this.state.downloads} page='downloads' statecallback={this.saveState} /> },
+            { to: '/support/video', title: 'Video', render: () => <ServiceDetail content={this.state.video} page='video' statecallback={this.saveState} /> },
             { to: '/search', title: 'Search', render: () => <Search content={this.state.search} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/blog', title: 'BLOG', render: () => <Blog content={this.state.blog} urls={this.state.urls} statecallback={this.saveState} /> },
             { to: '/faq', title: 'FAQ', render: () => <Faq content={this.state.faq} statecallback={this.saveState} /> },
 
             { to: '/', title: 'HOME', render: () => <Home content={this.state.home} statecallback={this.saveState} /> },
             { to: '/products', title: 'PRODUCTEN', render: () => <div>Loading...</div> },
-            { to: '/support', title: 'SUPPORT', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },
-           /* { to: '/production', title: 'Productie', render: () => <Production content={this.state.production} statecallback={this.saveState} /> },*/
+            { to: '/support', title: 'SUPPORT', render: () => <Service content={this.state.services} statecallback={this.saveState}/> },          
             { to: '/about', title: 'OVER QMEX', render: () => <About content={this.state.about} statecallback={this.saveState}/> },
             { to: '/contact', title: 'CONTACT', render: () => <Contact content={this.state.contact} statecallback={this.saveState} /> }
         ];
@@ -76,8 +75,8 @@ export default class App extends Component {
                                     statecallback={this.saveState}
                                     id={p.sys.id}
                                     slug={p.fields.slug}
-                                    menu={this.state.products}
-                                    submenu={this.state['products_' + p.fields.slug]} />
+                                    menu={this.state.MenuItems}
+                                />
             };
 
         // add hoofdmenu's to urls list
@@ -132,21 +131,19 @@ export default class App extends Component {
                                     statecallback={this.saveState}
                                     id={p.sys.id}
                                     slug={p.fields.slug}
-                                    menu={this.state.products}
-                                    submenu={this.state['products_' + p.fields.slug]} />} />
+                                    menu={this.state.MenuItems} />} />
                         ))}
 
                             {/* De tussenpagina-product links met de slug van contentful */}
                             {this.state.tussenpaginaslug.map((p, i) => (
                                 p.fields.hoofdmenus.map((hm,j) => (
 
-                                <Route exact key={i + "_" + j} path={"/products/" + hm.fields.slug} render={() =>
-                                    <Products content={this.state['products_' + hm.fields.slug]}
-                                        statecallback={this.saveState}
-                                        id={hm.sys.id}
-                                        slug={hm.fields.slug}
-                                        menu={this.state.products}
-                                        submenu={this.state['products_' + hm.fields.slug.split('/')[0]]} />} />
+                                    <Route exact key={i + "_" + j} path={"/products/" + hm.fields.slug} render={() =>
+                                        <Products content={this.state['products_' + hm.fields.slug]}
+                                            statecallback={this.saveState}
+                                            id={hm.sys.id}
+                                            slug={hm.fields.slug}
+                                            menu={this.state.MenuItems} />} />
                                 ))
                             ))}
 
@@ -166,8 +163,7 @@ export default class App extends Component {
                                     statecallback={this.saveState}
                                     id={p.sys.id}
                                     slug={p.fields.slug}
-                                    menu={this.state.products}
-                                    submenu={this.state['products_' + p.fields.slug.split('/')[0]]} />} />
+                                    menu={this.state.MenuItems} />} />
                             ))}
 
                         {/* De blog links met de slug van contentful 

@@ -1,5 +1,17 @@
 ﻿/* variabelen */
-$theme-colors: ( "primary": #f48c00, "secondary":#808080, "light":#f4f3f3 );
+$theme-colors: ( 
+    "primary" : #d88102, 
+    "secondary" : #808080, 
+    "light" : #f4f3f3, 
+    "aicro" : #8a9087, 
+    "roodbruin": #c55a11, 
+    "vrf":#009999, 
+    "metalblue":#3c5c71, 
+    "darkmetalblue":#333F50, 
+    "black":#000, 
+    "white":#fff
+);
+
 
 $spacers: ( 
     6: 5rem
@@ -7,11 +19,7 @@ $spacers: (
 
 
 
-
-
 /* import */
-
-
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
@@ -87,4 +95,74 @@ $link-hover-color: darken($link-color, 50%) !default;
 @import "../../node_modules/bootstrap/scss/spinners";
 @import "../../node_modules/bootstrap/scss/utilities";
 @import "../../node_modules/bootstrap/scss/print";
+
+/* Bootstrap uitbreiding*/
+
+.display-5 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.border-1 {
+    border-width: 1px !important;
+}
+
+.border-2 {
+    border-width: 2px !important;
+}
+
+.border-3 {
+    border-width: 3px !important;
+}
+
+.border-4 {
+    border-width: 4px !important;
+}
+
+.border-5 {
+    border-width: 5px !important;
+}
+
+.flex-basis-1 {
+    flex-basis: 100%;
+}
+
+.flex-basis-2 {
+    flex-basis: 50%;
+}
+
+.flex-basis-3 {
+    flex-basis: 33%;
+}
+
+.flex-basis-4 {
+    flex-basis: 25%;
+}
+
+.flex-basis-5 {
+    flex-basis: 20%;
+}
+
+.flex-basis-6 {
+    flex-basis: 16%;
+}
+
+@media screen and (max-width: 768px) {
+    .flex-basis-3 {
+        flex-basis: 50%;
+    }
+
+    .flex-basis-4 {
+        flex-basis: 50%;
+    }
+
+    .flex-basis-5 {
+        flex-basis: 50%;
+    }
+
+    .flex-basis-6 {
+        flex-basis: 50%;
+    }
+}
 

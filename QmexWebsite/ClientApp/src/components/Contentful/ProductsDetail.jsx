@@ -28,8 +28,8 @@ function ProductsDetail(props) {
                     laatste = true;
                 }
 
-                return <CollapseVerhaal content={mi.fields} width={1} last={laatste} className="flex-basis-1" >
-                    {kaartarray.map(mi => <SpecificatieKaart  content={mi.fields} className={"flex-basis-" + countcards(arr, i+1) + " py-5 px-3"} />)}
+                return <CollapseVerhaal content={mi.fields} width={0} last={laatste} className="flex-basis-1" >
+                    {kaartarray.map(mi => <SpecificatieKaart  content={mi.fields} className={"flex-basis-" + countcards(arr, i+1) + "py-5 px-3"} />)}
                        </CollapseVerhaal>;
 
 
@@ -62,15 +62,16 @@ function ProductsDetail(props) {
 
   
     return (
-        <Fragment>
+        <Fragment className="productDetailpage">
             <VMFJumbo content={props.content.showcase.fields} height="40vh" className="mb-5" cover />
 
-              <Verhaal id="inleiding" className="text-center" content={props.content.inleiding?.fields} width={2} />
-            <div id="productDetail_btn"  className="d-flex flex-wrap my-5 pb-5">
+            <Verhaal id="inleiding" className="text-center" content={props.content.inleiding?.fields} width={1} />
+
+            <div id="productDetail_c" className="d-flex flex-wrap my-5 pb-5">
                 {props.content.moreInfo?.map((mi, i, arr) => getMoreinfo(mi, i, arr))}
               </div>
 
-            <div id="ProductDetail_btn" >
+            <div id="ProductDetail_c">
                 < WidthContainer width={3} className='bg-light '>
                     <OneKaart button target="_blank" content={props.content.contactkaart?.fields} linktekst="Contact nu" className="my-5 py-5 oneKaart_btn  productDetail_btn" />
                 </WidthContainer>     

@@ -1,10 +1,10 @@
-﻿import React, { Component } from 'react';
+﻿import React, { Component, Fragment } from 'react';
 import ReactMarkdownWithHtml from 'react-markdown/with-html';
 import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
-/* VMF JUMBO
+/* VMF JUMBO, neeeeeheee!  VMFTopBanner!
  * 
  * props:
  * - content        (van contentful)
@@ -14,21 +14,26 @@ import { Link } from 'react-router-dom';
  * - height:        (string) height of jumbo.  (default: 100%)
  * - cover:         (boolean)  of het plaatje cover moet hebben of niet.
 */
-export default class VMFJumbo extends Component {
+export default class VMFTopBanner extends Component {
+
     render() {
+       
+        //nobanner!
+        if (this.props.content === null || this.props.content === undefined) {
+            return <Fragment />;
+        }
+
+
+        // banner!
         // verzamel de "vreemde" props, en zet deze als attributen op de 1e div.
         const overgeblevenProps = { ...this.props };
         delete overgeblevenProps.pos;
         delete overgeblevenProps.content;
         delete overgeblevenProps.height;
         delete overgeblevenProps.cover;
-        delete overgeblevenProps.sign;
 
         let pos = "";
         switch (this.props.pos) {
-            case "bottomhardleft":
-                pos = "text-left ml-5 pb-4";
-                break;
             case "bottomleft":
                 pos = "text-left ml-5 pl-5 pb-4";
                 break;
@@ -44,26 +49,33 @@ export default class VMFJumbo extends Component {
         }
 
         return (
-            <div style={this.getFotoStyle(this.props.cover)} {...overgeblevenProps} >
+            <div className={'position-relative ' + this.getBGStyle(this.props.content?.titel)} {...overgeblevenProps} >
                 <Container fluid >
                     <Row>
-                        <Col className={pos }>
-                            {this.props.sign && <img src={this.props.sign} className="position-absolute" style={{right:"10px", top:"10px"}}/>}
-                            <h1 className='display-4'>{this.props.content?.titel}</h1>
-                            <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
-
-                            <div className="my-4">
-                                {this.props.content?.moreUrl && <Link style={{ textDecoration:'none',fontSize:'19px'}} className="text-white bg-primary py-2 px-3 ml-2"
-                                    to={this.props.content?.moreUrl}>{this.props.content?.moreUrlText}</Link>}
-                            </div>
+                        <Col className="ml-auto py-6 pl-6 productTopbanner">
+                            <h1 className='display-4 d-inline font-weight-bold pl-5' style={{color:'black'}}>QMEX </h1>
+                            <h1 className='display-4 text-white d-inline' style={{marginLeft: '-0.6rem' }}>{this.props.content?.titel}</h1>
+                            <ReactMarkdownWithHtml allowDangerousHtml className='text-white pl-5'>{this.props.content?.tekst}</ReactMarkdownWithHtml>
                         </Col>
                     </Row>
+                   
+                        {this.props.content.fotoUrl && <img className="position-absolute"
+                            style={{ right: "10vw", bottom: "-6rem", width: "max(33vw,325px)" }} src={this.props.content.fotoUrl} />
+                        }
                 </Container>
             </div>
-            );
+        );
     }
 
 
+    getBGStyle(titel) {
+        switch (titel) {
+            case "WARMTEPOMP": return 'bg-roodbruin';
+            case "AIRCO": return 'bg-aicro';
+            case "VRF SYSTEEM": return 'bg-vrf';
+            case "ACCESSORIES": return 'bg-success';
+        }
+    }
 
     getFotoStyle(cover) {
         // hoogte
@@ -77,7 +89,7 @@ export default class VMFJumbo extends Component {
                 alignitems = "flex-end";
                 bgpos = "center right";
                 break;
-                case "left":
+            case "left":
                 alignitems = "center";
                 bgpos = "center";
                 break;
@@ -106,7 +118,7 @@ export default class VMFJumbo extends Component {
         style.backgroundPosition = bgpos;
         style.backgroundRepeat = 'no-repeat';
         if (cover) {
-            style.backgroundSize= 'cover';
+            style.backgroundSize = 'cover';
         }
         return style;
     }

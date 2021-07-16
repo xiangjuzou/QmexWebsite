@@ -54,7 +54,7 @@ class Header extends PureComponent {
           
                         <div className="ml-auto form-inline" style={{ width: "300px", flexWrap: "nowrap" }}>
                             <FormControl type="search" placeholder="zoek" onChange={(e) => this.updateSearch(e)} onKeyUp={(e) => this.checkEnter(e)} value={this.state.search} />
-                            <Button id='serch_btn' type="button" onClick={() => this.searchButton()}>
+                            <Button id='search_btn' type="button" onClick={() => this.searchButton()}>
                                 {searchbtn} { }
                             </Button>
                         </div>

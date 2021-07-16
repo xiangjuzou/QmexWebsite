@@ -1,33 +1,35 @@
-﻿import React, { Component, Fragment } from 'react';
+﻿import React, { Component } from 'react';
 import CFLoader from './Contentful/CFLoader';
-import VMFJombo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import Verhaal from './Contentful/Verhaal/Verhaal';
-import WidthContainer from './Common/WidthContainer';
 import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
+import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
+import Kaart from './Contentful/Kaart/Kaart';
+import { Row, Col } from 'react-bootstrap';
 
-export default class SupportDetail extends Component {
+export default class ServiceDetail extends Component {
     constructor(props) {
         super(props);
 
+
         if (!this.props.content) {
             switch (this.props.page) {
-                case "supportdiensten":
-                    CFLoader.LoadPage("7IvQi3D1o2Qc1xwJfGoN01", "supportdiensten", this.props.statecallback);
+                case "dienst":
+                    CFLoader.LoadPage("7IvQi3D1o2Qc1xwJfGoN01", "dienst", this.props.statecallback);
                     break;
-                case "supportproductdevelopment":
-                    CFLoader.LoadPage("70zXKrVG1GD5BcgwwYGywT ", "supportproductdevelopment", this.props.statecallback);
+                case "productdevelopment":
+                    CFLoader.LoadPage("70zXKrVG1GD5BcgwwYGywT", "productdevelopment", this.props.statecallback);
                     break;
-                case "supportsubsidies":
-                    CFLoader.LoadPage("4nY34Ickcp0NKDmJZ1wbXj ", "supportsubsidies", this.props.statecallback);
+                case "subsidies":
+                    CFLoader.LoadPage("4nY34Ickcp0NKDmJZ1wbXj", "subsidies", this.props.statecallback);
                     break;
-                case "supportgrantie":
-                    CFLoader.LoadPage("5sw1q9tGnvyzFQdMPKLvC6 ", "supportgrantie", this.props.statecallback);
+                case "garantie":
+                    CFLoader.LoadPage("5sw1q9tGnvyzFQdMPKLvC6", "garantie", this.props.statecallback);
                     break;
-                case "supportdownloads":
-                    CFLoader.LoadPage("paginaDienstDetail ", "supportdownloads", this.props.statecallback);
+                case "downloads":
+                    CFLoader.LoadPage("50A0v7sxdEWw3QrREZnS9j", "downloads", this.props.statecallback);
                     break;
-                case "supportvideo":
-                    CFLoader.LoadPage("3kwmkicombbPES9YJmK394 ", "supportvideo", this.props.statecallback);
+                case "video":
+                    CFLoader.LoadPage("3kwmkicombbPES9YJmK394", "video", this.props.statecallback);
                     break;               
                 default: break;
             }
@@ -38,27 +40,17 @@ export default class SupportDetail extends Component {
     render() {
         if (!this.props.content) { return "Loading..."; }
 
-
-        const lijstZonderEerste = this.props.content.verhalen.slice(1);
+        const c = this.props.content;
 
         return (
-            <Fragment>
-            <div id="servicedetail_main_content">
-                    <VMFJombo content={this.props.content.verhalen[0].fields} pos="top" height="40vh" />
-                    <WidthContainer width={1}>
-                       {lijstZonderEerste.map((v) => this.kiesComponent(v))}
-                    </WidthContainer>
-                </div> 
-             </Fragment>
-            )
-    }
-
-    kiesComponent(v) {
-        switch (v.sys?.contentType.sys.id) {
-            case "verhaalmetfoto":
-                return <VerhaalMetFoto  content={v.fields} />
-            default:
-                return <Verhaal  content={v.fields} width={2} />
-        }
+            <div>
+                {c.banner && <VMFJumbo content={c.banner.fields} />}
+                {c.inleiding && <VerhaalMetFoto content={c.inleiding.fields} />}
+                {c.verhaal && <Verhaal content={c.verhaal.fields} />}
+                <Row>
+                    {c.kaarten?.map((k) => <Col md={6} key={k.fields.name}><Kaart content={k.fields} /></Col> )}
+                </Row>
+             </div>
+        )  
     }
 }
