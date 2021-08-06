@@ -35,12 +35,12 @@ export default class Service extends Component {
 
                
                 <div id="service_waarden">
-                    <WidthContainer width ={1}>
+                    <WidthContainer width={1}>
                     <Columns fluid>
                         {this.props.content.waarden.map(k =>
                             <Col className="text-left" >
-                                <div className="ml-5 pl-5">{Waarde}</div>
-                                <Kaart key={k.fields.name} content={k.fields} />
+                                <span className="d-inline-block"><img src="/img/lamp.png" width="42px" alt="lamp" /> </span>
+                                <Kaart key={k.fields.name} content={k.fields} className="d-inline-block" />
                             </Col>)}
                         </Columns>
                      </WidthContainer>
@@ -48,16 +48,20 @@ export default class Service extends Component {
 
                 <div className="bg-light">
                 <Container>
-                <Verhaal className="text-center my-5 py-5" content={this.props.content.inleiding.fields} />
+                <Verhaal className="text-center my-5 px-5 support_verhaal" content={this.props.content.inleiding.fields} />
                     </Container>
                  </div>
 
-                <div id="service_kaarten" className="my-5 pt-5">
+                <div className="my-5 pt-5 service_kaarten">
                     <Columns>
-                        {this.props.content.kaarten.map((k, index) => <Col className="mb-5" key={index} md={4} lg={4} xl={4} sm={12}>
-                            <Kaart key={k.fields?.name} button target="_blank" content={k.fields} className="service_kaart" /></Col>)}
+                        {this.props.content.kaarten.map((k, i) =>
+                            <Col key={i} className={"servicekaart_" + i + " text-left" + "mb-5"} >
+                                <Kaart key={k.fields} target="_blank" content={k.fields} overlay clickall/>
+                            </Col>)}
                     </Columns>
                 </div>
+
+                
             </Fragment>
         );
     }

@@ -392,7 +392,10 @@ color:#f48c00;
          font-size:14px;
          margin-top:15px;
         }
-   
+  .service_kaarten h6{
+      font-size:12px;
+      padding:8px;
+  }
 
     }
 

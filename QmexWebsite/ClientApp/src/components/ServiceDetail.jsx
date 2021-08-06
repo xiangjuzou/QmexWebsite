@@ -5,6 +5,7 @@ import VerhaalMetFoto from './Contentful/VerhaalMetFoto/VerhaalMetFoto';
 import VMFJumbo from './Contentful/VerhaalMetFoto/VMFJumbo';
 import Kaart from './Contentful/Kaart/Kaart';
 import { Row, Col } from 'react-bootstrap';
+import VMFTopBanner from "./Contentful/VerhaalMetFoto/VMFTopBanner.jsx";
 
 export default class ServiceDetail extends Component {
     constructor(props) {
@@ -44,7 +45,8 @@ export default class ServiceDetail extends Component {
 
         return (
             <div>
-                {c.banner && <VMFJumbo content={c.banner.fields} />}
+             
+                {c.banner && <VMFTopBanner content={c.banner.fields} cover/>}
                 {c.inleiding && <VerhaalMetFoto content={c.inleiding.fields} />}
                 {c.verhaal && <Verhaal content={c.verhaal.fields} />}
                 <Row>

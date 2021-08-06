@@ -5383,7 +5383,7 @@ a.close.disabled {
 .align-text-top {
   vertical-align: text-top !important; }
 
-.bg-primary {
+.bg-primary, .service_kaarten h6 {
   background-color: #d88102 !important; }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -5463,7 +5463,7 @@ button.bg-roodbruin:hover,
 button.bg-roodbruin:focus {
   background-color: #96450d !important; }
 
-.bg-vrf {
+.bg-vrf, .support_verhaal span {
   background-color: #009999 !important; }
 
 a.bg-vrf:hover, a.bg-vrf:focus,
@@ -8020,7 +8020,7 @@ button.bg-white:focus {
 .font-italic {
   font-style: italic !important; }
 
-.text-white, #copyright {
+.text-white, #copyright, .support_verhaal span a {
   color: #fff !important; }
 
 .text-primary, .f_social, footer a:hover, .sidemenulink:hover, #home_verhaal span, #PS_VRFsysteem .CT_card a {
@@ -8101,16 +8101,16 @@ a.text-metalblue:hover, a.text-metalblue:focus {
 a.text-darkmetalblue:hover, a.text-darkmetalblue:focus {
   color: #151a21 !important; }
 
-.text-black, .home_productInleiding h2 {
+.text-black, .home_productInleiding h2, .service_kaarten h6 {
   color: #000 !important; }
 
 a.text-black:hover, a.text-black:focus {
   color: black !important; }
 
-.text-white, #copyright {
+.text-white, #copyright, .support_verhaal span a {
   color: #fff !important; }
 
-a.text-white:hover, a#copyright:hover, a.text-white:focus, a#copyright:focus {
+a.text-white:hover, a#copyright:hover, .support_verhaal span a:hover, a.text-white:focus, a#copyright:focus, .support_verhaal span a:focus {
   color: #d9d9d9 !important; }
 
 .text-body {
@@ -8454,30 +8454,56 @@ button#search_btn {
 
 /*#endregion*/
 /*#region service-pagina */
-.service_kaart button {
-  margin-right: auto;
-  box-shadow: -3px 3px 5px #ccc;
-  border-radius: 8px; }
+.service_kaarten .card {
+  border: none; }
+
+.service_kaarten .card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.service_kaarten h6 {
+  text-shadow: 2px 2px 1px #808080;
+  display: inline-block;
+  padding: 8px 15px;
+  font-weight: 700;
+  padding-right: 25px;
+  margin-left: -1rem;
+  font-size: 20px; }
+
+.service_kaarten img {
+  width: 100%;
+  height: auto; }
+
+.servicekaart_0 {
+  flex-basis: 65%; }
+
+.servicekaart_1 {
+  flex-basis: 35%; }
+
+.servicekaart_1 h6, .servicekaart_3 h6 {
+  background-color: #ccc !important; }
+
+.support_verhaal h3 {
+  color: black;
+  font-weight: 800; }
+
+.support_verhaal span {
+  border-radius: 7%;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 400; }
+
+.support_verhaal span a:hover {
+  text-decoration: none; }
+
+#service_waarden h5 {
+  margin-bottom: 1.7rem;
+  font-weight: 700;
+  font-size: 18px; }
 
 /*#endregion*/
 /*#region tussenpage */
-.tussenpage_kaart img:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: 3;
-  animation-duration: 3s; }
-
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg); }
-  30% {
-    transform: translate(-6px, 0px) rotate(1deg); }
-  50% {
-    transform: translate(-3px, 3px) rotate(-1deg); }
-  80% {
-    transform: translate(-2px, -1px) rotate(1deg); }
-  100% {
-    transform: translate(1px, -3px) rotate(-2deg); } }
-
 /*#endregion*/
 /*#region product showcase */
 .productGallery .vmf_bottom {

@@ -31,7 +31,7 @@ export default class App extends Component {
         this.links = [
             { to: '/privacy', title: 'Privacy', render: () => <Privacy content={this.state.privacy} statecallback={this.saveState} /> },
             { to: '/support/diensten', title: 'Diensten', render: () => <ServiceDetail content={this.state.dienst} page='dienst' statecallback={this.saveState} /> },
-            { to: '/support/productdevelopment', title: 'Producte development', render: () => <ServiceDetail content={this.state.productdevelopment} page='productdevelopment' statecallback={this.saveState} /> },
+            { to: '/support/oplossingen', title: 'oplossingen', render: () => <ServiceDetail content={this.state.oplossingen} page='oplossingen' statecallback={this.saveState} /> },
             { to: '/support/subsidies', title: 'Subsidies', render: () => <ServiceDetail content={this.state.subsidies} page='subsidies' statecallback={this.saveState} /> },
             { to: '/support/grantie', title: 'Grantie', render: () => <ServiceDetail content={this.state.garantie} page='garantie' statecallback={this.saveState} /> },
             { to: '/support/downloads', title: 'Downloads', render: () => <ServiceDetail content={this.state.downloads} page='downloads' statecallback={this.saveState} /> },
