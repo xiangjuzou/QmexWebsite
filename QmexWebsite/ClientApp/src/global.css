@@ -146,7 +146,9 @@ color:#f48c00;
     margin: 30px;
     border: none;
 }
-
+.tussenkaart_1 h2{
+    padding-top:7px;
+}
 .tussenkaart_0, .tussenkaart_2, .tussenkaart_4 {
     position: relative;
 }
@@ -190,10 +192,13 @@ color:#f48c00;
     border-radius: 19px;
 }
 
+
+
 @media screen and (max-width: 1560px) {
     #home_blogBanner h2 {
         font-size: 40px;
     }
+
     #home_blogBanner p {
         font-size: 16px;
     }
@@ -201,34 +206,40 @@ color:#f48c00;
     #home_blogBanner .col {
         width: 30%;
     }
+
     #PS_VRFsysteem .card-body.card-img-overlay {
         font-size: 13px;
         height: 35%;
     }
+
     .sidemenu_arrow {
         margin-left: 0;
     }
-    .productPage,.productDetailpage {
+
+    .productPage, .productDetailpage {
         width: 100% !important;
     }
-    #sidebalk h3{
-        font-size:21px;
+
+    #sidebalk h3 {
+        font-size: 21px;
     }
-    #sidebalk h6{
-        font-size:13px;
+
+    #sidebalk h6 {
+        font-size: 13px;
     }
-    
-  .productPage{
-      width:100% !important;
-  }
+
+    .productPage {
+        width: 100% !important;
+    }
+
     .product_right {
         width: 100%;
         margin: auto 0px;
-       padding: auto 0px;
+        padding: auto 0px;
     }
-   . productDetail_c{
 
-   }
+    . productDetail_c {
+    }
 }
 @media screen and (max-width: 1200px) {  /* xl */
 
@@ -265,6 +276,7 @@ color:#f48c00;
     }
 }
 @media screen and (max-width: 992px) {  /* lg */
+
         #home_blogBanner .col {
             top: 25%;
             width: 40%;
@@ -281,7 +293,7 @@ color:#f48c00;
             font-size: 12px;
         }
 
-            #navLink a:hover {
+       #navLink a:hover {
                 text-decoration: none !important;
                 color: #f48c00 !important;
                 border-bottom: 0px;
@@ -304,14 +316,14 @@ color:#f48c00;
         .home_news #col-one a {
                 margin: auto;
             }
+       
+        #service_waarden .card-body {
+        padding: 10px;
+    }
 
-        #home_verhaal #section_0 h2 {
-            text-align: center;
-        }
-  
-        #home_verhaal #section_0 p {
-            text-align: center;
-        }
+        .service_kaarten h6 {
+        font-size: 16px;
+    }
        
     }
 @media screen and (max-width: 768px) { /* md */
@@ -319,7 +331,11 @@ color:#f48c00;
         top: 20%;
         width: 50%;
     }
-
+   
+    .footer_slogo {
+        font-size: 18px;
+        margin-left: 5rem;
+    } 
 
 }
 @media screen and (max-width: 576px) { /* sm */
@@ -347,11 +363,10 @@ color:#f48c00;
             flex-basis: 100%;
             display:flex;
         }
-
-
-        #home_blogBanner {
-            position: relative;
-        }
+     
+    #home_blogBanner {
+        position: relative;
+    }
 
             #home_blogBanner .col {
             }

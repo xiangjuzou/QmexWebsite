@@ -20,7 +20,7 @@ export default class Kaart extends Component {
             // card met button-link
             if (this.props.button) {
                 return (
-                    <Card style={{ marginBottom: "15px", height: "100%" }} className={this.props.className}  >
+                    <Card style={{ marginBottom: "15px", height: "100%" }} className={this.props.className}>
                         {this.renderCardBody(
                             <Button className="bg-primary" style={{ display: "inline-block" }}><Link className="text-white" style={{ textDecoration: 'none', fontSize: '18px' }} to={this.props.content?.linkUrl}>{lt}</Link></Button>
                             , overlay)}
@@ -51,7 +51,7 @@ export default class Kaart extends Component {
 
         // anders card zonder link
         return (
-            <Card style={{ borderWidth: '0', marginBottom: "15px" }} className={this.props.className}>
+            <Card style={{ borderWidth:'0', marginBottom: "15px" }} className={this.props.className}>
                 {this.renderCardBody("", overlay)}
             </Card>
         )

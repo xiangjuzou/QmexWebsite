@@ -33,22 +33,22 @@ export default class Service extends Component {
                     <VMFJumbo content={this.props.content.banner?.fields} height="48vh" cover pos="bottomleft"/>
                 </div>  
 
-               
-                <div id="service_waarden">
-                    <WidthContainer width={1}>
+
+                <div id="service_waarden" style={{width:'90%',margin:'auto'}}>
                     <Columns fluid>
-                        {this.props.content.waarden.map(k =>
-                            <Col className="text-left" >
-                                <span className="d-inline-block"><img src="/img/lamp.png" width="42px" alt="lamp" /> </span>
-                                <Kaart key={k.fields.name} content={k.fields} className="d-inline-block" />
-                            </Col>)}
+                            {this.props.content.waarden.map(k =>
+                                <Fragment>                           
+                                    <Col>
+                                        <img src="/img/lamp.png" width="38px" height="auto" alt="lamp" />
+                                        <Kaart key={k.fields.name} content={k.fields}  />
+                                </Col>
+                            </Fragment>)}
                         </Columns>
-                     </WidthContainer>
                 </div>
 
                 <div className="bg-light">
-                <Container>
-                <Verhaal className="text-center my-5 px-5 support_verhaal" content={this.props.content.inleiding.fields} />
+                    <Container>
+                        <Verhaal className="text-center my-5 px-5 support_verhaal" content={this.props.content.inleiding.fields} />
                     </Container>
                  </div>
 

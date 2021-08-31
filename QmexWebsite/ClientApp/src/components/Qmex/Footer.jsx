@@ -33,11 +33,11 @@ const Footer = React.memo((props) => {
                           <div ><img className="mr-3" src="/img/address.png" width="22px" alt="address"/>Munsterstraat 2F </div>
                          <div className="pl-4 ml-3 ">7418 EV Deventer</div>
                          <div className="pl-4 ml-3">The Nederlands</div>
-                         <div className="py-2"><img className="mr-3" src="/img/email.png" width="21px" alt="email" />info@qmex.eu  </div>                
+                         <div className="py-2 "><img className="mr-4" src="/img/email.png" width="21px" alt="email" />info@qmex.eu  </div>                
                  </Col>
             
                   <Col xs={6} lg={3} className="justify-content-center  flex-column d-flex">
-                    <h6 className="font-weight-bold mb-2">PRODUCTEN </h6>
+                    <h6 className="font-weight-bold mb-2 footer_column">PRODUCTEN </h6>
                     <div><a href="/products" target='_blank'>Airconditioner</a></div>
                     <div><a href="/products/warmtepomp" target='_blank'>Warmtepomp</a></div>
                     <div><a href="/products/vrf" target='_blank'>VRF systeem</a></div>
@@ -45,9 +45,8 @@ const Footer = React.memo((props) => {
                    </Col>
 
                     <Col xs={6} lg={3} className="justify-content-center flex-column d-flex f_support ">
-                     <h6 className="font-weight-bold pt-4 mb-2">SUPPORT</h6>
+                        <h6 className="font-weight-bold pt-3 mb-2 footer_column">SUPPORT</h6>
                      <div> <a href="/support" target='_blank'>Diensten</a></div>
-                        <div><a href="/support/productdevelopment" target='_blank'>Product ontwikkeling</a></div>
                         <div> <a href="/support/subsidies" target='_blank'>Subsidies </a></div>
                         <div><a href="/support/garantie" target='_blank'>Garantiebeleid</a></div>
                         <div><a href="/support/downloads" target='_blank'>Download</a></div>
@@ -56,7 +55,8 @@ const Footer = React.memo((props) => {
                    <Col xs={6} lg={3} className="d-flex flex-column justify-content-center mt-5 mb-2">
                             <div> <a className="footer_4 " href="/faq" target='_blank'>FAQ</a></div>
                             <div><a className="footer_4" href="/blog" target='_blank'>BLOG</a></div>
-                           <div><a className="footer_4" href="/support/video" target='_blank'>VIDEO</a></div>
+                            <div><a className="footer_4" href="/support/video" target='_blank'>VIDEO</a></div>
+                            <div><a href="/Contact" target='_blank'>CONTACT</a></div>
                             <div className="d-inline d-flex flex-row my-2">
                             <a href='https://www.facebook.com' target='_blank' rel="noopener noreferrer"><RiFacebookBoxLine className="mr-2 f_social" /></a>
                             <a href='https://www.instagram.com' target='_blank' rel="noopener noreferrer">< RiInstagramLine className="mr-2 f_social" /></a>
@@ -69,16 +69,16 @@ const Footer = React.memo((props) => {
 
                 <div id='copyright'>
                 <Columns >
-                    <Col lg={9} className="py-2" >
-                    <span className="pr-1"> | </span>
+                    <Col lg={8} className="py-2" >
+                    <span > | </span>
                     <a href="/privacy" target='_blank' style={{
-                        fontSize: '13px', fontWeight: '800'}} > PRIVACY
-                        <span className="pl-1"> | </span>   DISCLAMER </a> 
-                    <span className="pl-1"> | </span>
+                        fontSize: '12px', fontWeight: '600'}} > PRIVACY
+                        <span> | </span>  DISCLAMER </a> 
+                    <span> | </span>
 
                  
                         <p className="my-2 d-inline-block copyright_p"> Copyright &copy; 2021 Qmex Technology B.V. </p></Col>
-                        <Col lg={3}> <img className="" src="/img/fme.png" width="160px" alt="fme" /></Col>
+                        <Col lg={4}> <img className="" src="/img/fme.png" width="160px" alt="fme" /></Col>
                     </Columns>
             </div>
           

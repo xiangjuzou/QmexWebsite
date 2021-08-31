@@ -21,8 +21,8 @@ export default class Titel extends Component {
             <div {...overgeblevenProps} >
                 <WidthContainer width={this.props.width}>
                     <Col>
-                        <h2 className="mt-5 text-center position-relative f-roboto">{this.props.content?.titel}</h2>
-                        <div className="mx-auto mb-5" style={{ borderTop: "5px #f48c00 solid", width: '100px', boxShadow: '0px 3px 1px #ccc' }} />
+                        <h2 id="titel" className="mt-5 text-center position-relative f-roboto">{this.props.content?.titel}</h2>
+                        <div className="mx-auto mb-4" style={{ borderTop: "5px #f48c00 solid", width: '100px', boxShadow: '0px 3px 1px #ccc' }} />
                     </Col>
                 </WidthContainer>
             </div>

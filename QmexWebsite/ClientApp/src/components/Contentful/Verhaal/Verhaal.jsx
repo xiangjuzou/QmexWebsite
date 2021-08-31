@@ -9,7 +9,7 @@ import ReactMarkdownWithHtml from 'react-markdown/with-html';
 export default class Verhaal extends Component {
     constructor(props) {
         super(props);
-        this.state = { uitgeklapt: false };
+        this.state = {uitgeklapt: false };
     }
 
      uitklappen = () =>{
@@ -39,12 +39,12 @@ export default class Verhaal extends Component {
             }
         }  
 
-        return { btn: btn, tekst: tekst };
+        return {btn: btn, tekst: tekst };
     }
 
     render() {
         const content = this.bepaalUitklapbareTekst();
-        const newclass = (this.props.className) ? this.props.className : "my-5 py-5";
+        const newclass = (this.props.className) ? this.props.className: "my-5 py-5";
 
         // verzamel de "vreemde" props, en zet deze als attributen op de 1e div.
         const overgeblevenProps = { ...this.props };

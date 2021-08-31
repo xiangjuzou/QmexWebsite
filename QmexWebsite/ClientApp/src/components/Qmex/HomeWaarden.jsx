@@ -13,7 +13,7 @@ const HomeWaarden = (props) => {
             <Columns >
                 {props.content.waarden.map((k, i) =>
                     <Col className="waarden_kaart" key={k.fields.name} lg={4} md={12}>
-                        <Kaart content={k.fields} clickall  overlay className={"kaart_" + i + " text-white text-center mx-2"} />
+                        <Kaart content={k.fields} clickall overlay className={`kaart_${i} text-white text-center mx-2`} />
                     </Col>)}
             </Columns>
         </div>

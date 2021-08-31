@@ -37,9 +37,9 @@ export default class Home extends Component {
                     <Row>
                         {
                           this.props.content.inleiding.map( (inleiding,i) => (
-                              <Col lg={6} md={12} id={"section_" + i}>
+                              <Col  id={"section_" + i}>
                                   { i === 0 && <Verhaal className="text-left" content={inleiding.fields} />}
-                                  { i === 1 && <Container fluid><Row><Col xl={7} lg={12}><Verhaal className="text-left" content={inleiding.fields} /></Col><Col xl={5} lg={12}></Col></Row></Container>}
+                                  { i === 1 && <Container fluid id="home_verhaalR"><Row><Col xl={8} lg={8} md={11} ><Verhaal className="text-left" content={inleiding.fields} /></Col><Col xl={4} lg={4} md={1} ></Col></Row></Container>}
                                </Col>
                             ))
                         }

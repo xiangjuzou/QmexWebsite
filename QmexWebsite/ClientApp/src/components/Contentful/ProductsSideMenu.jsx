@@ -63,7 +63,7 @@ function ProductsSidemenu(props) {
 
             <h3 id="side_titel" className="border-bottom border-light border-2 pb-1 font-weight-bold "> {arrowDown} PRODUCTEN </h3>
 
-            <div id="hoofd-items" className="mt-4 pt-1">
+            <div id="hoofd-items" className="mt-3">
                 {props.content[0].fields.subMenus.map((mi) => parseItem(mi.fields, 1))}
             </div>
         </div>

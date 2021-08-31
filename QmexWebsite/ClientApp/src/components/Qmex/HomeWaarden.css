@@ -6,18 +6,16 @@
 }
 
 .home_waarden .waarden_kaart {
-    height: 12vw;
     margin-bottom: 20px;
+    height:200px;
 }
 
 .home_waarden .card {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
     background-position: center;
-   
 }
 
 .home_waarden .kaart_0 {
@@ -39,26 +37,26 @@
 }
 
 .home_waarden img {
-    width: 81px;
+    max-width: 81px;
 }
 
 .home_waarden .card-text h4 {
     font-weight: 800;
     font-style: normal;
-    font-family: 'Gill Sans Nova' ;
+    font-family: 'Gill Sans Nova';
+    margin-top:1.5rem;
 }
+ 
 
-@media screen and (max-width: 992px) {  /* lg */
-    .home_waarden {
-        width: 60%;
-    }
+@media screen and (max-width: 992px) { /* lg */
+ 
+    .home_waarden .waarden_kaart {
+            height: 200px;
+            margin-bottom: 30px;
+        }
 
- .home_waarden .waarden_kaart {
-        height: 37vw;
-        margin-bottom: 30px;
-    }
-   .home_waarden .card-text p{
-       font-size:20px;
- }
+   .home_waarden .card-text h4 {
+            font-size: 18px;
+        }
+
 }
-

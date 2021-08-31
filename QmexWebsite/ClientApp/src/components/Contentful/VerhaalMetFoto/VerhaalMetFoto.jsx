@@ -33,7 +33,7 @@ export default class VerhaalMetFoto extends Component {
        
         let col1 = (
             <Col md={6} sm={12} id="col-one" className="mb-4 p-4">
-                <h2 className="mb-3">{this.props.content?.titel}</h2>
+                <h2>{this.props.content?.titel}</h2>
                 <div className="mr-auto mb-5 vmf_bottom" style={{ borderTop: "5px #f48c00 solid", width: '100px', boxShadow: '0px 3px 1px #ccc' }} />
                 <ReactMarkdownWithHtml allowDangerousHtml>{this.props.content?.tekst}</ReactMarkdownWithHtml>
                 <div className="my-5">

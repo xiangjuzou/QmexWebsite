@@ -43,7 +43,7 @@ export default class Products extends Component {
 
         return (
             <Fragment>
-                <VMFTopBanner content={this.props.content?.fields?.topBanner?.fields} /> 
+                <VMFTopBanner content={this.props.content?.fields?.topBanner?.fields} height='48vh'/> 
                 
                 <div style={{ width: '80%', margin: 'auto' }} className="mt-5 productPage" >
                     <Columns fluid>

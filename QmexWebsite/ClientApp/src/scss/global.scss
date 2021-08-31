@@ -75,11 +75,12 @@ h1 {
     letter-spacing: -.003em;
 }
 
-
+#titel{
+    margin-bottom:10px;
+    padding:0px;
+}
 /*#endregion */
-
 /*#region globale footer */
-
 footer {
     @extend .bg-darkmetalblue;
     margin-top: 30px;
@@ -90,15 +91,34 @@ footer {
 footer, footer a {
     @extend .text-light;
 }
+footer a:hover {
+    color: #D88102 !important;
+    text-decoration: none;
+}
+
+.footer_column {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer_column:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    border-bottom: 1px dotted #d88102;
+}
+
 
 a.footer_4 {
     font-size: 13px;
-    font-weight:500;
+    font-weight: 500;
 }
 
 .footer_slogo {
     @extend .f-arial-bold;
-    font-size: 19px;
+    font-size: 24px;
     letter-spacing:1.8px;
 }
 
@@ -133,10 +153,6 @@ a.footer_4 {
 }
 
 
-footer a:hover {
-    @extend .text-primary;
-    text-decoration: none;
-}
 /*#endregion */
 
 /*#region globale header */
@@ -233,11 +249,6 @@ button#search_btn {
     border-radius: 8px;
 }
 
-.home_kaart h5 {
-    @extend .f-gill-bold;
-    font-size: 23px;
-}
-
 
 #home_verhaal h1 {
     font-size: 34px;
@@ -294,7 +305,9 @@ button#search_btn {
 
 #home_qmex h2 {
     @extend .f-arial-bold;
-    font-size: 35px;
+    font-size: 42px;
+    margin-top:10px;
+    margin-bottom:4px;
 }
 
 #home_qmex p {
@@ -307,6 +320,7 @@ button#search_btn {
 
 
 /*#region service-pagina */
+
 .service_kaarten .card {
     border: none;
 }
@@ -361,11 +375,6 @@ button#search_btn {
         text-decoration: none;
     }
 
-    #service_waarden h5 {
-        margin-bottom: 1.7rem;
-        font-weight: 700;
-        font-size: 18px;
-    }
     /*#endregion*/
     /*#region tussenpage */
     /*#endregion*/
